@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from 'react'
 import styles from "./styles.module.css";
 import { FaBars } from "react-icons/fa";
@@ -12,10 +11,12 @@ import { usePathname } from 'next/navigation';
 import logo from "@/assets/logo.svg";
 import Image from 'next/image';
 import { logOut } from '@/redux/slices/user.slice';
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
   const dispatch = useDispatch();
   const pathname = usePathname();
+  const router = useRouter();
   const user = useSelector(state=>state.user.user);
   
   const [isOpen, setIsOpen] = useState(false); // Mobile menu state
@@ -24,6 +25,7 @@ export default function Header() {
   };
   const handleLogOut = ()=>{
     dispatch(logOut());
+    router.replace("/login");
   }
   const { t } = useTranslation("header");
   return (

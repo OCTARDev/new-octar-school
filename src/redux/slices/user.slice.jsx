@@ -3,7 +3,6 @@ import Cookies from "js-cookie";
 
 const initialState = {
     user:null,
-    userIP:null,
     accessToken:"",
     initialized:false
 
@@ -14,7 +13,6 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setUser:(state,action)=>{
-      
       const {token , user} = action.payload;
       state.user = user;
       state.accessToken = token;
@@ -25,14 +23,12 @@ const userSlice = createSlice({
       state.accessToken = null;
       state.initialized = true;
       // Remove the user cookie
-      Cookies.remove("user", { path: "/" });
+      Cookies.remove("user");
+      window.location.reload();
     },
     setInitialized(state) {
       state.initialized = true;
     },
-    setIP :(state,action)=>{      
-      state.userIP = action.payload;
-    }
   },
 });
 

@@ -7,10 +7,10 @@ import Cookies from "js-cookie";
 export default function HydrateAuth({ children }) {
     const dispatch = useDispatch();
     const [isMounted, setIsMounted] = useState(false); // Track client-side mount
-    const storedUser = Cookies.get("user"); 
+
     
     useEffect(() => {
-     
+      const storedUser = Cookies.get("user"); 
       if (storedUser) {
         dispatch(setUser(JSON.parse(storedUser)));
       }else{
@@ -18,7 +18,7 @@ export default function HydrateAuth({ children }) {
       }
   
       setIsMounted(true); // Mark component as mounted
-    }, [dispatch,storedUser]);
+    }, [dispatch]);
   
     if (!isMounted) return null; // Prevent SSR-client mismatch
   

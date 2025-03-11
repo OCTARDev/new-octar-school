@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import { FaChevronLeft } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
-
 import OTPInput from 'react-otp-input';
 import useVerifyOtp from '@/tanstack-query/auth/useVerifyOtp';
 import useResendOtp from '@/tanstack-query/auth/useResendOtp';
@@ -19,8 +18,14 @@ export default function Otp() {
     const [timer, setTimer] = useState(180);
     const [isClicked , setIsClicked] = useState(false);
     const [otp ,setOtp] = useState("");
-    //on success & on error handlers
 
+    const handleLogout = () => {
+        dispatch(logOut());
+        console.log("log out");
+        router.push("/login");
+
+    }
+    //on success & on error handlers
     const onSuccess = (data)=>{
         console.log(data);
         
@@ -41,7 +46,6 @@ export default function Otp() {
     /* handling timer */
     useEffect(() => {
         let interval;
-    
         if (isClicked && timer > 0) {
           interval = setInterval(() => {
             setTimer((prev) => prev - 1);
@@ -51,7 +55,6 @@ export default function Otp() {
           setIsClicked(false);
           setTimer(30); // Reset timer for next click
         }
-    
         return () => clearInterval(interval);
       }, [isClicked, timer]);
       /* handling resending otp */
@@ -69,10 +72,7 @@ export default function Otp() {
     resendOtp.mutate();
     }
 
-    const handleLogout = ()=>{
-        dispatch(logOut());
-        router.replace("/login");
-    }
+
   return (
     <div className='min-h-screen flex flex-col'>
         {/* header */}
@@ -87,7 +87,7 @@ export default function Otp() {
                 />
             </Link>
             <div>
-                <button className='btn btn-primary' onClick={handleLogout}>Logout</button>
+                <button className='btn btn-primary' type='button' onClick={handleLogout}>Logout</button>
             </div>
             
         </nav>

@@ -29,18 +29,23 @@ export default function Login() {
     email:"",
     password:"",
   }});
-  const onSuccess = (data)=>{
+  const onSuccess = async(data)=>{
     const user = data?.data?.data;
     toast.success("Signin Successfully");
-    dispatch(setUser(user));
-
     //set cookie expiration
     const expires = rememberMe ? 30 : null;
 
     // Store user in cookies
-    Cookies.set("user", JSON.stringify(user), { expires, path: "/" });
-    //re route to home route
-    router.push("/home");
+    Cookies.set("user", JSON.stringify(user), { 
+      expires,
+      path: "/",
+      secure:true,
+      sameSite:"Strict"
+  });
+  window.location.reload();
+  dispatch(setUser(user));
+  //re route to home route
+  router.push("/home");
 }
 
 const onError = (error)=>{
