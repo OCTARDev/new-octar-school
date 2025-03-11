@@ -37,8 +37,3 @@
 [dir="rtl"] .sidebar.expanded{
   right:0;
 }
-.giftMenu{
-    div>a:hover{
-        @apply underline text-red-700 cursor-pointer;
-    }
-}
