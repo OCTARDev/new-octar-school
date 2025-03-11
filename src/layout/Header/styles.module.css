@@ -1,0 +1,44 @@
+.fullscreen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.2;
+    top: 0;
+    background-color: black;
+    padding: 0;
+    z-index: 20;
+  }
+
+ .sidebar{
+    position: fixed;
+    overflow-y: auto;
+    min-width: 240px;
+    left:-100%;
+    top: 0;
+    height: 100%;
+    width: fit-content;
+    background-color: white;
+    z-index: 30;
+    transition: all 0.4s ease-in-out;
+    font-size: 20px ;
+    padding: 20px 0px ;
+  }
+
+[dir="ltr"] .sidebar{
+  left:-100%;
+}
+[dir="ltr"] .sidebar.expanded{
+    left: 0;
+}
+[dir="rtl"] .sidebar{
+  right:-100%;
+}
+
+[dir="rtl"] .sidebar.expanded{
+  right:0;
+}
+.giftMenu{
+    div>a:hover{
+        @apply underline text-red-700 cursor-pointer;
+    }
+}

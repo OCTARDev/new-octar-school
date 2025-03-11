@@ -1,0 +1,26 @@
+"use client";
+import { setInitialized, setUser } from '../../redux/slices/user.slice';
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import Cookies from "js-cookie";
+
+export default function HydrateAuth({ children }) {
+    const dispatch = useDispatch();
+    const [isMounted, setIsMounted] = useState(false); // Track client-side mount
+    const storedUser = Cookies.get("user"); 
+    
+    useEffect(() => {
+     
+      if (storedUser) {
+        dispatch(setUser(JSON.parse(storedUser)));
+      }else{
+        dispatch(setInitialized());
+      }
+  
+      setIsMounted(true); // Mark component as mounted
+    }, [dispatch,storedUser]);
+  
+    if (!isMounted) return null; // Prevent SSR-client mismatch
+  
+    return children;
+  }
