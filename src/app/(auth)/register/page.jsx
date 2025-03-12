@@ -38,8 +38,9 @@ export default function Register() {
   //api call on success and on error handlers
   const onSuccess = (data)=>{
     console.log(data);
+    const user = data?.data?.data;
     toast.success("Signin Successfully");
-    dispatch(setUser(data?.data?.data));
+    dispatch(setUser(user));
     // Store user in cookies
     Cookies.set("user", JSON.stringify(user), { path: "/" });
     //re route to home route
