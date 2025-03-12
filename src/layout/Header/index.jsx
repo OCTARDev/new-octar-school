@@ -24,7 +24,7 @@ export default function Header() {
   };
   const handleLogOut = ()=>{
     dispatch(logOut());
-    router.replace("/login");
+    /* router.replace("/login"); */
   }
   const { t } = useTranslation("header");
   return (

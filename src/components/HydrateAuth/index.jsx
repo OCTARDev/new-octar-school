@@ -1,16 +1,16 @@
 "use client";
 import { setInitialized, setUser } from '../../redux/slices/user.slice';
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Cookies from "js-cookie";
 
 export default function HydrateAuth({ children }) {
     const dispatch = useDispatch();
     const [isMounted, setIsMounted] = useState(false); // Track client-side mount
-
     
     useEffect(() => {
       const storedUser = Cookies.get("user"); 
+      
       if (storedUser) {
         dispatch(setUser(JSON.parse(storedUser)));
       }else{

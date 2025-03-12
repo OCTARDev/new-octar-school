@@ -22,6 +22,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import SchoolRegisterSchema from '../../../utils/Validation/auth/SchoolRegister';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../redux/slices/user.slice';
+import Cookies from 'js-cookie';
 
 export default function Register() {
   const {t} = useTranslation("register");

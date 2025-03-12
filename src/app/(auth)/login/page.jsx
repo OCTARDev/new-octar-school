@@ -42,10 +42,14 @@ export default function Login() {
       secure:true,
       sameSite:"Strict"
   });
-  window.location.reload();
+  /* window.location.reload(); */
   dispatch(setUser(user));
   //re route to home route
-  router.push("/home");
+  if(!!user.user.email_verified_at){
+    router.push("/home")
+  }else{
+    router.push("/otp");
+  }
 }
 
 const onError = (error)=>{

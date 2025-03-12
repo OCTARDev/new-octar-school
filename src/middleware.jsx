@@ -1,13 +1,24 @@
 import { NextResponse } from 'next/server';
 
 // List of protected routes
-const protectedRoutes = ['/dashboard', '/otp'];
-// Routes to block for authenticated users
-const authRoutes = ['/login', '/register'];
 
-export function middleware(req) {
-  const userCookie = req.cookies.get('user')?.value; // Assuming JWT is stored in cookies
+// Routes to block for authenticated users
+
+
+export function middleware(request) {
+  const userCookie = request.cookies.get('user')?.value; // Assuming JWT is stored in cookies
+  
+  const protectedPaths = ['/dashboard', '/otp'];
+  const protectedPathForLoggedIn = ['/login', '/register'];
+
+  const requestedPath = request.nextUrl.pathname;
+  const isVerifyPage = requestedPath.startsWith("/otp");
+  const pathname = request.nextUrl.pathname;
+
+
   let user;
+
+
 
   try {
     user = !!userCookie ? JSON.parse(userCookie) : null; // Parse JSON string
@@ -16,16 +27,50 @@ export function middleware(req) {
     user = null;
   }
 
-  const token = user?.token; // Safely access token
-  const isVerified = !!user?.user.email_verified_at;
-  const pathname = req.nextUrl.pathname;
+  /* console.log(user.user); */
+  
+
+  // Protect /dashboard /otp for unauthenticated users
+  if (protectedPaths.some((path) => pathname.startsWith(path)) ) {   
+    if (!user) {
+      console.log('Redirecting to /login due to missing token');
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
+
+    // Redirect unverified users to /home/verify-email (excluding itself)
+    if (!user?.user?.email_verified_at && !isVerifyPage) {
+      console.log('Redirecting to /otp due to unverified email');
+      return NextResponse.redirect(new URL(`/otp`, request.url));
+    }
+  }
+
+  // Prevent verified users from accessing /otp
+  if (isVerifyPage && user?.user?.email_verified_at) {
+    return NextResponse.redirect(new URL("/home", request.url));
+  }
+
+  // Public routes: prevent logged-in users from accessing login or sign-up
+  if (protectedPathForLoggedIn.some((path) => pathname.startsWith(path))) {
+    if (user) {
+      return NextResponse.redirect(new URL("/home", request.url));
+    }
+  }
 
 
-  // Check if the requested path is a protected route or its descendant
-  const isProtected = protectedRoutes.some((route) => pathname.startsWith(route));
-  // Check if the user is already logged in and trying to access auth pages
-  const isAuthRoute = authRoutes.includes(pathname);
 
+  return NextResponse.next(); // Allow request if authenticated
+}
+
+export const config = {
+  matcher: ["/home/:path*", "/login", "/regiser" , "/otp" ,"/dashboard/:path*"],
+};
+
+// Configure middleware to apply only on specific routes
+/* export const config = {
+  matcher: ['/otp', '/dashboard/:path*', '/login', '/register' ,"/home/:path*" ], // Define protected routes
+}; */
+
+/* 
   // Redirect to login if user tries to access a protected route without a valid token
   if (isProtected && !token) {
     console.log('Redirecting to /login due to missing token');
@@ -48,12 +93,4 @@ export function middleware(req) {
   if (isAuthRoute && token) {
     console.log('Redirecting to /home from auth route due to existing token');
     return NextResponse.redirect(new URL('/home', req.url));
-  }
-
-  return NextResponse.next(); // Allow request if authenticated
-}
-
-// Configure middleware to apply only on specific routes
-export const config = {
-  matcher: ['/otp', '/dashboard/:path*', '/login', '/register' , "/home/:path*"], // Define protected routes
-};
+  } */

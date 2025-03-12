@@ -12,7 +12,7 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setUser:(state,action)=>{
+    setUser:(state,action)=>{      
       const {token , user} = action.payload;
       state.user = user;
       state.accessToken = token;
@@ -24,7 +24,7 @@ const userSlice = createSlice({
       state.initialized = true;
       // Remove the user cookie
       Cookies.remove("user");
-      window.location.reload();
+      /* window.location.reload(); */
     },
     setInitialized(state) {
       state.initialized = true;
@@ -32,5 +32,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { setUser , logOut , setInitialized ,setIP} = userSlice.actions;
+export const { setUser , logOut , setInitialized } = userSlice.actions;
 export default userSlice.reducer;

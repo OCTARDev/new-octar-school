@@ -36,7 +36,10 @@ export default function ResetPassword() {
     //on success & on error handlers
     const onSuccess = (data)=>{        
         toast.success("Password Updated Successfully");
-        router.push("/login")
+        setTimeout(()=>{
+            router.push("/login")
+        },2000)
+        
     }
     const onError = (error)=>{
         toast.error(error?.response?.data?.message || "Error Occured")
