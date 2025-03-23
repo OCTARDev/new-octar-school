@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React from 'react';
 import logo from "../../../assets/logo.svg";
 import SideImageComponent from '../_components/SideImage';
-import Input from '../_components/Input';
+import Input from '@/components/Input';
 import { useForm } from 'react-hook-form';
 import { FaRegUser } from "react-icons/fa";
 import useFetchCountries from '../../../tanstack-query/helper/useFetchCountries';

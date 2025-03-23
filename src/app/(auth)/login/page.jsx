@@ -16,7 +16,7 @@ import { useDispatch } from 'react-redux';
 import { setUser } from '../../../redux/slices/user.slice';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { signinSchema } from '../../../utils/Validation/auth/Login';
-import Input from '../_components/Input';
+import Input from '@/components/Input';
 
 export default function Login() {  
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function Login() {
     email:"",
     password:"",
   }});
-  const onSuccess = async(data)=>{
+  const onSuccess = (data)=>{
     const user = data?.data?.data;
     toast.success("Signin Successfully");
     //set cookie expiration
@@ -50,12 +50,12 @@ export default function Login() {
   }else{
     router.push("/otp");
   }
-}
+  }
 
-const onError = (error)=>{
-    console.log(error);
-    toast.error(error?.response?.data?.message || "Error Occurred")
-}
+  const onError = (error)=>{
+      console.log(error);
+      toast.error(error?.response?.data?.message || "Error Occurred")
+  }
 
   const login = useLogin({onSuccess,onError});
   const onSubmit = (data)=>{

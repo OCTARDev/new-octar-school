@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { FaChevronLeft } from "react-icons/fa";
 import forgotImg from "@/assets/auth/forgot.png";
-import Input from '../_components/Input';
+import Input from '@/components/Input';
 import { MdMailOutline } from "react-icons/md";
 import { useForm } from 'react-hook-form';
 import useForgotPassword from '@/tanstack-query/auth/useForgotPassword';

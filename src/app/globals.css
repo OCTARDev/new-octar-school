@@ -61,10 +61,10 @@ body{
   @apply bg-gradient-primary hover:bg-gradient-secondary text-neutral10 disabled:bg-gradient-to-r disabled:bg-gray-500;
 }
 
-input,select{
+input,select,textarea{
   @apply focus-visible:outline-none;
 }
 
 .input-control{
-  @apply w-full flex items-center ps-2 gap-2 border-2 overflow-hidden border-gray-300 rounded-2xl ;
+  @apply w-full flex items-center ps-2 gap-2 border overflow-hidden border-gray-300 rounded-2xl ;
 }

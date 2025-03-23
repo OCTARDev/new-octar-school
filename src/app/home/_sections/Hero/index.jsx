@@ -1,5 +1,5 @@
 import React from 'react';
-import hero from "../../../../assets/home/hero.png";
+import hero from "@/assets/home/hero.png";
 import Image from 'next/image';
 
 export default function HeroSection() {
