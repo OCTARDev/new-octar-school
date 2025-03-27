@@ -2,30 +2,30 @@
 
 import Image from 'next/image'
 import React from 'react';
-import logo from "../../../assets/logo.svg";
+import logo from "@/assets/logo.svg";
 import SideImageComponent from '../_components/SideImage';
 import Input from '@/components/Input';
 import { useForm } from 'react-hook-form';
 import { FaRegUser } from "react-icons/fa";
-import useFetchCountries from '../../../../tanstack-query/helper/useFetchCountries';
-import ErrorBoundary from '../../../../components/ErrorBoundary/ErrorBoundary';
-import { useTranslation } from 'react-i18next';
+import useFetchCountries from '@/tanstack-query/helper/useFetchCountries';
+import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
+import { useTranslations } from 'next-intl';
 import { MdMailOutline } from "react-icons/md";
 import PasswordInput from '../_components/PasswordInput';
 import Link from 'next/link';
-import useRegister from '../../../../tanstack-query/auth/useRegister';
+import useRegister from '@/tanstack-query/auth/useRegister';
 import { FaSchool } from "react-icons/fa";
 import { FaFlag } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 import { yupResolver } from '@hookform/resolvers/yup';
-import SchoolRegisterSchema from '../../../../utils/Validation/auth/SchoolRegister';
+import SchoolRegisterSchema from '@/utils/Validation/auth/SchoolRegister';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../../../../redux/slices/user.slice';
+import { setUser } from '@/redux/slices/user.slice';
 import Cookies from 'js-cookie';
 
 export default function Register() {
-  const {t} = useTranslation("register");
+  const t = useTranslations("register");
   const dispatch = useDispatch();
   const {data,isLoading,isError,isSuccess,error} = useFetchCountries();
   const countries = data?.data?.data?.countries;

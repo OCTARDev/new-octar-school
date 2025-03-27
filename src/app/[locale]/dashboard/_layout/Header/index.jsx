@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Link  from 'next/link';
 
 import LanguageSwitcher from '@/components/LanguageSwitcher';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import logo from "@/assets/logo.svg";
 import Image from 'next/image';
@@ -27,7 +27,7 @@ export default function Header() {
     dispatch(logOut());
     router.replace("/login");
   }
-  const { t } = useTranslation("header");
+  const t = useTranslations("header");
   return (
     <header className='capitalize'>
       <div className={`${styles.fullscreen} ${!isOpen?"hidden":""} `} onClick={toggleMenu}></div>

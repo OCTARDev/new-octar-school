@@ -1,16 +1,15 @@
 .dropdown{
     position: relative;
     display: flex;
-    button{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-grow: 1;
-        gap: 3px;
-        text-transform: capitalize;
-    }
 }
-
+.dropdown button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 3px;
+    text-transform: capitalize;
+}
 .dropdownMenu{
     position: absolute;
     z-index: 50;

@@ -1,5 +1,5 @@
 import React from 'react'
-import authImage from "../../../../assets/auth/auth_upscaled.png";
+import authImage from "@/assets/auth/auth_upscaled.png";
 import Image from 'next/image'
 
 export default function SideImageComponent() {

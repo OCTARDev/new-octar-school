@@ -2,20 +2,20 @@
 import Cookies from "js-cookie";
 import Image from 'next/image'
 import React, { useState } from 'react';
-import logo from "../../../assets/logo.svg";
+import logo from "@/assets/logo.svg";
 import SideImageComponent from '../_components/SideImage';
 import { FaRegUser } from "react-icons/fa";
 import PasswordInput from '../_components/PasswordInput';
 import Link  from 'next/link';
 import RoleInput from '../_components/RoleInput';
 import { useForm } from 'react-hook-form';
-import useLogin from '../../../../tanstack-query/auth/useLogin';
+import useLogin from '@/tanstack-query/auth/useLogin';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../../../../redux/slices/user.slice';
+import { setUser } from '@/redux/slices/user.slice';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { signinSchema } from '../../../../utils/Validation/auth/Login';
+import { signinSchema } from '@/utils/Validation/auth/Login';
 import Input from '@/components/Input';
 
 export default function Login() {  
