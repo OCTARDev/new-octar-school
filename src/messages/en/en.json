@@ -1,0 +1,14 @@
+{
+    "header":{
+        "login":"login",
+        "home":"home",
+        "about":"about",
+        "curriculum":"curriculum",
+        "features":"features",
+        "pricing":"pricing",
+        "blog":"blog",
+        "contact":"contact",
+        "support":"support",
+        "news":"news"
+    }
+}

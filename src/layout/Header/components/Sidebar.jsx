@@ -6,7 +6,7 @@ import { IoGiftSharp } from 'react-icons/io5';
 import { IoMdClose } from "react-icons/io";
 import { CiBellOn } from 'react-icons/ci';
 import LanguageSwitcher from '../../../components/LanguageSwitcher';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import logo from "../../../assets/logo.svg";
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,7 +15,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { logOut } from '@/redux/slices/user.slice';
 
 export default function Sidebar({isOpen,toggleMenu}) {
-    const {t} = useTranslation();
+    const t = useTranslations("header");
     const dispatch = useDispatch();
     const router = useRouter();
     const user = useSelector(state=>state.user.user);

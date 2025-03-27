@@ -1,9 +1,12 @@
 import { NextResponse } from 'next/server';
-
+import createIntlMiddleware from 'next-intl/middleware';
 // List of protected routes
 
 // Routes to block for authenticated users
 
+// Supported locales
+const locales = ['en', 'ar'];
+const defaultLocale = 'en';
 
 export function middleware(request) {
   const userCookie = request.cookies.get('user')?.value; // Assuming JWT is stored in cookies
@@ -55,42 +58,23 @@ export function middleware(request) {
       return NextResponse.redirect(new URL("/home", request.url));
     }
   }
+  // Localization Middleware
+  const intlMiddleware = createIntlMiddleware({
+    locales,
+    defaultLocale
+  });
 
-
-
-  return NextResponse.next(); // Allow request if authenticated
+  return intlMiddleware(request);
 }
 
 export const config = {
-  matcher: ["/home/:path*", "/login", "/regiser" , "/otp" ,"/dashboard/:path*"],
+  matcher: [
+    '/(en|ar)/:path*', // Locale-specific routes
+    '/home/:path*',
+    '/login',
+    '/register',
+    '/otp',
+    '/dashboard/:path*'
+  ],
 };
 
-// Configure middleware to apply only on specific routes
-/* export const config = {
-  matcher: ['/otp', '/dashboard/:path*', '/login', '/register' ,"/home/:path*" ], // Define protected routes
-}; */
-
-/* 
-  // Redirect to login if user tries to access a protected route without a valid token
-  if (isProtected && !token) {
-    console.log('Redirecting to /login due to missing token');
-    return NextResponse.redirect(new URL('/login', req.url));
-  }
-
-  // Redirect logged-in users who are NOT verified to /otp
-  if (token && !isVerified && pathname !== '/otp') {
-    console.log('Redirecting to /otp due to unverified email');
-    return NextResponse.redirect(new URL('/otp', req.url));
-  }
-
-  // Redirect Users from otp if they are verified
-  if (pathname === '/otp' && isVerified) {
-    console.log('Redirecting to /home from /otp due to verified email');
-    return NextResponse.redirect(new URL('/home', req.url));
-  }
-
-  // Redirect logged-in users away from /login and /register to /home
-  if (isAuthRoute && token) {
-    console.log('Redirecting to /home from auth route due to existing token');
-    return NextResponse.redirect(new URL('/home', req.url));
-  } */

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Link  from 'next/link';
 import Sidebar from './components/Sidebar';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
-import { useTranslation } from 'react-i18next';
+import {useTranslations} from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import logo from "@/assets/logo.svg";
 import Image from 'next/image';
@@ -16,7 +16,6 @@ import GiftMenuComponent from './components/Curicuilum';
 
 export default function Header() {
   const dispatch = useDispatch();
-  const router = useRouter();
   const pathname = usePathname();
   const user = useSelector(state=>state.user.user);
   const [isOpen, setIsOpen] = useState(false); // Mobile menu state
@@ -25,9 +24,8 @@ export default function Header() {
   };
   const handleLogOut = ()=>{
     dispatch(logOut());
-    /* router.replace("/login"); */
   }
-  const { t } = useTranslation("header");
+  const t = useTranslations("");
   return (
     <header className='capitalize'>
       <div className={`${styles.fullscreen} ${!isOpen?"hidden":""} `} onClick={toggleMenu}></div>
@@ -76,7 +74,7 @@ export default function Header() {
           </button>
         :
           <Link href={"/login"} className={`nav-link btn btn-primary ${pathname.includes("/home")?" active":""}`}>
-          {t("login")}
+          {t("header.login")}
           </Link>
         }
         </div>

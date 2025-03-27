@@ -1,37 +1,40 @@
-"use client"; // Mark this component as a Client Component
+"use client";
 
-import React, { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import React from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
 import { MdLanguage } from "react-icons/md";
+
 const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
+  const pathname = usePathname(); // Get current URL path
+  const router = useRouter(); // Next.js router
+  const currentLocale = useLocale(); // Get current locale from next-intl
 
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") || "en";
-    i18n.changeLanguage(savedLanguage);
-    document.documentElement.dir = savedLanguage === "ar" ? "rtl" : "ltr";
-  }, []);
+  const changeLanguage = (event) => {
+    const newLocale = event.target.value;
+    const segments = pathname.split("/");
 
-  const handleChangeLanguage = (e) => {
-    const newLang = e.target.value;
-    i18n.changeLanguage(newLang);
-    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
-    localStorage.setItem("language", newLang);
+    // Replace the first segment with the new locale
+    segments[1] = newLocale;
+    const newPath = segments.join("/") || `/${newLocale}`;
+
+    router.replace(newPath);
   };
 
   return (
-    <div className=" flex items-center cursor-pointer px-2 py-1 border rounded">
-      <div className=" left-0 top">
-      <MdLanguage size={20} />
-      </div>
+    <div className="flex items-center cursor-pointer px-2 py-1 border rounded">
+      <MdLanguage size={20} className="mr-2" />
       <select
-      className="px-4 bg-transparent"
-        onChange={handleChangeLanguage}
-        value={i18n.language}
-
+        className="px-4 bg-transparent outline-none"
+        onChange={changeLanguage}
+        value={currentLocale} // Set the current locale as selected
       >
-        <option value="en">English</option>
-        <option value="ar">Arabic</option>
+        {routing.locales.map((locale) => (
+          <option key={locale} value={locale}>
+            {locale === "en" ? "English" : "العربية"}
+          </option>
+        ))}
       </select>
     </div>
   );

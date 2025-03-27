@@ -1,7 +1,6 @@
 import axios from "axios";
-import {store} from "../../redux/store";
-import i18n from "../../i18n"; 
-import { logOut } from "../../redux/slices/user.slice";
+import {store} from "@/redux/store";
+import { logOut } from "@/redux/slices/user.slice";
 import Cookies from "js-cookie";
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -21,7 +20,8 @@ axiosInstance.interceptors.request.use(async (req)=>{
     if(user && user.token){
         req.headers.Authorization = `Bearer ${user.token}`
     }
-    const currentLanguage = i18n.language;
+    // Get the current locale from cookies (NEXT_LOCALE)
+    const currentLanguage = Cookies.get("NEXT_LOCALE") || "en";
     req.headers["X-App-Locale"] = currentLanguage;
     return req;
 })
