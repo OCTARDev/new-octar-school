@@ -60,6 +60,9 @@ body{
 .btn.btn-primary{
   @apply bg-gradient-primary hover:bg-gradient-secondary text-neutral10 disabled:bg-gradient-to-r disabled:bg-gray-500;
 }
+.btn.btn-secondary{
+  @apply bg-gray-300 hover:bg-gradient-primary text-primaryA1 hover:text-neutral10 disabled:bg-gradient-to-r disabled:bg-gray-500;
+}
 
 input,select,textarea{
   @apply focus-visible:outline-none;

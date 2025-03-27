@@ -6,11 +6,13 @@ import Input from '@/components/Input';
 import { FaPhoneAlt, FaRegUser } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { MdMailOutline } from 'react-icons/md';
+import useContactUs from '@/tanstack-query/Home/useContactUs';
 
 export default function ContactFormSection() {
     const {register,handleSubmit,formState:{errors}}  = useForm();
+    const contactUs = useContactUs();
     const onSubmit = (data)=>{
-
+        contactUs.mutate(data);
     }
   return (
     <section className='py-4'>

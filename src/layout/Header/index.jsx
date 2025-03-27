@@ -1,23 +1,24 @@
 "use client";
 import { useState } from 'react'
 import styles from "./styles.module.css";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaChevronDown } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import Link  from 'next/link';
 import Sidebar from './components/Sidebar';
-import LanguageSwitcher from '../../components/LanguageSwitcher';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { usePathname, useRouter } from 'next/navigation';
-import logo from "../../assets/logo.svg";
+import logo from "@/assets/logo.svg";
 import Image from 'next/image';
-import { logOut } from '../../redux/slices/user.slice';
+import { logOut } from '@/redux/slices/user.slice';
+import Dropdown from '@/components/Dropdown/Dropdown';
+import GiftMenuComponent from './components/Curicuilum';
 
 export default function Header() {
   const dispatch = useDispatch();
   const router = useRouter();
   const pathname = usePathname();
   const user = useSelector(state=>state.user.user);
-  
   const [isOpen, setIsOpen] = useState(false); // Mobile menu state
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -52,7 +53,17 @@ export default function Header() {
         <div className='items-center gap-6 hidden lg:flex'>
           <Link className={`nav-link ${pathname === ("/home")?" active":""}`} href={"/home"}>home</Link>
           <Link className={`nav-link ${pathname.includes("/home/about")?" active":""}`} href={"/home/about"}>about us</Link>
-          <Link className={`nav-link ${pathname.includes("/home/curriculum")?" active":""}`} href={"/home/curriculum"}>curriculum</Link>
+          <Dropdown title={
+            <div className='flex mx-auto items-center gap-2 py-3 hover:text-primaryA0 nav-link'>
+              <span className='text-center '>Curriculum</span>
+              <span><FaChevronDown size={14}/></span>
+              </div>}
+              btnStyle={`flex items-center  px-2 gap-1 capitalize `}
+              menuStyle={`!left-0 !right-0 w-fit mx-auto !mt-0 `}
+              dropdownStyle={`relative `}
+              >
+              <GiftMenuComponent />
+          </Dropdown>
           <Link className={`nav-link ${pathname.includes("/home/features")?" active":""}`} href={"/home/features"}>features</Link>
           <Link className={`nav-link ${pathname.includes("/home/blog")?" active":""}`} href={"/home/blog"}>blog</Link>
           <Link className={`nav-link ${pathname.includes("/home/pricing")?" active":""}`} href={"/home/pricing"}>pricing</Link>
