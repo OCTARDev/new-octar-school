@@ -7,7 +7,7 @@ import Link  from 'next/link';
 import Sidebar from './components/Sidebar';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import {useTranslations} from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import logo from "@/assets/logo.svg";
 import Image from 'next/image';
 import { logOut } from '@/redux/slices/user.slice';
@@ -25,16 +25,16 @@ export default function Header() {
   const handleLogOut = ()=>{
     dispatch(logOut());
   }
-  const t = useTranslations("");
+  const t = useTranslations("header");
   return (
     <header className='capitalize'>
       <div className={`${styles.fullscreen} ${!isOpen?"hidden":""} `} onClick={toggleMenu}></div>
       <Sidebar isOpen={isOpen} toggleMenu={toggleMenu}/>
       {/* top nav */}
       <div className='p-2 bg-gray-100 hidden lg:flex justify-end items-center gap-4'>
-      <Link className={`nav-link ${pathname.includes("/home/news")?" active":""}`} href={"/home/news"}>news</Link>
-      <Link className={`nav-link ${pathname.includes("/home/support")?" active":""}`} href={"/home/support"}>Support</Link>
-      <Link className={`nav-link ${pathname.includes("/home/contact")?" active":""}`} href={"/home/contact"}>contact us</Link>
+      <Link className={`nav-link ${pathname.includes("/home/news")?" active":""}`} href={"/home/news"}>{t("news")}</Link>
+      <Link className={`nav-link ${pathname.includes("/home/support")?" active":""}`} href={"/home/support"}>{t("support")}</Link>
+      <Link className={`nav-link ${pathname.includes("/home/contact")?" active":""}`} href={"/home/contact"}>{t("contact")}</Link>
       <LanguageSwitcher />
       </div>
       <nav className={`${styles.navbar} px-8 md:px-14 lg:px-20 py-2 flex justify-between max-w-full relative gap-6 border-b-2 shadow-md`}>
@@ -49,11 +49,11 @@ export default function Header() {
         </div>
         {/* Middle */}
         <div className='items-center gap-6 hidden lg:flex'>
-          <Link className={`nav-link ${pathname === ("/home")?" active":""}`} href={"/home"}>home</Link>
-          <Link className={`nav-link ${pathname.includes("/home/about")?" active":""}`} href={"/home/about"}>about us</Link>
+          <Link className={`nav-link ${pathname === ("/home")?" active":""}`} href={"/home"}>{t("home")}</Link>
+          <Link className={`nav-link ${pathname.includes("/home/about")?" active":""}`} href={"/home/about"}>{t("about")}</Link>
           <Dropdown title={
             <div className='flex mx-auto items-center gap-2 py-3 hover:text-primaryA0 nav-link'>
-              <span className='text-center '>Curriculum</span>
+              <span className='text-center '>{t("curriculum")}</span>
               <span><FaChevronDown size={14}/></span>
               </div>}
               btnStyle={`flex items-center  px-2 gap-1 capitalize `}
@@ -62,19 +62,19 @@ export default function Header() {
               >
               <GiftMenuComponent />
           </Dropdown>
-          <Link className={`nav-link ${pathname.includes("/home/features")?" active":""}`} href={"/home/features"}>features</Link>
-          <Link className={`nav-link ${pathname.includes("/home/blog")?" active":""}`} href={"/home/blog"}>blog</Link>
-          <Link className={`nav-link ${pathname.includes("/home/pricing")?" active":""}`} href={"/home/pricing"}>pricing</Link>
+          <Link className={`nav-link ${pathname.includes("/home/features")?" active":""}`} href={"/home/features"}>{t("features")}</Link>
+          <Link className={`nav-link ${pathname.includes("/home/blog")?" active":""}`} href={"/home/blog"}>{t("blog")}</Link>
+          <Link className={`nav-link ${pathname.includes("/home/pricing")?" active":""}`} href={"/home/pricing"}>{t("pricing")}</Link>
         </div>
         {/* Right */}
         <div className='hidden lg:flex gap-1 sm:gap-3 items-center justify-between capitalize py-2 '>   
           {user? 
           <button className='btn btn-primary' onClick={handleLogOut}>
-          Logout
+          {t("logout")}
           </button>
         :
           <Link href={"/login"} className={`nav-link btn btn-primary ${pathname.includes("/home")?" active":""}`}>
-          {t("header.login")}
+          {t("login")}
           </Link>
         }
         </div>

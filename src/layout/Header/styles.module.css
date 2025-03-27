@@ -13,7 +13,6 @@
     position: fixed;
     overflow-y: auto;
     min-width: 240px;
-    left:-100%;
     top: 0;
     height: 100%;
     width: fit-content;

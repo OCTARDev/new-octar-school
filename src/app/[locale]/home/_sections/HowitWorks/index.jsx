@@ -1,9 +1,11 @@
 import React from 'react'
 import howitworks from "@/assets/home/howitworks.png";
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 
 export default function HowItWorksSection() {
+    const t = useTranslations("home.howitworks")
   return (
     <section className='py-6 md:py-0'>
         <div className='grid grid-cols-1 md:grid-cols-5 gap-10 px-4 items-center max-w-screen-xl mx-auto'>
@@ -17,16 +19,13 @@ export default function HowItWorksSection() {
             </div>
             {/* right content */}
             <div className='flex flex-col gap-4 col-span-1 md:col-span-3'>
-                <h3 className='text-4xl font-bold'>How OCTAR Works</h3>
+                <h3 className='text-4xl font-bold'>{t("title")}</h3>
                 <p>
-                    OCTAR takes traditional school curricula and brings them to life through immersive AR. 
-                    Students engage with 3D models and interactive content, making abstract subjects like math, 
-                    science, and history tangible and fun. 
-                    From virtual field trips to AR stories, every lesson becomes an exciting adventure.
+                    {t("body")}
                 </p>
                 <div>
                     <button className='btn btn-primary'>
-                        See How It Works
+                        {t("button")}
                     </button>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 "use client";
+import Card from '@/components/Card';
 import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
 import useFetchCurriculum from '@/tanstack-query/Home/useFetchCurriculum';
 import Image from 'next/image';
@@ -19,13 +20,7 @@ export default function CurriculumSection({id}) {
                 {curriculum?.map((c,i)=>{
                     return(
                     <div className='flex flex-col items-center gap-2' key={c.id}> 
-                        <div className='w-full px-2 py-3 flex flex-col gap-2 items-center border-2 rounded-lg'>
-                            <img 
-                            src={c.media_path} 
-                            className='max-w-full'
-                            />
-                            <p className='font-bold text-xl'> {c.title}</p>
-                        </div>
+                        <Card c={c}/>
                         <div>
                             <Link href={`/home/target/${c.id}`} className='btn btn-primary'>Explore Content</Link>
                         </div>

@@ -1,16 +1,18 @@
 import Image from 'next/image'
 import React from 'react'
 import parents from "@/assets/home/parents.png";
+import { useTranslations } from 'next-intl';
 
 
 
 export default function ForParentsSection() {
+    const t = useTranslations("home.parents");
   return (
     <section className='py-6 my-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto mt-6'>
             {/* left */}
             <div className='flex flex-col gap-4'>
-                <h4 className='font-bold text-3xl'>For Parents</h4>
+                <h4 className='font-bold text-3xl'>{t("title")}</h4>
                 <div className='flex gap-5'>
                     <span className='py-1'>
                         <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,8 +22,8 @@ export default function ForParentsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Active Participation</h6>
-                        <p className=''>§  Enables parents to engage in their child’s learning journey.</p>
+                        <h6 className='font-bold text-lg'>{t("h1")}</h6>
+                        <p className=''>{t("b1")}</p>
                     </div>
                 </div>
                 <div className='flex gap-5'>
@@ -33,8 +35,8 @@ export default function ForParentsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Active Participation</h6>
-                        <p className=''>Reinforce skills at home through fun, interactive AR activities</p>
+                        <h6 className='font-bold text-lg'>{t("h2")}</h6>
+                        <p className=''>{t("b2")}</p>
                     </div>
                 </div>
                 <div className='flex gap-5'>
@@ -46,8 +48,8 @@ export default function ForParentsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Transparency</h6>
-                        <p className=''>Provides insight into their child’s progress</p>
+                        <h6 className='font-bold text-lg'>{t("h3")}</h6>
+                        <p className=''>{t("b3")}</p>
                     </div>
                 </div>
             </div>

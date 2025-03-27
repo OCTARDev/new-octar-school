@@ -1,17 +1,19 @@
 import Image from 'next/image'
 import React from 'react'
 import workspallete from "@/assets/home/workspallete.png";
+import { useTranslations } from 'next-intl';
 
 
 
 export default function ForSchoolsSection() {
+    const t = useTranslations("home.schools");
   return (
     <section className='py-6 my-10'>
-        <h3 className='text-3xl font-bold text-center'>How OCTAR Works</h3>
+        <h3 className='text-3xl font-bold text-center'>{t("header")}</h3>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto mt-6'>
             {/* left */}
             <div className='flex flex-col gap-4'>
-                <h4 className='font-bold text-3xl'>For Schools</h4>
+                <h4 className='font-bold text-3xl'>{t("title")}</h4>
                 <div className='flex gap-5'>
                     <span className='py-1'>
                         <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,8 +23,8 @@ export default function ForSchoolsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Enhanced Learning Outcomes</h6>
-                        <p className=''>OCTAR helps schools meet curriculum standards with engaging AR technology</p>
+                        <h6 className='font-bold text-lg'>{t("h1")}</h6>
+                        <p className=''>{t("b1")}</p>
                     </div>
                 </div>
                 <div className='flex gap-5'>
@@ -34,8 +36,8 @@ export default function ForSchoolsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Competitive Edge</h6>
-                        <p className=''>Schools adopting OCTAR are committed to modern, tech-driven education.</p>
+                        <h6 className='font-bold text-lg'>{t("h2")}</h6>
+                        <p className=''>{t("b2")}</p>
                     </div>
                 </div>
                 <div className='flex gap-5'>
@@ -47,8 +49,8 @@ export default function ForSchoolsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Customizable Integration</h6>
-                        <p className=''>Easily integrates with existing teaching methods and curricula.</p>
+                        <h6 className='font-bold text-lg'>{t("h3")}</h6>
+                        <p className=''>{t("b3")}</p>
                     </div>
                 </div>
             </div>

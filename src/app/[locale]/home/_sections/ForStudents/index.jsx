@@ -2,8 +2,10 @@ import Image from 'next/image'
 import React from 'react'
 import student from "@/assets/home/student.png";
 import { LuArrowUpRight } from "react-icons/lu";
+import { useTranslations } from 'use-intl';
 
 export default function ForStudentsSection() {
+    const t = useTranslations("home.students");
   return (
     <section className='py-6 my-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto mt-6'>
@@ -17,7 +19,7 @@ export default function ForStudentsSection() {
             </div>
             {/* right */}
             <div className='flex flex-col gap-4'>
-                <h4 className='font-bold text-3xl'>For Student</h4>
+                <h4 className='font-bold text-3xl'>{t("title")}</h4>
                 <div className='flex gap-5'>
                     <span className='py-1'>
                         <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,8 +29,8 @@ export default function ForStudentsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Fun Learning</h6>
-                        <p className=''>Makes traditional lessons exciting and fun</p>
+                        <h6 className='font-bold text-lg'>{t("h1")}</h6>
+                        <p className=''>{t("b1")}</p>
                     </div>
                 </div>
                 <div className='flex gap-5'>
@@ -40,8 +42,8 @@ export default function ForStudentsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Improved Retention</h6>
-                        <p className=''>AR experiences help concepts stick</p>
+                        <h6 className='font-bold text-lg'>{t("h2")}</h6>
+                        <p className=''>{t("b2")}</p>
                     </div>
                 </div>
                 <div className='flex gap-5'>
@@ -53,15 +55,15 @@ export default function ForStudentsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Holistic Development:</h6>
-                        <p className=''>Supports cognitive, social, emotional, and physical growth.</p>
+                        <h6 className='font-bold text-lg'>{t("h3")}</h6>
+                        <p className=''>{t("b3")}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div className=' px-4 items-center max-w-screen-xl mx-auto mt-6'>
             <button className='btn btn-primary flex gap-1 items-center'>
-                <span>Learn More About How OCTAR Helps</span>
+                <span>{t("button")}</span>
                 <span>
                     <LuArrowUpRight size={24}/>
                 </span>

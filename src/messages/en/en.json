@@ -1,6 +1,7 @@
 {
     "header":{
         "login":"login",
+        "logout":"logout",
         "home":"home",
         "about":"about",
         "curriculum":"curriculum",
@@ -10,5 +11,74 @@
         "contact":"contact",
         "support":"support",
         "news":"news"
+    },
+    "home":{
+        "hero":{
+            "welcome":"Welcome to",
+            "octar":"octar",
+            "where":"— Where",
+            "learning":"Learning Comes to Life",
+            "first":"The first real app to combine coloring with augmented reality,",
+            "transforming":"transforming education into an engaging, interactive adventure.",
+            "button":"Start Your Free Trial"
+        },
+        "howitworks":{
+            "title":"How OCTAR Works",
+            "body":"OCTAR takes traditional school curricula and brings them to life through immersive AR. Students engage with 3D models and interactive content, making abstract subjects like math, science, and history tangible and fun. From virtual field trips to AR stories, every lesson becomes an exciting adventure.",
+            "button":"See How It Works"
+        },
+        "schools":{
+            "header":"How OCTAR Works",
+            "title":"For schools",
+            "h1":"Enhanced Learning Outcomes",
+            "b1":"OCTAR helps schools meet curriculum standards with engaging AR technology",
+            "h2":"Competitive Edge",
+            "b2":"Schools adopting OCTAR are committed to modern, tech-driven education.",
+            "h3":"Customizable Integration",
+            "b3":"Easily integrates with existing teaching methods and curricula."
+        },
+        "teachers":{
+            "title":"for teacher",
+            "h1":"teaching aid",
+            "b1": "Simplifies complex concepts with interactive tools",
+            "h2":"Saves Time",
+            "b2":"Reduces prep time with ready-made AR lessons",
+            "h3":"Engages Students",
+            "b3":"Keeps kids focused and motivated through immersive activities."
+        },
+        "parents":{
+            "title":"for parents",
+            "h1":"Active Participation",
+            "b1":"Enables parents to engage in their child’s learning journey.",
+            "h2":"Active Participation",
+            "b2":"Reinforce skills at home through fun, interactive AR activities",
+            "h3":"Transparency",
+            "b3":"Provides insight into their child’s progress"
+        },
+        "students":{
+            "title":"for student",
+            "h1":"Fun Learning",
+            "b1":"Makes traditional lessons exciting and fun",
+            "h2":"Improved Retention",
+            "b2":"AR experiences help concepts stick",
+            "h3":"Holistic Development",
+            "b3":"Supports cognitive, social, emotional, and physical growth.",
+            "button":"Learn More About How OCTAR Helps"
+        },
+        "case":{
+            "header":"Case Studies & Testimonials",
+            "description":"OCTAR has already been adopted by schools with great success. Here are some case studies",
+            "h1":"Web development",
+            "h2":"Imam Alkisai Institute of America",
+            "h3":"explore all services",
+            "b1":"school district x",
+            "b2":"Increased student engagement and retention rates by 40% with AR-enhanced history lessons.",
+            "button":"read more case studies"
+        },
+        "testimonial":{
+            "button":"share your story"
+        }
     }
+
+
 }
