@@ -7,7 +7,7 @@ import { QueryClient , QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Loader from "../loader";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -48,6 +48,7 @@ export default function ClientProvider({ children }) {
           transition={{ type: "tween", duration: 0.5 }}
           >
             {children}
+            
           </motion.div>
           <ReactQueryDevtools initialIsOpen={false} />
       </Provider>
