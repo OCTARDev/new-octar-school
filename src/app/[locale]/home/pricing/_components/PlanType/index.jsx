@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from 'react'
+import { useTranslations } from 'use-intl';
 
 export default function PlanType({setValue,value}) {
-
+    const t = useTranslations("pricing");
     const handleChooseRole = (role)=>{
         setValue(role)
     }    
@@ -11,18 +12,18 @@ export default function PlanType({setValue,value}) {
     <div className='my-4 flex flex-col justify-center items-center gap-2'>
         <div className='flex'>
             <button 
-            className={`!rounded-l-full px-8 py-3 btn ${value === "monthly"? "btn-primary" :"bg-gray-300"}`} 
+            className={`!rounded-s-full px-8 py-3 btn ${value === "monthly"? "btn-primary" :"bg-gray-300"}`} 
             type='button'
             onClick={()=>{handleChooseRole("monthly")}}
             >
-                Monthly
+                {t("monthly")}
             </button>
             <button 
-            className={`!rounded-r-full px-8 py-3 btn  ${value === "yearly"? "btn-primary" :"bg-gray-300"}`} 
+            className={`!rounded-e-full px-8 py-3 btn  ${value === "yearly"? "btn-primary" :"bg-gray-300"}`} 
             type='button'
             onClick={()=>{handleChooseRole("yearly")}}
             >
-                Yearly
+                {t("yearly")}
             </button>
         </div>
   </div>

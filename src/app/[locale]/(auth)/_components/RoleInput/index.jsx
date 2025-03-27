@@ -14,14 +14,14 @@ export default function RoleInput({setValue}) {
         <span className='font-bold text-gray-500'>Choose Your Role </span>
         <div className='flex'>
             <button 
-            className={`!rounded-l-full px-8 py-3 btn ${role === "school"? "btn-primary" :"bg-gray-300"}`} 
+            className={`!rounded-s-full px-8 py-3 btn ${role === "school"? "btn-primary" :"bg-gray-300"}`} 
             type='button'
             onClick={()=>{handleChooseRole("school")}}
             >
                 School
             </button>
             <button 
-            className={`!rounded-r-full px-8 py-3 btn  ${role === "teacher"? "btn-primary" :"bg-gray-300"}`} 
+            className={`!rounded-e-full px-8 py-3 btn  ${role === "teacher"? "btn-primary" :"bg-gray-300"}`} 
             type='button'
             onClick={()=>{handleChooseRole("teacher")}}
             >

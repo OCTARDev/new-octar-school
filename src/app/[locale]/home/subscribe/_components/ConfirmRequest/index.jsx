@@ -3,7 +3,9 @@ import useSubscribe from '@/tanstack-query/Home/Subscription/useSubscribe';
 import React from 'react'
 import { toast } from 'react-toastify';
 import { useRouter } from "next/navigation";
+import { useTranslations } from 'next-intl';
 export default function ConfirmRequest({isExpanded,handleCloseModal,data}) {
+    const t = useTranslations("subscribe");
     const router = useRouter();
     const onSuccess = (data)=>{        
         toast.success( "Request has been sent Successfully");
@@ -27,8 +29,8 @@ export default function ConfirmRequest({isExpanded,handleCloseModal,data}) {
         <div className='w-full h-full flex flex-col gap-4 justify-center items-center'>
             <h1 className='text-2xl font-bold capitalize'>{message}</h1>
             <div className='flex gap-4'>
-            <button onClick={handleSend} className='bg-green-500 text-white px-4 py-2 rounded-lg'>Yes</button>
-            <button onClick={handleCloseModal} className='bg-red-500  text-white px-4 py-2 rounded-lg'>No</button>
+            <button onClick={handleSend} className='bg-green-500 text-white px-4 py-2 rounded-lg capitalize'>{t("yes")}</button>
+            <button onClick={handleCloseModal} className='bg-red-500  text-white px-4 py-2 rounded-lg capitalize'>{t("no")}</button>
             </div>
         </div>
     </PopPage>

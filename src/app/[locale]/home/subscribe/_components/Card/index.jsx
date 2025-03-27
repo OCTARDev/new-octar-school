@@ -1,25 +1,26 @@
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import React from 'react'
 import { FaRegCircleCheck } from "react-icons/fa6";
 export default function SubscribeCard({p}) {
+    const t = useTranslations("pricing.card")
   return (
-    <div className='border rounded-lg flex flex-col gap-4 py-3'>
-        <p className='font-bold text-lg px-3'>{p?.title}</p>
+    <div className='border rounded-lg flex flex-col gap-4 py-3 shadow-2xl'>
+        <p className='font-light text-lg px-3'>{p?.title}</p>
         <p className='px-3'>
-            <span className='font-extrabold leading-loose text-4xl'>${p?.price} </span>
+            <span className='font-extrabold leading-loose text-4xl uppercase'> {p?.currency} {p?.price} </span>
             <sub className='font-semibold capitalize'>{p?.period}</sub>
         </p>
         <p className='text-gray-600 flex gap-2 text-sm font-semibold px-3'>
-            <span>No. Seats</span>
+            <span>{t("seats")}</span>
             <span>{p?.number_sets}</span>
         </p>
         <p className='text-gray-600 flex gap-2 text-sm font-semibold capitalize px-3'>
-            <span>Type Of Plan:</span>
-            <span>{p?.type}</span>
+            <span>{t("type")}</span>
+            <span>{p?.type_trans}</span>
         </p>
         <hr className=''/>
         <div className='px-3 flex flex-col'>
-            <h2 className='font-semibold mb-2'>Features</h2>
+            <h2 className='font-semibold mb-2'>{t("features")}</h2>
             
             {p?.details?.map((l,i)=>{
                 return(
@@ -32,7 +33,7 @@ export default function SubscribeCard({p}) {
         </div>
         <hr/>
         <div className='px-3'>
-            <h4 className='font-semibold mb-2'>Levels</h4>
+            <h4 className='font-semibold mb-2'>{t("levels")}</h4>
             {p?.levels_arr?.map((l,i)=>{
                 return(
                     <p key={i} className='px-2 flex gap-2 text-sm my-1'>

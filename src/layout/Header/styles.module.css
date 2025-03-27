@@ -23,16 +23,9 @@
     padding: 20px 0px ;
   }
 
-[dir="ltr"] .sidebar{
-  left:-100%;
+.sidebar{
+  inset-inline-start: -100%;
 }
-[dir="ltr"] .sidebar.expanded{
-    left: 0;
-}
-[dir="rtl"] .sidebar{
-  right:-100%;
-}
-
-[dir="rtl"] .sidebar.expanded{
-  right:0;
+.sidebar.expanded{
+  inset-inline-start: 0;
 }

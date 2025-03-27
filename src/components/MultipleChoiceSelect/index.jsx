@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
-const MultiChoiceSelect = ({options,setValue,selectId ,maxLength , title = "Select an option" ,setParentOptions ,values}) => {
+const MultiChoiceSelect = ({options,setValue,selectId ,maxLength , title = "Select an option" ,setParentOptions ,values , placeholder}) => {
   const [selectedOption, setSelectedOption] = useState(null);
   
   useEffect(()=>{
@@ -29,6 +29,7 @@ const MultiChoiceSelect = ({options,setValue,selectId ,maxLength , title = "Sele
         value={selectedOption}
         getOptionLabel={(e) => e.title} // Use the title as the label
         getOptionValue={(e) => e.id} // Use the id as the value
+        placeholder={placeholder}
       />
   )
 };

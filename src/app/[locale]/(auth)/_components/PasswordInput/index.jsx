@@ -29,7 +29,7 @@ export default function PasswordInput({placeholder,id ="password",register,error
                 <button
                     type="button"
                     onClick={togglePasswordVisibility}
-                    className="absolute right-3 top-3.5 text-xl cursor-pointer"
+                    className="absolute end-3 top-3.5 text-xl cursor-pointer"
                 >
                     {isPasswordVisible ? <FaRegEyeSlash /> : <FaRegEye />}
                 </button>

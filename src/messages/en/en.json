@@ -78,7 +78,35 @@
         "testimonial":{
             "button":"share your story"
         }
+    },
+    "pricing":{
+        "card":{
+            "seats":"no. of seats",
+            "type":"type of plan",
+            "button":"subscribe now",
+            "features":"features",
+            "levels":"levels"
+        },
+        "header":"Pricing Plan",
+        "description":"Choose The Perfect Plan For You",
+        "monthly":"monthly",
+        "yearly":"yearly",
+        "hero":{
+            "h1":"OCTAR is designed to meet and exceed international educational standards",
+            "b1":"IEYC, IPC, CCSS, Montessori, and UNESCO Alignment"
+        }
+    },
+    "subscribe":{
+        "cancel":"cancel",
+        "description":"Subscribe to year Individual plan",
+        "levels":"levels",
+        "levels_placeholder":"Select",
+        "seats":"seats",
+        "seats_placeholder":"Enter No. of Seats",
+        "message_placeholder":"Enter Your Message",
+        "button": "Subscribe",
+        "yes":"yes",
+        "no":"no"
     }
-
 
 }
