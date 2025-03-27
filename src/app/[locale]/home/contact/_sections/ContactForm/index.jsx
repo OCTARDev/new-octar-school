@@ -7,10 +7,19 @@ import { FaPhoneAlt, FaRegUser } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { MdMailOutline } from 'react-icons/md';
 import useContactUs from '@/tanstack-query/Home/useContactUs';
+import { toast } from 'react-toastify';
 
 export default function ContactFormSection() {
     const {register,handleSubmit,formState:{errors}}  = useForm();
-    const contactUs = useContactUs();
+    const onSuccess = (data)=>{
+        console.log("re",data?.data);
+        toast.success(data.data.message || "Message Sent Successfully")
+    }
+    const onError = (e)=>{
+        console.log(e.response.data.message);
+        toast.error(e.response.data.message || "Error Occurred")
+    }
+    const contactUs = useContactUs({onSuccess,onError});
     const onSubmit = (data)=>{
         contactUs.mutate(data);
     }
@@ -26,10 +35,10 @@ export default function ContactFormSection() {
             <form className='flex flex-col gap-6 flex-grow md:w-4/6 mx-auto' onSubmit={handleSubmit(onSubmit)}>
                 <h3 className='text-primaryA1 font-extrabold'>Email us your inquiry</h3>
                 <Input 
-                    placeholder={"Username"}
+                    placeholder={"name"}
                     icon = {<FaRegUser size={18} className='text-gray-400'/>}
                     register={register}
-                    id={"username"}
+                    id={"name"}
                     type={"text"}
                     errors={errors}
                 />
@@ -52,6 +61,7 @@ export default function ContactFormSection() {
                 <textarea
                     className='border gray-300 p-2 rounded-lg'
                     placeholder='Your Message'
+                    {...register("message")}
                     rows={4}
                 />
                 <button className='btn btn-primary'>Send</button>
