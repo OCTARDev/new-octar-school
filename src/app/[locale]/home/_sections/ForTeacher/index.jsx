@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 import teacher from "@/assets/home/teacher.png";
-import { useTranslations } from 'use-intl';
+import { getTranslations } from 'next-intl/server';
 
 
-export default function ForTeacherSection() {
-    const t = useTranslations("home.teachers");
+export default async function ForTeacherSection() {
+    const t = await getTranslations("home.teachers");
   return (
     <section className='py-6 my-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto mt-6'>

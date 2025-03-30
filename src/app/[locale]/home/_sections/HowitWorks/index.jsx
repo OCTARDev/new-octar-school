@@ -1,11 +1,11 @@
 import React from 'react'
 import howitworks from "@/assets/home/howitworks.png";
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 
-export default function HowItWorksSection() {
-    const t = useTranslations("home.howitworks")
+export default async function HowItWorksSection() {
+    const t = await getTranslations("home.howitworks")
   return (
     <section className='py-6 md:py-0'>
         <div className='grid grid-cols-1 md:grid-cols-5 gap-10 px-4 items-center max-w-screen-xl mx-auto'>

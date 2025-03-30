@@ -1,6 +1,4 @@
-"use client";
 import React from 'react'
-import { useTranslations } from 'next-intl'
 import HeroSection from './_sections/Hero';
 import HowItWorksSection from './_sections/HowitWorks';
 import TestimonialsSection from './_sections/Testimonials';
@@ -10,8 +8,7 @@ import ForParentsSection from './_sections/ForParents';
 import ForStudentsSection from './_sections/ForStudents';
 import CaseStudiesSection from './_sections/CaseStudies';
 
-export default function Home() {
-  const t = useTranslations();
+export default function Home() {  
   return (
     <div className=''>
       <HeroSection />
