@@ -5,11 +5,10 @@ import { store } from "../../redux/store";
 import { useEffect, useState } from "react";
 import { QueryClient , QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { usePathname } from "next/navigation";
 import Loader from "../loader";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion , AnimatePresence } from "framer-motion";
 
 
 const variants = {
@@ -36,22 +35,23 @@ export default function ClientProvider({ children }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
-          {loading && <Loader />}
-          <ToastContainer position="top-right" autoClose={3000} />
-          <motion.div
-          key={pathname}
-          variants={variants}
-          initial="hidden"
-          animate="enter"
-          exit="exit"
-          transition={{ type: "tween", duration: 0.5 }}
-          >
-            {children}
-            
-          </motion.div>
-          <ReactQueryDevtools initialIsOpen={false} />
-      </Provider>
+      <AnimatePresence>
+        <Provider store={store}>
+            {loading && <Loader />}
+            <motion.div
+            key={pathname}
+            variants={variants}
+            initial="hidden"
+            animate="enter"
+            exit="exit"
+            transition={{ type: "tween", duration: 0.5 }}
+            >
+              {children}
+
+            </motion.div>
+            <ReactQueryDevtools initialIsOpen={false} />
+        </Provider>
+      </AnimatePresence>
     </QueryClientProvider>
     );
 }

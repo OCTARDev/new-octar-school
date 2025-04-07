@@ -2,7 +2,7 @@ import axiosInstance from "@/utils/axiosInstance";
 import { useQuery } from "@tanstack/react-query";
 
 const fetch = (id)=>{
-    return axiosInstance.get(`/home-page/categories/${id}`);
+    return axiosInstance.get(`/home-page/categories/index-curriculums/${id}`);
 }
 
 

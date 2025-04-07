@@ -7,7 +7,7 @@ export default function Error({ error, reset }) {
   }, [error]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen px-10">
       <h1 className="text-3xl font-bold text-red-600">Oops! Something went wrong.</h1>
       <p className="text-gray-500">{error.message || "Failed to load blogs."}</p>
       <button

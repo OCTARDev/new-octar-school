@@ -9,6 +9,8 @@ module.exports = {
   		colors: {
   			primaryA1: 'rgba(var(--primary-A1))',
   			primaryA2: 'rgba(var(--primary-A2))',
+  			primaryA3: 'rgba(var(--primary-A3))',
+  			primaryA4: 'rgba(var(--primary-A4))',
   			secondaryA1: 'rgba(var(--secondary-A1))',
   			secondaryA2: 'rgba(var(--secondary-A2))',
   			statusError: 'rgba(var(--status-error))',

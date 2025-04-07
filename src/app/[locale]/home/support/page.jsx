@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import SupportHeroSection from './_sections/Hero'
 import SupportHelpSection from './_sections/Help'

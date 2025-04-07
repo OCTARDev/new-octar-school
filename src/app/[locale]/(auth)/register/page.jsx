@@ -32,8 +32,6 @@ export default function Register() {
   const router = useRouter();
   const {register,formState:{errors},handleSubmit,watch} = useForm({resolver:yupResolver(SchoolRegisterSchema)});
   const password = watch("password");
-
-  console.log("p",password);
   
   //api call on success and on error handlers
   const onSuccess = (data)=>{

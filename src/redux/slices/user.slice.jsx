@@ -4,7 +4,10 @@ import Cookies from "js-cookie";
 const initialState = {
     user:null,
     accessToken:"",
-    initialized:false
+    initialized:false,
+    dashboard:{
+      isExpanded:false
+    }
 
 };
 
@@ -29,8 +32,11 @@ const userSlice = createSlice({
     setInitialized(state) {
       state.initialized = true;
     },
+    expandSidebar:(state)=>{
+      state.dashboard.isExpanded = !state.dashboard.isExpanded;
+    }
   },
 });
 
-export const { setUser , logOut , setInitialized } = userSlice.actions;
+export const { setUser , logOut , setInitialized , expandSidebar } = userSlice.actions;
 export default userSlice.reducer;

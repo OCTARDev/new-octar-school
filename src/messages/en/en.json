@@ -2,6 +2,7 @@
     "header":{
         "login":"login",
         "logout":"logout",
+        "dashboard":"dashboard",
         "home":"home",
         "about":"about",
         "curriculum":"curriculum",

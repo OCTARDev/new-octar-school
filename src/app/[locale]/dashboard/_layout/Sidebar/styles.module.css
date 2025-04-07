@@ -1,0 +1,20 @@
+.sidebar{
+    top: 0;
+    background-color: white;
+    @apply hidden md:flex flex-col gap-4 px-3 items-center;
+}
+.sidebar.expanded{
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    left: 0;
+    border: 2px solid black;
+    z-index: 30;
+}
+.navItem{
+    @apply w-full flex justify-start gap-5 items-center hover:bg-primaryA4 text-neutral1 hover:text-primaryA1 py-3 px-6 rounded-full font-bold capitalize; 
+}
+.navItem.active{
+    @apply bg-primaryA4 text-primaryA1;
+}

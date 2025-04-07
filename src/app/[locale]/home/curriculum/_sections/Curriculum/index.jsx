@@ -22,7 +22,7 @@ export default function CurriculumSection({id}) {
                     <div className='flex flex-col items-center gap-2' key={c.id}> 
                         <Card c={c}/>
                         <div>
-                            <Link href={`/home/target/${c.id}`} className='btn btn-primary'>Explore Content</Link>
+                            <Link href={`/home/categories/${c.id}`} className='btn btn-primary'>Explore Content</Link>
                         </div>
                     </div>
                     )
