@@ -108,6 +108,32 @@
         "button": "Subscribe",
         "yes":"yes",
         "no":"no"
+    },
+    "dashboard":{
+        "school":{
+            "profile":{
+                "header":"School Profile Management",
+                "editButton":"Edit Profile",
+                "information":"Profile Information",
+                "email":"email address",
+                "emailPlaceholder":"Enter Your Email Address",
+                "school_name":"School Name",
+                "schoolNamePlaceholder":"Enter School Name",
+                "first":"first name",
+                "last":"last name",
+                "phone":"phone number",
+                "country":"country",
+                "passwordHeader":"update password",
+                "oldPassword":"old password",
+                "newPassword":"new password",
+                "cPassword":"Confirm New Password",
+                "submit":"submit",
+                "placeholderOldPassword":" Enter Old Password",
+                "placeholderNewPassword":" Enter New Password",
+                "placeholderCPassword":"Confirm Your Password",
+                "logoButton":"Update Logo"
+            }
+        }
     }
 
 }

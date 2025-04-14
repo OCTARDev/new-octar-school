@@ -1,5 +1,5 @@
 "use client";
-import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import React from 'react'
 import TargetHeroSection from '../Hero';
 import Card from '@/components/Card';

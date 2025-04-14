@@ -8,6 +8,7 @@ import logo from "@/assets/logo.svg";
 import Image from 'next/image';
 import { expandSidebar, logOut } from '@/redux/slices/user.slice';
 import { useRouter } from 'next/navigation';
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ export default function Header() {
   }
   return (
     <header className='capitalize'>
-      <nav className={`${styles.navbar} px-8 md:px-14 lg:px-20 py-2 flex justify-between max-w-full relative gap-6 border-b-2 shadow-md`}>
+      <nav className={`${styles.navbar} px-8 md:px-14 lg:px-20 py-2 flex justify-between items-center max-w-full relative gap-6 border-b-2 shadow-md capitalize`}>
         {/* Left */}
         <div className='flex items-center justify-between lg:flex-grow-0 flex-grow'>
           <Link className='flex gap-1 items-center text-primaryRed' href={`/${firstLink}/home`}>
@@ -35,8 +36,11 @@ export default function Header() {
           <FaBars size={20} />
           </button>
         </div>
+        {/* Middle */}
+        <div className="font-bold text-lg">OCTAR Education</div>
         {/* Right */}
-        <div className='hidden md:flex gap-1 sm:gap-3 items-center justify-between capitalize py-2 '>   
+        <div className='hidden md:flex gap-1 sm:gap-3 items-center justify-between capitalize py-2 '>  
+          <LanguageSwitcher /> 
           {user? 
           <button className='btn btn-primary' onClick={handleLogOut}>
           Logout

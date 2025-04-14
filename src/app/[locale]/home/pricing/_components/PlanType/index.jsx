@@ -12,14 +12,14 @@ export default function PlanType({setValue,value}) {
     <div className='my-4 flex flex-col justify-center items-center gap-2'>
         <div className='flex'>
             <button 
-            className={`!rounded-s-full px-8 py-3 btn ${value === "monthly"? "btn-primary" :"bg-gray-300"}`} 
+            className={`!rounded-s-full px-8 py-3 btn capitalize ${value === "monthly"? "btn-primary" :"bg-gray-300"}`} 
             type='button'
             onClick={()=>{handleChooseRole("monthly")}}
             >
                 {t("monthly")}
             </button>
             <button 
-            className={`!rounded-e-full px-8 py-3 btn  ${value === "yearly"? "btn-primary" :"bg-gray-300"}`} 
+            className={`!rounded-e-full px-8 py-3 btn capitalize ${value === "yearly"? "btn-primary" :"bg-gray-300"}`} 
             type='button'
             onClick={()=>{handleChooseRole("yearly")}}
             >

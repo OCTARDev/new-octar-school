@@ -2,7 +2,7 @@
 import useFetchSinglePlan from '@/tanstack-query/Home/Subscription/useFetchSinglePlan';
 import React, { useState } from 'react'
 import SubscribeCard from '../Card';
-import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import { useForm } from 'react-hook-form';
 import MultiChoiceSelect from '@/components/MultipleChoiceSelect';
 import ConfirmRequest from '../ConfirmRequest';

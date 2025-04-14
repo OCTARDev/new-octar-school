@@ -5,7 +5,7 @@ import { FaRegCircleCheck } from "react-icons/fa6";
 export default function PlanCard({p}) {
     const t = useTranslations("pricing.card")
   return (
-    <div className='border rounded-lg flex flex-col gap-4 py-3 shadow-2xl'>
+    <div className='border rounded-lg flex flex-col gap-4 py-3 shadow-2xl capitalize'>
         <p className='font-light text-lg px-3'>{p?.title}</p>
         <p className='px-3'>
             <span className='font-extrabold leading-loose text-4xl uppercase'> {p?.currency} {p?.price} </span>

@@ -109,6 +109,32 @@
         "button": "اشترك",
         "yes":"نعم",
         "no":"لا"
+    },
+    "dashboard":{
+        "school":{
+            "profile":{
+                "header": "إدارة الملف الشخصي",
+                "editButton": "تعديل الملف الشخصي",
+                "information": "معلومات الملف الشخصي",
+                "email": "عنوان البريد الإلكتروني",
+                "emailPlaceholder":"ادخل عنوان البريد الالكتروني",
+                "school_name":"اسم المدرسة",
+                "schoolNamePlaceholder":"ادخل اسم المدرسة",
+                "first": "الاسم الأول",
+                "last": "الاسم الأخير",
+                "phone": "رقم الهاتف",
+                "country": "الدولة",
+                "passwordHeader": "تحديث كلمة المرور",
+                "oldPassword": "كلمة المرور الحالية",
+                "newPassword": "كلمة المرور الجديدة",
+                "cPassword": "تأكيد كلمة المرور الجديدة",
+                "submit":"تعديل",
+                "placeholderOldPassword":"ادخل الباسورد الحالية",
+                "placeholderNewPassword":"ادخل الباسورد الجديد",
+                "placeholderCPassword":"اكد الباسورد",
+                "logoButton":"تعديل اللوجو"
+            }
+        }
     }
 
 }

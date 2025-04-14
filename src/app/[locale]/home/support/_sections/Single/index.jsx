@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import useFetchFAQs from '@/tanstack-query/Home/useFetchFAQs';
 import { IoArrowBack } from "react-icons/io5";
-import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import Link from 'next/link';
 import Dropdown from '@/components/Dropdown/Dropdown';
 import DropContainer from '@/components/DropContainer';
@@ -40,7 +40,6 @@ export default function SingleFAQ({id}) {
                                         </div>
                                     </DropContainer>
                                 </div>
-                                
                             )
                         })
                     }

@@ -8,7 +8,7 @@ import Input from '@/components/Input';
 import { useForm } from 'react-hook-form';
 import { FaRegUser } from "react-icons/fa";
 import useFetchCountries from '@/tanstack-query/helper/useFetchCountries';
-import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import { useTranslations } from 'next-intl';
 import { MdMailOutline } from "react-icons/md";
 import PasswordInput from '../_components/PasswordInput';

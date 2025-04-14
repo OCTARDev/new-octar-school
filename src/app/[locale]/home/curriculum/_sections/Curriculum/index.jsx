@@ -1,6 +1,6 @@
 "use client";
 import Card from '@/components/Card';
-import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import useFetchCurriculum from '@/tanstack-query/Home/useFetchCurriculum';
 import Image from 'next/image';
 import Link from 'next/link';

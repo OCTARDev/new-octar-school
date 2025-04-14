@@ -5,6 +5,9 @@ import styles from "../../../_layout/Sidebar/styles.module.css";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { IoHomeSharp } from "react-icons/io5";
+import { FaPalette, FaUser } from "react-icons/fa";
+import { FaPersonChalkboard } from "react-icons/fa6";
+
 export default function SchoolSidebar() {
     const pathname = usePathname();
     const lastPathName = pathname.split("/");
@@ -22,14 +25,14 @@ export default function SchoolSidebar() {
             className={`${styles.navItem} ${pathname.includes("/teachers") && `${styles.active}`}`} 
             href={`/${firstLink}/dashboard/school/teachers`}
         >
-            <span><IoHomeSharp size={20}/></span>
+            <span><FaPersonChalkboard  size={20}/></span>
             <span>Teachers</span>
         </Link>
         <Link 
             className={`${styles.navItem}  ${pathname.includes("/subjects") && `${styles.active}`}`} 
-            href={`/${firstLink}/dashboard/school/subjcets`}
+            href={`/${firstLink}/dashboard/school/subjects`}
         >
-            <span><IoHomeSharp size={20}/></span>
+            <span><FaPalette size={20}/></span>
             <span>Subjects</span>
         </Link>
         <Link 
@@ -43,7 +46,7 @@ export default function SchoolSidebar() {
             className={`${styles.navItem}  ${pathname.includes("/profile") && `${styles.active}`}`} 
             href={`/${firstLink}/dashboard/school/profile`}
         >
-            <span><IoHomeSharp size={20}/></span>
+            <span><FaUser  size={20}/></span>
             <span>School Profile</span>
         </Link>
         <Link 
