@@ -73,6 +73,7 @@ module.exports = {
   		},
 		  fontFamily: {
 			sans: ["Open Sans", "sans-serif"],
+			cairo: ['Cairo', 'sans-serif'],
 		  },
   	}
   },

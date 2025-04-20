@@ -1,0 +1,63 @@
+"use client";
+import FormMediaComponent from '@/components/FormMedia';
+import useStoreCommunityPost from '@/tanstack-query/School/Community/useStore';
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+
+export default function AddPostSection() {
+    const [image,setImage] = useState(null);
+    const {register,handleSubmit,formState:{errors},setValue} = useForm({});
+    const router = useRouter();
+    const onSuccess = (data)=>{
+        console.log(data);
+        toast.success( data?.data?.message ||"Post Created Successfully");
+        router.back();
+    }
+    const onError = (error)=>{
+        console.log(error);
+        toast.error(error?.response?.data?.message || "Something went wrong");
+    }
+    const addPost = useStoreCommunityPost({onSuccess,onError});
+    const onSubmit = (data)=>{
+        addPost.mutate(data);
+    };
+  return (
+    <section>
+        <div className='flex flex-col gap-4 p-4'>
+            <h1 className='text-2xl font-bold'>Add Community Post</h1>
+            <form action="" className='flex flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
+                <div className='input-container'>
+                    <input 
+                    type="text" 
+                    placeholder='Title*' 
+                    {...register("title",{required:"Title is required"})}
+                    />
+                </div>
+                <div className='input-container'>
+                    <textarea 
+                    {...register("description",{required:"Description is required"})}
+                    rows="10" 
+                    placeholder='Description*'
+                    />
+                </div>
+                <FormMediaComponent 
+                formTitle={"media"}
+                register={register}
+                setValue={setValue}
+                image={image}
+                setImage={setImage}
+                errors={errors}
+                title={"Post Image"}
+                placeholder={"+ Post Image"}
+                />
+                <div className='flex items-center justify-end gap-4'>
+                    <button type="submit" className='btn btn-primary'>Submit</button>
+                </div>
+                
+            </form>
+        </div>
+    </section>
+  )
+}

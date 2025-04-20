@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:wght@300;400;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -45,9 +45,7 @@
 
 
 
-body{
-  @apply font-sans;
-}
+
 .nav-link{
   @apply hover:text-primaryA2;
 }
@@ -80,6 +78,6 @@ input,select,textarea{
 .input-container{
   @apply flex flex-col gap-1;
 }
-.input-container>input,.input-container>select{
+.input-container>input,.input-container>select,.input-container>textarea{
   @apply border py-1 px-3 rounded-md;
 }

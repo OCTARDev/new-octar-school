@@ -16,7 +16,7 @@ export default async function LocaleLayout({ children , params }) {
   const direction = directions[locale] || "ltr";
 
   return (
-      <div lang={locale} dir={direction}>
+      <div lang={locale} dir={direction} className={`${locale === "ar" ? "font-cairo":"font-sans"}`}>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </div>
   );

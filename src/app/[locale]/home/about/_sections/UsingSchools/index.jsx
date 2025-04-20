@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 import youngwoman from "@/assets/about/young-woman.png";
+import { getTranslations } from 'next-intl/server';
 
 
-export default function UsingSchoolsSection() {
+export default async function UsingSchoolsSection() {
+    const t = await getTranslations("about.usingSchools");
   return (
     <section className='py-6 my-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto mt-6'>
@@ -17,7 +19,7 @@ export default function UsingSchoolsSection() {
             </div>
             {/* right */}
             <div className='flex flex-col gap-4'>
-                <h4 className='font-bold text-3xl'>By using OCTAR, schools can</h4>
+                <h4 className='font-bold text-3xl'>{t("header")}</h4>
                 <div className='flex gap-5'>
                     <span className='py-1'>
                         <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,10 +29,9 @@ export default function UsingSchoolsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Transform Traditional Curriculum</h6>
+                        <h6 className='font-bold text-lg'>{t("h1")}</h6>
                         <p className='text-sm'>
-                            Core subjects like language, math, science, 
-                            and social studies become AR-based experiences, making abstract concepts tangible.
+                        {t("p1")}
                         </p>
                     </div>
                 </div>
@@ -43,10 +44,9 @@ export default function UsingSchoolsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Enhance Teacher Support</h6>
+                        <h6 className='font-bold text-lg'>{t("h2")}</h6>
                         <p className='text-sm'>
-                            OCTAR provides teachers with an intuitive dashboard to track student progress, 
-                            customize lesson plans, and seamlessly integrate AR content
+                        {t("p2")}
                         </p>
                     </div>
                 </div>
@@ -59,10 +59,9 @@ export default function UsingSchoolsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Promote Active Learning</h6>
+                        <h6 className='font-bold text-lg'>{t("h3")}</h6>
                         <p className='text-sm'>
-                            Students interact with 3D objects, characters, 
-                            and stories, enhancing retention and engagement
+                        {t("p3")}
                         </p>
                     </div>
                 </div>
@@ -75,15 +74,14 @@ export default function UsingSchoolsSection() {
                         </svg>
                     </span>
                     <div className='flex flex-col gap-2'>
-                        <h6 className='font-bold text-lg'>Track Learning Progress</h6>
+                        <h6 className='font-bold text-lg'>{t("h4")}</h6>
                         <p className='text-sm'>
-                        §  Real-time analytics help teachers monitor student development, 
-                        providing insights for personalized support.CTA Button: Explore How OCTAR Works
+                        {t("p4")}
                         </p>
                     </div>
                 </div>
                 <div>
-                    <button className='btn btn-primary'>Start Your Free Trial</button>
+                    <button className='btn btn-primary'>{t("button")}</button>
                 </div>
             </div>
         </div>

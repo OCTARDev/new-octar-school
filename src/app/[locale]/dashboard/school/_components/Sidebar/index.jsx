@@ -7,6 +7,10 @@ import { usePathname } from 'next/navigation';
 import { IoHomeSharp } from "react-icons/io5";
 import { FaPalette, FaUser } from "react-icons/fa";
 import { FaPersonChalkboard } from "react-icons/fa6";
+import { MdSubscriptions } from "react-icons/md";
+import { RiGraduationCapFill, RiUserCommunityFill } from "react-icons/ri";
+
+
 
 export default function SchoolSidebar() {
     const pathname = usePathname();
@@ -19,7 +23,7 @@ export default function SchoolSidebar() {
         href={`/${firstLink}/dashboard/school`}
         >
             <span><IoHomeSharp size={20}/></span>
-            <span>home</span>
+            <span className=''>home</span>
         </Link>
         <Link 
             className={`${styles.navItem} ${pathname.includes("/teachers") && `${styles.active}`}`} 
@@ -36,10 +40,10 @@ export default function SchoolSidebar() {
             <span>Subjects</span>
         </Link>
         <Link 
-            className={`${styles.navItem}  ${pathname.includes("/classes") && `${styles.active}`}`} 
+            className={`${styles.navItem}  ${(pathname.includes("/classes") || pathname.includes("/students")) && `${styles.active}`}`} 
             href={`/${firstLink}/dashboard/school/classes`}
         >
-            <span><IoHomeSharp size={20}/></span>
+            <span><RiGraduationCapFill  size={20}/></span>
             <span>Classes</span>
         </Link>
         <Link 
@@ -53,9 +57,16 @@ export default function SchoolSidebar() {
             className={`${styles.navItem}  ${pathname.includes("/sub-details") && `${styles.active}`}`} 
             href={`/${firstLink}/dashboard/school/sub-details`}
         >
-            <span><IoHomeSharp size={20}/></span>
+            <span><MdSubscriptions  size={20}/></span>
             <span>Subscription Details</span>
+        </Link>
+        <Link 
+            className={`${styles.navItem}  ${pathname.includes("/sub-details") && `${styles.active}`}`} 
+            href={`/${firstLink}/dashboard/school/community`}
+        >
+            <span><RiUserCommunityFill   size={20}/></span>
+            <span>Community</span>
         </Link>
     </SidebarWrapper>
   )
-}
+};

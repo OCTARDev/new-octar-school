@@ -13,8 +13,7 @@ async function getBlogs() {
   }
 
 export default async function Blog() {
-    let blogs = await getBlogs();
-  
+  let blogs = await getBlogs();
  
 
   return (

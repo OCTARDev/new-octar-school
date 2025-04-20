@@ -1,0 +1,79 @@
+"use client";
+
+import useIndexCommunity from '@/tanstack-query/School/Community/useIndex';
+import React, { useRef, useEffect } from 'react';
+
+import PostCard from '@/components/PostCard';
+import Spinner from '@/components/Spinner';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import AddComponent from './_components/AddComponent';
+
+export default function CommunityFeed(){
+    const {
+        data,
+        fetchNextPage,
+        hasNextPage,
+        isFetchingNextPage,
+        isError,
+        isLoading,
+        isSuccess,
+        error,
+    } = useIndexCommunity();
+
+    const observerRef = useRef();
+
+    // Flatten the posts from all pages
+    const allPosts = data?.pages?.flatMap(
+        (page) => page?.data?.data?.data || []
+    );
+
+    useEffect(() => {
+        if (!hasNextPage || isFetchingNextPage) return;
+
+        const observer = new IntersectionObserver(
+        (entries) => {
+            if (entries[0].isIntersecting) {
+            fetchNextPage();
+            }
+        },
+        { threshold: 1 }
+        );
+
+        if (observerRef.current) {
+        observer.observe(observerRef.current);
+        }
+
+        return () => {
+        if (observerRef.current) observer.unobserve(observerRef.current);
+        };
+    }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
+
+  return (
+    <div className='relative'>
+        <AddComponent />
+        {/* All Posts */}
+        <div className='grid grid-cols-3'>
+
+        
+        <ErrorBoundary isError={isError} error={error} isLoading={isLoading} isSuccess={isSuccess}>   
+        <div className="col-span-2 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 p-4">
+            {allPosts?.map((post,i) => (
+            <PostCard key={post.id} post={post}/>
+            ))}
+            {/* Observerer Reference */}
+            <div ref={observerRef} className="h-10"></div>      
+        </div>
+        </ErrorBoundary>
+        </div>
+        {/* Loading Spinner */}
+        {isFetchingNextPage && 
+            <div className="text-center">
+                <Spinner />
+                <span>Loading more...</span>
+                
+            </div>
+        }
+    </div>
+    
+  );
+};

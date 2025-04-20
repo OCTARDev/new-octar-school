@@ -5,7 +5,9 @@ import Features4StudentsSection from './_sections/Features4Students'
 import Features4ParentsSection from './_sections/Features4Parents'
 import Features4TeachersSection from './_sections/Features4Teachers'
 
-export default function page() {
+
+export default function Features() {
+
   return (
     <div>
       <HeroSection />
@@ -16,3 +18,5 @@ export default function page() {
     </div>
   )
 }
+
+

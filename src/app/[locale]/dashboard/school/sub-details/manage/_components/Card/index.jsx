@@ -1,11 +1,10 @@
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import React from 'react'
 import { FaRegCircleCheck } from "react-icons/fa6";
-export default function PlanCard({p}) {
+export default function SubscribeCard({p}) {
     const t = useTranslations("pricing.card")
   return (
-    <div className='border rounded-lg flex flex-col gap-4 py-3 shadow-2xl capitalize'>
+    <div className='border rounded-lg flex flex-col gap-4 py-3 shadow-2xl'>
         <p className='font-light text-lg px-3'>{p?.title}</p>
         <p className='px-3'>
             <span className='font-extrabold leading-loose text-4xl uppercase'> {p?.currency} {p?.price} </span>
@@ -19,9 +18,6 @@ export default function PlanCard({p}) {
             <span>{t("type")}</span>
             <span>{p?.type_trans}</span>
         </p>
-        <div className='px-3'>
-            <Link href={`/home/subscribe/${p?.id}`} className='btn btn-secondary !py-3 text-lg'>{t("button")}</Link>
-        </div>
         <hr className=''/>
         <div className='px-3 flex flex-col'>
             <h2 className='font-semibold mb-2'>{t("features")}</h2>

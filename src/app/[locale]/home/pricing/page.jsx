@@ -1,6 +1,6 @@
 import React from 'react'
 import CurriculumHeroSection from '../curriculum/_sections/Hero'
-import PricingPlansSection from './_sections/Plans'
+import PricingPlansSection from '@/components/PlansSection'
 
 export default function Pricing() {
   return (

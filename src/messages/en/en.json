@@ -109,6 +109,83 @@
         "yes":"yes",
         "no":"no"
     },
+    "about":{
+        "hero":{
+            "h1":"What is",
+            "h2":"Octar",
+            "h3":"?",
+            "p1":"OCTAR is an immersive, AR-powered learning tool that enhances early education through interactive, 3D experiences. Tailored for kindergarten and primary school curricula, it transforms traditional lessons into hands-on adventures, where students engage with educational content dynamically"
+            },
+        "usingSchools":{
+            "header":"By using OCTAR, schools can",
+            "h1":"Transform Traditional Curriculum",
+            "p1":"Core subjects like language, math, science,and social studies become AR-based experiences, making abstract concepts tangible.",
+            "h2":"Enhance Teacher Support",
+            "p2":"OCTAR provides teachers with an intuitive dashboard to track student progress,customize lesson plans, and seamlessly integrate AR content",
+            "h3":"Promote Active Learning",
+            "p3":" Students interact with 3D objects, characters,and stories, enhancing retention and engagement",
+            "h4":"Track Learning Progress",
+            "p4":"Real-time analytics help teachers monitor student development, providing insights for personalized support.CTA Button: Explore How OCTAR Works",
+            "button":"Start Your Free Trial"
+            },
+        "differentOctar":{
+            "h1":"Why OCTAR is Different",
+            "p1":"Unlike other AR tools or VR systems, OCTAR combines coloring with interactive 3D experiences to keep kids physically active and engaged. This immersive, hands-on approach promotes deeper understanding and makes learning more memorable."
+        }
+        },
+    "curriculum":{
+        "header":"Curriculum",
+        "button":"Explore Content"
+    },
+    "categories":{
+        "hero":"OCTAR is designed to meet and exceed international educational standards",
+        "header": "Available Categories",
+        "button": "Show Targets"
+    },
+    "target":{
+        "hero":"OCTAR is designed to meet and exceed international educational standards",
+        "header":"Available Targets"
+    },
+    "features": {
+        "hero": {
+            "title": "Welcome to OCTAR",
+            "description": "OCTAR is an innovative educational tool that combines coloring and augmented reality to transform learning into a fun and interactive experience.",
+            "feature1": {
+                "title": "Interactive Learning",
+                "description": "Makes learning more enjoyable by interacting with 3D models."
+            },
+            "feature2": {
+                "title": "Ease of Use",
+                "description": "Designed to be simple and user-friendly for both students and teachers."
+            },
+            "button": "Get Started Now",
+            "imageAlt": "Illustrative image of augmented reality"
+        },
+        "features4schools": {
+            "title": "For School",
+            "description": "OCTAR supports schools by enhancing curriculum delivery, improving learning outcomes, and providing a competitive edge through the use of innovative AR technology.",
+            "button": "Learn More for Schools",
+            "imageAlt": "Web design, color picker and palette"
+        },
+        "features4students": {
+            "title": "For Students",
+            "description": "OCTAR turns learning into fun, interactive adventures that boost retention and encourage cognitive, emotional, and physical growth.",
+            "button": "See How Students Benefit from OCTAR",
+            "imageAlt": "Illustrative image of a student using OCTAR"
+        },
+        "features4parents": {
+            "title": "For Parents",
+            "description": "Parents can track their child’s progress, actively participate in learning, and reinforce skills at home using the OCTAR app.",
+            "button": "Learn How Parents Can Get Involved",
+            "imageAlt": "Illustrative image of parents using OCTAR"
+        },
+        "features4teachers": {
+            "title": "For Teachers",
+            "description": "OCTAR simplifies teaching, saves time with ready-made AR lessons, and keeps students engaged with interactive, immersive content.",
+            "button": "Explore How OCTAR Supports Teachers",
+            "imageAlt": "Illustrative image of a teacher using OCTAR"
+        }
+    },
     "dashboard":{
         "school":{
             "profile":{

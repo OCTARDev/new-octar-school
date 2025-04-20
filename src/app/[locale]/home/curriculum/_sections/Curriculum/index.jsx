@@ -5,16 +5,17 @@ import useFetchCurriculum from '@/tanstack-query/Home/useFetchCurriculum';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+import { useTranslations } from 'use-intl';
 
 export default function CurriculumSection({id}) {
 
     const {data,isLoading,isError,isSuccess,error} = useFetchCurriculum({id});
     const curriculum = data?.data?.data;
-    
+    const t = useTranslations("curriculum");
   return (
     <section className='px-4'>
         <div className='max-w-screen-xl mx-auto flex flex-col gap-2 py-4'>
-            <h3 className='text-4xl font-bold mb-8'>Curriculum</h3>
+            <h3 className='text-4xl font-bold mb-8'>{t("header")}</h3>
             <ErrorBoundary isLoading={isLoading} isError={isError} error={error} isSuccess={isSuccess}>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3'>
                 {curriculum?.map((c,i)=>{
@@ -22,7 +23,7 @@ export default function CurriculumSection({id}) {
                     <div className='flex flex-col items-center gap-2' key={c.id}> 
                         <Card c={c}/>
                         <div>
-                            <Link href={`/home/categories/${c.id}`} className='btn btn-primary'>Explore Content</Link>
+                            <Link href={`/home/categories/${c.id}`} className='btn btn-primary'>{t("button")}</Link>
                         </div>
                     </div>
                     )

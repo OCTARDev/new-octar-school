@@ -1,24 +1,23 @@
 import Image from 'next/image'
 import React from 'react'
 import hero from "@/assets/home/hero.png";
+import { getTranslations } from 'next-intl/server';
 
 
-export default function HeroSection() {
+export default async function HeroSection() {
+    const t = await getTranslations("about.hero");
   return (
     <section className='px-4 mt-24 py-6'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto'>
             {/* left  */}
             <div className='flex flex-col gap-2'>
                 <p className='text-4xl font-extrabold leading-relaxed'>
-                    What Is 
-                    <span className='mx-1 text-primaryA1'>OCTAR</span>
-                    ?
+                    {t("h1")}
+                    <span className='mx-1 text-primaryA1'>{t("h2")}</span>
+                    {t("h3")}
                 </p>
                 <p>
-                OCTAR is an immersive, AR-powered learning tool that enhances early education through interactive, 3D experiences. 
-                Tailored for kindergarten and primary school curricula, 
-                it transforms traditional lessons into hands-on adventures, 
-                where students engage with educational content dynamically
+                {t("p1")}
                 </p>
             </div>
             {/* right */}
