@@ -1,16 +1,17 @@
 import axiosInstance from "@/utils/axiosInstance";
+import teacherAxiosInstance from "@/utils/teacherAxiosInstance";
 import { useQuery } from "@tanstack/react-query";
 
-const fetch = ({page,search,id})=>{
-    return axiosInstance.get(`/students/${id}?page=${page}&search=${search}`)
+const fetch = ({search,id})=>{
+    return teacherAxiosInstance.get(`/class-rooms/students/${id}?search=${search}`)
 }
 
-const useIndexStudents = ({page,search,id})=>{
+const useIndexTeacherStudents = ({search,id})=>{
     return useQuery({
-        queryKey:["dashboard","students","index",id,page,search],
-        queryFn:()=>fetch({page,search,id})
+        queryKey:["dashboard","teacher","students","index",id,search],
+        queryFn:()=>fetch({search,id})
     })
 };
 
 
-export default useIndexStudents;
+export default useIndexTeacherStudents;

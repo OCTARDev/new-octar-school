@@ -106,7 +106,7 @@ export default function Login() {
                 />
                 <label htmlFor="rememberMe">Remember me</label>
               </div>
-              <Link className='hover:underline' href={"/forgot-password"}>Forgot Password?</Link>
+              <Link className='hover:underline' href={"forgot-password"}>Forgot Password?</Link>
             </div>
             {/* Button */}
             <div>

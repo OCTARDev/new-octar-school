@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import { SlOptionsVertical } from "react-icons/sl";
 import { MdDelete, MdEdit } from "react-icons/md";
 import Dropdown from '@/components/Dropdown/Dropdown';
-import useDeleteCommunityPost from '@/tanstack-query/School/Community/useDelete';
 import Link from 'next/link';
 
 
-export default function PostCard({post}) {
+export default function PostCard({post,deletePost}) {
     const [learn,setLearn] = useState(false);
     // Utility function to truncate text
     const truncateText = (text, maxLength) => {
@@ -25,7 +24,6 @@ export default function PostCard({post}) {
             text
         );
     };
-    const deletePost = useDeleteCommunityPost({});
     const handleDelete = (id) => {
         deletePost.mutate(id);
     };
@@ -37,7 +35,7 @@ export default function PostCard({post}) {
         {/* post header */}
         <div className='flex items-start justify-between gap-2 p-4 '>
             <div className='flex items-start gap-2'>
-                <img src={post.user_media} alt="user" className='w-10 h-10 rounded-full bg-black' />
+                <img src={post.user_media} alt="user" className='w-10 h-10 rounded-full  border' />
                 <div className='flex flex-col gap-1'>
                     <h1 className='font-bold capitalize'>{post.user_name}</h1>
                     <span className='text-xs text-gray-500'>{post.last_update}</span>

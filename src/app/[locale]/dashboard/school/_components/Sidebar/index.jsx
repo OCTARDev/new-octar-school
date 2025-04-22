@@ -61,7 +61,7 @@ export default function SchoolSidebar() {
             <span>Subscription Details</span>
         </Link>
         <Link 
-            className={`${styles.navItem}  ${pathname.includes("/sub-details") && `${styles.active}`}`} 
+            className={`${styles.navItem}  ${pathname.includes("/community") && `${styles.active}`}`} 
             href={`/${firstLink}/dashboard/school/community`}
         >
             <span><RiUserCommunityFill   size={20}/></span>
