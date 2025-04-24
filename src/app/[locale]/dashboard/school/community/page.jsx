@@ -8,8 +8,10 @@ import Spinner from '@/components/Spinner';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import AddComponent from './_components/AddComponent';
 import useDeleteCommunityPost from '@/tanstack-query/School/Community/useDelete';
+import { useTranslations } from 'next-intl';
 
 export default function CommunityFeed(){
+    const t = useTranslations("dashboard.school.community");
     const {
         data,
         fetchNextPage,
@@ -58,7 +60,7 @@ export default function CommunityFeed(){
             <ErrorBoundary isError={isError} error={error} isLoading={isLoading} isSuccess={isSuccess}>   
             <div className="col-span-3 md:col-span-2 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 p-4">
                 {allPosts?.map((post,i) => (
-                <PostCard key={post.id} post={post} deletePost={deletePost}/>
+                <PostCard key={post.id} post={post} deletePost={deletePost} isShow={true}/>
                 ))}
                 {/* Observerer Reference */}
                 <div ref={observerRef} className="h-10"></div>      
@@ -69,7 +71,7 @@ export default function CommunityFeed(){
         {isFetchingNextPage && 
             <div className="text-center">
                 <Spinner />
-                <span>Loading more...</span>
+                <span>{t("loading")}</span>
             </div>
         }
     </div>

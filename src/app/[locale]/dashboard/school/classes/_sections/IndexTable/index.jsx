@@ -11,9 +11,11 @@ import ConfirmRestore from '@/components/ConfirmRestore';
 import { GoDotFill } from "react-icons/go";
 import useDeleteClass from '@/tanstack-query/School/Classes/useDelete';
 import useRestoreClass from '@/tanstack-query/School/Classes/useRestore';
+import { useTranslations } from 'next-intl';
 
 
 export default function ClassesTableSection({dashboard,setPage}) {
+    const t = useTranslations("dashboard.school.classes.classTable");
     const classes = dashboard?.data;
     const [isExpanded, setIsExpanded] = useState(false);
     const [restoreIsExpanded, setRestoreIsExpanded] = useState(false);
@@ -63,13 +65,13 @@ export default function ClassesTableSection({dashboard,setPage}) {
                 <ResponsiveTable >
                 <thead>
               <tr className='text-sm text-[#424242]'>
-                <th className="px-4 py-2 text-start">ID</th>
-                <th className="px-4 py-2 text-start">Class Name</th>
-                <th className="px-4 py-2 text-start">Status</th>
-                <th className="px-4 py-2 text-start">Total Students</th>
-                <th className="px-4 py-2 text-start">Level</th>
+                <th className="px-4 py-2 text-start">{t("id")}</th>
+                <th className="px-4 py-2 text-start">{t("name")}</th>
+                <th className="px-4 py-2 text-start">{t("status")}</th>
+                <th className="px-4 py-2 text-start">{t("students")}</th>
+                <th className="px-4 py-2 text-start">{t("level")}</th>
 
-                <th className="px-4 py-2 text-start">Actions</th>
+                <th className="px-4 py-2 text-start">{t("actions")}</th>
               </tr>
             </thead>
             <tbody>

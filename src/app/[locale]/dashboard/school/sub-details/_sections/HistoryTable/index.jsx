@@ -7,8 +7,10 @@ import { GoDotFill } from "react-icons/go";
 import useDeleteClass from '@/tanstack-query/School/Classes/useDelete';
 import useRestoreClass from '@/tanstack-query/School/Classes/useRestore';
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { useTranslations } from 'next-intl';
 
 export default function HistoryTableSection({dashboard,setPage}) {
+    const t = useTranslations("dashboard.school.subs.table");
     const classes = dashboard?.payment_history;
     const [isExpanded, setIsExpanded] = useState(false);
     const [restoreIsExpanded, setRestoreIsExpanded] = useState(false);
@@ -52,20 +54,20 @@ export default function HistoryTableSection({dashboard,setPage}) {
             handleDeleteRequest={handleRestoreRequest} 
             id={selectedId}
         />
-        <h1 className='my-4 font-bold text-xl capitalize'>Payment History</h1>
+        <h1 className='my-4 font-bold text-xl capitalize'>{t("header")}</h1>
         {/* table */}
         <div className='border-2 rounded-lg p-3 flex flex-col gap-4 mb-4'>
             <div className=' rounded-lg py-2'>
                 <ResponsiveTable >
                 <thead>
                     <tr className='text-sm text-[#424242]'>
-                        <th className="px-4 py-2 text-start">ID</th>
-                        <th className="px-4 py-2 text-start">Title</th>
-                        <th className="px-4 py-2 text-start">Subscription Plan</th>
-                        <th className="px-4 py-2 text-start">Plan Type</th>
-                        <th className="px-4 py-2 text-start">Duration</th>
-                        <th className="px-4 py-2 text-start">Cost</th>
-                        <th className="px-4 py-2 text-start">Status</th>
+                        <th className="px-4 py-2 text-start">{t("id")}</th>
+                        <th className="px-4 py-2 text-start">{t("title")}</th>
+                        <th className="px-4 py-2 text-start">{t("subPlan")}</th>
+                        <th className="px-4 py-2 text-start">{t("type")}</th>
+                        <th className="px-4 py-2 text-start">{t("duration")}</th>
+                        <th className="px-4 py-2 text-start">{t("cost")}</th>
+                        <th className="px-4 py-2 text-start">{t("status")}</th>
 
                     </tr>
                 </thead>

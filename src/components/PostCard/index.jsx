@@ -3,10 +3,13 @@ import { SlOptionsVertical } from "react-icons/sl";
 import { MdDelete, MdEdit } from "react-icons/md";
 import Dropdown from '@/components/Dropdown/Dropdown';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 
-export default function PostCard({post,deletePost}) {
+export default function PostCard({post,deletePost,isShow=false}) {    
+    const t = useTranslations("components.postCard");
     const [learn,setLearn] = useState(false);
+
     // Utility function to truncate text
     const truncateText = (text, maxLength) => {
         if (!text) return '';
@@ -17,7 +20,7 @@ export default function PostCard({post,deletePost}) {
             className="text-gray-500  font-semibold hover:cursor-pointer" 
             title='Expand Post'
             onClick={handleLearnMore}>
-                Learn More
+                {t("learnMore")}
             </span>
             </>
         ) : (
@@ -42,7 +45,7 @@ export default function PostCard({post,deletePost}) {
                 </div>
             </div>
             {/* options if my own post */}
-            {post.is_own && 
+            {(post.is_own || isShow) && 
             <Dropdown 
             title={<SlOptionsVertical size={16} className='text-gray-500 hover:text-gray-800 hover:cursor-pointer' />}
             >
@@ -54,7 +57,7 @@ export default function PostCard({post,deletePost}) {
                     title='Edit Post'
                     >
                         <span><MdEdit size={20}/></span>
-                        <span>Edit</span>
+                        <span>{t("edit")}</span>
                     </Link>
                     <button 
                     className='text-sm text-red-500 hover:text-red-800  items-center !justify-normal' 
@@ -63,7 +66,7 @@ export default function PostCard({post,deletePost}) {
                     onClick={()=>handleDelete(post.id)}
                     >
                         <span><MdDelete size={20}/></span>
-                        <span>Delete</span>
+                        <span>{t("delete")}</span>
                     </button>
                 </div>
             </Dropdown>

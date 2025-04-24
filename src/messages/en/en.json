@@ -13,6 +13,16 @@
         "support":"support",
         "news":"news"
     },
+    "components":{
+        "backSection":{
+            "back":"back"
+        },
+        "postCard":{
+            "learnMore":"Learn More",
+            "edit":"Edit",
+            "delete":"Delete"
+        }
+    },
     "home":{
         "hero":{
             "welcome":"Welcome to",
@@ -187,7 +197,21 @@
         }
     },
     "dashboard":{
+        "header":{
+            "title": "OCTAR EDUCATION",
+            "logout":"logout",
+            "login":"login"
+        },
         "school":{
+            "sidebar":{
+                "home": "Home",
+                "teachers": "Teachers",
+                "subjects": "Subjects",
+                "classes": "Classes",
+                "schoolProfile": "School Profile",
+                "subscriptionDetails": "Subscription Details",
+                "community": "Community"
+            },
             "profile":{
                 "header":"School Profile Management",
                 "editButton":"Edit Profile",
@@ -208,7 +232,333 @@
                 "placeholderOldPassword":" Enter Old Password",
                 "placeholderNewPassword":" Enter New Password",
                 "placeholderCPassword":"Confirm Your Password",
-                "logoButton":"Update Logo"
+                "logoButton":"Update Logo",
+                "noStudents":"No Of Students",
+                "role":"Role",
+                "subs":{
+                    "header":"Subscription Details",
+                    "title":"Title",
+                    "status":"status",
+                    "price":"price",
+                    "period":"period",
+                    "type":"type of plan",
+                    "num_seats":"number of seats",
+                    "renew":"renew subscription date"
+                }
+            },
+            "home":{
+                "hero":{
+                    "header":"Welcome To OCTAR",
+                    "teachers":"Total Teachers",
+                    "students":"Total Students",
+                    "classes":"Active Classes"
+                },
+                "sub":{
+                    "header":"Current Subscription Plan",
+                    "h1":"Individual Plan",
+                    "active":"active",
+                    "inacitve":"inactive",
+                    "pause":"pause",
+                    "seat":"seat plan",
+                    "renewSubs":"Renew Subscription Date",
+                    "terms":"Terms Apply",
+                    "upgrade":"upgrade"
+                },
+                "classes":{
+                    "activeClasses": "Active Classes",
+                    "viewAll": "View All",
+                    "id": "ID",
+                    "className": "Class Name",
+                    "level": "Level",
+                    "teachersCount": "Teachers Count",
+                    "studentsCount": "Students Count",
+                    "actions": "Actions",
+                    "teachers": "Teachers",
+                    "students": "Students",
+                    "edit": "Edit",
+                    "delete": "Delete"
+                }
+            },
+            "teachers":{
+                "header":"Teachers",
+                "addTeacher":"Add Teacher",
+                "searchPlaceholder":"Search by name or email",
+                "table":{
+                    "id": "ID",
+                    "name": "Name",
+                    "class": "Class",
+                    "emailAddress": "Email Address",
+                    "actions": "Actions",
+                    "catalog": "Catalog",
+                    "classes": "Classes",
+                    "show": "Show",
+                    "edit": "Edit",
+                    "delete": "Delete",
+                    "restore": "Restore"
+                },
+                "show":{
+                    "id": "id",
+                    "name": "name",
+                    "email": "email address",
+                    "status": "status",
+                    "classesCount": "classes count"
+                },
+                "showTable":{
+                    "classId": "Class ID",
+                    "className": "Class Name",
+                    "totalStudents": "Total Students",
+                    "students": "Students"
+                },
+                "add":{
+                    "back": "Back",
+                    "title": "Add Teacher",
+                    "nameLabel": "Teacher Name",
+                    "namePlaceholder": "Enter Teacher Name",
+                    "nameRequired": "Teacher Name is required",
+                    "emailLabel": "Teacher Email",
+                    "emailPlaceholder": "Enter Teacher Email",
+                    "emailRequired": "Teacher Email is required",
+                    "passwordLabel": "Teacher Password",
+                    "passwordPlaceholder": "Enter Teacher Password",
+                    "passwordRequired": "Teacher Password is required",
+                    "assignClassLabel": "Assign Class",
+                    "mediaLabel": "Media",
+                    "mediaPlaceholder": "+ Click to upload image",
+                    "assignClassPlaceholder": "Assign Classes",
+                    "resetButton": "Reset",
+                    "submitButton": "Add Teacher",
+                    "successMessage": "Teacher added successfully",
+                    "errorMessage": "Failed to add Teacher"
+                },
+                "edit":{
+                    "title": "Edit Teacher",
+                    "nameLabel": "Teacher Name",
+                    "namePlaceholder": "Enter Teacher Name",
+                    "nameRequired": "Teacher Name is required",
+                    "emailLabel": "Teacher Email",
+                    "emailPlaceholder": "Enter Teacher Email",
+                    "emailRequired": "Teacher Email is required",
+                    "assignClassLabel": "Assign Class",
+                    "assignClassPlaceholder": "Assign Classes",
+                    "mediaLabel": "Media",
+                    "mediaPlaceholder": "+ Click to upload image",
+                    "submitButton": "Edit Teacher",
+                    "successMessage": "Teacher edited successfully",
+                    "errorMessage": "Failed to edit Teacher"
+                }
+            },
+            "subjects":{
+                "header":"Subjects",
+                "searchPlaceholder":"Search by name or email",
+                "grades":"Grades",
+                "categories":{
+                    "availableCategories": "Available Categories"
+                  },
+                "targets":{
+                    "availableTargets": "Available Targets"
+                }
+            },
+            "subs":{
+                "header":"Subscription Details",
+                "table":{
+                    "header":"Payment History",
+                    "id":"ID",
+                    "title":"Title",
+                    "subPlan":"Subscription Plan",
+                    "type":"Plan Type",
+                    "duration":"Duration",
+                    "cost":"Cost",
+                    "status":"Status"
+                }
+            },
+            "community":{
+                "loading":"Loading...",
+                "add":{
+                    "header":"Add Community Post",
+                    "titlePlaceholder":"Title",
+                    "descriptionPlaceholder":"Description",
+                    "postImage":"Post Image",
+                    "submit":"submit"
+                },
+                "edit":{
+                    "header":"Edit Community Post",
+                    "titlePlaceholder":"Title",
+                    "descriptionPlaceholder":"Description",
+                    "postImage":"Post Image",
+                    "edit":"Edit"
+                }
+            },
+            "classes":{
+                "header":"classes",
+                "addBtn":"Add Class",
+                "classTable":{
+                    "searchPlaceholder":"Search for a class",
+                    "id":"ID",
+                    "name":"Class Name",
+                    "status":"status",
+                    "students":"Total Students",
+                    "level":"level",
+                    "actions":"Actions"
+                },
+                "add":{
+                    "header":"Create Class",
+                    "name":"Class Name",
+                    "namePlaceholder":"Enter Class Name",
+                    "assignLevelLabel":"Assign Level",
+                    "assignLevelPlaceholder":"Assign Levels",
+                    "mediaLabel":"Media",
+                    "mediaPlaceholder":"+ Click to upload image",
+                    "addBtn":"Add Class",
+                    "resetBtn":"Reset"
+                },
+                "edit":{
+                    "header":"Edit Class",
+                    "name":"Class Name",
+                    "namePlaceholder":"Enter Class Name",
+                    "assignLevelLabel":"Assign Level",
+                    "assignLevelPlaceholder":"Assign Levels",
+                    "mediaLabel":"Media",
+                    "mediaPlaceholder":"+ Click to upload image",
+                    "addBtn":"Edit Class",
+                    "resetBtn":"Reset"
+                }
+            },
+            "students":{
+                "header":"Students",
+                "addStudent":"Add Student",
+                "studentTable":{
+                    "searchPlaceholder":"Search by name or email",
+                    "id":"ID",
+                    "name":"Student Name",
+                    "code":"code",
+                    "status":"Status",
+                    "notes":"Notes",
+                    "actions":"Actions"
+                },
+                "add":{
+                    "header":"Create Student",
+                    "name":"Student Name",
+                    "namePlaceholder":"Enter Student Name",
+                    "media":"Media",
+                    "mediaPlaceholder":"+ Click to upload image",
+                    "addBtn":"Add Student",
+                    "resetBtn":"Reset"
+                },
+                "edit":{
+                    "header":"Edit Student",
+                    "name":"Student Name",
+                    "namePlaceholder":"Enter Student Name",
+                    "media":"Media",
+                    "mediaPlaceholder":"+ Click to upload image",
+                    "addBtn":"Edit Student",
+                    "resetBtn":"Reset"
+                },
+                "notes":{
+                    "header":"View Notes"
+                }
+            }
+        },
+        "teacher":{
+            "sidebar":{
+                "home": "Home",
+                "subjects": "Subjects",
+                "classes": "Classes",
+                "teacherProfile": "Teacher Profile",
+                "community": "Community"
+            },
+            "home":{
+                "hero":{
+                    "header":"Welcome To OCTAR",
+                    "curriculum":"Total Curriculum",
+                    "students":"Total Students",
+                    "classes":"Active Classes"
+                },
+                "classes":{
+                    "latest": "Latest Student Work",
+                    "viewAll": "View All",
+                    "id": "ID",
+                    "className": "Class Name",
+                    "level": "Level",
+                    "teachersCount": "Teachers Count",
+                    "studentsCount": "Students Count",
+                    "teachers":"Teachers",
+                    "students":"Students"
+                }
+            },
+            "subjects":{
+                "header":"Subjects",
+                "searchPlaceholder":"Search by name or email",
+                "grades":"Grades",
+                "categories":{
+                    "availableCategories": "Available Categories"
+                  },
+                "targets":{
+                    "availableTargets": "Available Targets"
+                }
+            },
+            "classes":{
+                "header":"classes",
+                "addBtn":"Add Class",
+                "classTable":{
+                    "searchPlaceholder":"Search for a class",
+                    "allLevels":"All Levels",
+                    "id":"ID",
+                    "name":"Class Name",
+                    "students":"Total Students",
+                    "actions":"Actions"
+                }
+            },
+            "students":{
+                "header":"Students",
+                "addStudent":"Add Student",
+                "studentTable":{
+                    "searchPlaceholder":"Search by name or email",
+                    "id":"ID",
+                    "name":"Student Name",
+                    "code":"code",
+                    "status":"Status",
+                    "notes":"Notes",
+                    "actions":"Actions"
+                },
+                "add":{
+                    "header":"Create Student",
+                    "name":"Student Name",
+                    "namePlaceholder":"Enter Student Name",
+                    "media":"Media",
+                    "mediaPlaceholder":"+ Click to upload image",
+                    "addBtn":"Add Student",
+                    "resetBtn":"Reset"
+                },
+                "edit":{
+                    "header":"Edit Student",
+                    "name":"Student Name",
+                    "namePlaceholder":"Enter Student Name",
+                    "media":"Media",
+                    "mediaPlaceholder":"+ Click to upload image",
+                    "addBtn":"Edit Student",
+                    "resetBtn":"Reset"
+                },
+                "notes":{
+                    "header":"Add Notes",
+                    "btn":"submit"
+                }
+            },
+            "community":{
+                "loading":"Loading...",
+                "add":{
+                    "header":"Add Community Post",
+                    "titlePlaceholder":"Title",
+                    "descriptionPlaceholder":"Description",
+                    "postImage":"Post Image",
+                    "submit":"submit"
+                },
+                "edit":{
+                    "header":"Edit Community Post",
+                    "titlePlaceholder":"Title",
+                    "descriptionPlaceholder":"Description",
+                    "postImage":"Post Image",
+                    "edit":"Edit"
+                }
             }
         }
     }

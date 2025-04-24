@@ -10,7 +10,6 @@ export default function School() {
   const [page,setPage] = useState(1);
   const {data,isError,isLoading,isSuccess,error} = useFetchDashboard({page});
   const dashboard = data?.data?.data;
-  console.log(dashboard);
   
   return (
     <div className='flex flex-col gap-6'>

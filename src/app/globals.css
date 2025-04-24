@@ -81,3 +81,53 @@ input,select,textarea{
 .input-container>input,.input-container>select,.input-container>textarea{
   @apply border py-1 px-3 rounded-md;
 }
+
+/* Manually restore default sizes for headers after resetting */
+.reset-html-styles h1 {
+  font-size: 2em; /* Default size for h1 */
+  font-weight: bold; /* Default font weight */
+  margin-top: 0.67em; /* Default margin */
+  margin-bottom: 0.67em; /* Default margin */
+}
+
+.reset-html-styles h2 {
+  font-size: 1.5em; /* Default size for h2 */
+  font-weight: bold; /* Default font weight */
+  margin-top: 0.75em; /* Default margin */
+  margin-bottom: 0.75em; /* Default margin */
+}
+
+.reset-html-styles h3 {
+  font-size: 1.17em; /* Default size for h3 */
+  font-weight: bold; /* Default font weight */
+  margin-top: 0.83em; /* Default margin */
+  margin-bottom: 0.83em; /* Default margin */
+}
+
+.reset-html-styles h4 {
+  font-size: 1em; /* Default size for h4 */
+  font-weight: bold; /* Default font weight */
+  margin-top: 1.12em; /* Default margin */
+  margin-bottom: 1.12em; /* Default margin */
+}
+
+.reset-html-styles h5 {
+  font-size: 0.83em; /* Default size for h5 */
+  font-weight: bold; /* Default font weight */
+  margin-top: 1.5em; /* Default margin */
+  margin-bottom: 1.5em; /* Default margin */
+}
+
+.reset-html-styles h6 {
+  font-size: 0.75em; /* Default size for h6 */
+  font-weight: bold; /* Default font weight */
+  margin-top: 1.67em; /* Default margin */
+  margin-bottom: 1.67em; /* Default margin */
+}
+
+
+
+.reset-html-styles p {
+  font-size: initial;  /* Default paragraph font size */
+  margin: initial;  /* Default margin */
+}

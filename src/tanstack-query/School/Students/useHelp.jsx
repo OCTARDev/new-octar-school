@@ -7,7 +7,7 @@ const fetch = ({})=>{
 
 const useHelpClasses = ({})=>{
     return useQuery({
-        queryKey:["dashboard","classes","help"],
+        queryKey:["dashboard","school","classes","help"],
         queryFn:()=>fetch({})
     })
 };

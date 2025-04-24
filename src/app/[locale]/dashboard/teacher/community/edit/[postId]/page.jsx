@@ -6,7 +6,7 @@ export default async function EditPost({params}) {
     const {postId} = await params;
   return (
     <div>
-        <BackSection title='Back To Community'/>
+        <BackSection />
         <EditPostSection id={postId}/>
     </div>
   )

@@ -10,15 +10,16 @@ import { MdOutlineSettingsBackupRestore } from "react-icons/md";
 import ConfirmRestore from '@/components/ConfirmRestore';
 import { GoDotFill } from "react-icons/go";
 import SearchBar from '@/components/Searchbar';
-import useRestoreStudent from '@/tanstack-query/School/Students/useRestore';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import { useRouter } from 'next/navigation';
-import useIndexTeacherStudents from '@/tanstack-query/School/Students/useIndex';
-import useDeleteTeacherStudent from '@/tanstack-query/School/Students/useDelete';
-import useRestoreTeacherStudent from '@/tanstack-query/School/Students/useRestore';
+import useIndexTeacherStudents from '@/tanstack-query/Teacher/Students/useIndex';
+import useDeleteTeacherStudent from '@/tanstack-query/Teacher/Students/useDelete';
+import useRestoreTeacherStudent from '@/tanstack-query/Teacher/Students/useRestore';
+import { useTranslations } from 'next-intl';
 
 
 export default function StudentsTableSection({id}) {
+    const t = useTranslations("dashboard.teacher.students.studentTable");
     const [page,setPage] = useState(1);
     const [search ,setSearch] = useState("");
     const [isExpanded, setIsExpanded] = useState(false);
@@ -42,10 +43,10 @@ export default function StudentsTableSection({id}) {
         setRestoreIsExpanded(true);
         setSelectedId(id);
       }
-      const handleCloseRestoreModal = ()=>{
+    const handleCloseRestoreModal = ()=>{
         setRestoreIsExpanded(false);
         setSelectedId(null);
-      }
+    }
     const deleteStudent = useDeleteTeacherStudent({});
     const handleDeleteRequest =()=>{
         deleteStudent.mutate(selectedId);
@@ -54,8 +55,7 @@ export default function StudentsTableSection({id}) {
     const handleRestoreRequest = ()=>{
         restoreStudent.mutate(selectedId);
     }
-    const redirectToNotes = (status,id)=>{
-    if(!status) return;
+    const redirectToNotes = (id)=>{
         router.push(`/dashboard/teacher/students/notes/${id}`);
     };
 
@@ -74,7 +74,10 @@ export default function StudentsTableSection({id}) {
             id={selectedId}
         />
         <div>
-            <SearchBar setSearch={setSearch}/>
+            <SearchBar 
+            setSearch={setSearch}
+            placeholder={t("searchPlaceholder")}
+            />
         </div>
         {/* table */}
         <ErrorBoundary isLoading={isLoading} isError={isError} error={error} isSuccess={isSuccess}>
@@ -84,13 +87,13 @@ export default function StudentsTableSection({id}) {
                 <ResponsiveTable >
                 <thead>
               <tr className='text-sm text-[#424242]'>
-                <th className="px-4 py-2 text-start">ID</th>
-                <th className="px-4 py-2 text-start">Student Name</th>
-                <th className="px-4 py-2 text-start">Code</th>
-                <th className="px-4 py-2 text-start">Status</th>
-                <th className="px-4 py-2 text-start">Notes</th>
+                <th className="px-4 py-2 text-start">{t("id")}</th>
+                <th className="px-4 py-2 text-start">{t("name")}</th>
+                <th className="px-4 py-2 text-start">{t("code")}</th>
+                <th className="px-4 py-2 text-start">{t("status")}</th>
+                <th className="px-4 py-2 text-start">{t("notes")}</th>
 
-                <th className="px-4 py-2 text-start">Actions</th>
+                <th className="px-4 py-2 text-start">{t("actions")}</th>
               </tr>
             </thead>
             <tbody>
@@ -122,18 +125,12 @@ export default function StudentsTableSection({id}) {
                             {/* Notes Status */}
                             <td className="px-4 py-2 space-x-2  normal-case">
                                 <button
-                                disabled={!row?.notes_status}
-                                onClick={()=>redirectToNotes(row?.notes_status,row?.id)}
-                                title="View Notes"
+                                onClick={()=>redirectToNotes(row?.id)}
+                                title="Add Notes"
                                 className=
-                                {`border rounded-lg px-2 py-1 flex items-center w-fit 
-
-                                    ${row?.notes_status?
-                                    "border-primaryA1 text-primaryA1 hover:bg-primaryA1 hover:text-white hover:cursor-pointer" :
-                                    "bg-gray-300 text-gray-500"}
-                                    `
-                                }>
-                                    <span >{row?.notes_status ? "Notes ":"No notes"}</span>
+                                {`border rounded-lg px-2 py-1 flex items-center w-fit border-primaryA1 text-primaryA1 hover:bg-primaryA1 hover:text-white hover:cursor-pointer`}
+                                >
+                                    <span >Add Notes</span>
                                 </button>
                             </td>
                             {/* actions */}

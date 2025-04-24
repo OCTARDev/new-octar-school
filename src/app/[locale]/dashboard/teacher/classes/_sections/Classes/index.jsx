@@ -5,8 +5,10 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import ClassesTableSection from '../IndexTable';
 import useIndexTeacherClasses from '@/tanstack-query/Teacher/Classes/useIndex';
 import useHelpTeacherClasses from '@/tanstack-query/Teacher/Classes/useHelp';
+import { useTranslations } from 'next-intl';
 
 export default function ClassSection() {
+  const t = useTranslations("dashboard.teacher.classes.classTable");
   const [search,setSearch] = useState("");
   const [levelId,setLEvelId] = useState("");
   const handleSearch = (e)=>{
@@ -22,14 +24,14 @@ export default function ClassSection() {
       <div className='flex gap-4 mb-10 '>
         <SearchBar 
         handleSearch={handleSearch}
-        placeholder='Search for a class'
+        placeholder={t("searchPlaceholder")}
         />
         <select 
         className='border rounded-lg p-2 capitalize'
         defaultValue={""} 
         onChange={(e)=>setLEvelId(e.target.value)}
         >
-          <option value={""} >All Levels</option>
+          <option value={""} >{t("allLevels")}</option>
         {helpData?.data?.data?.map((l,i)=>{
           return(
             <option 

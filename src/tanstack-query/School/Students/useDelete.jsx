@@ -1,20 +1,20 @@
-import teacherAxiosInstance from "@/utils/teacherAxiosInstance";
+import axiosInstance from "@/utils/axiosInstance";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const dt = (id)=>{
-    return teacherAxiosInstance.delete(`/class-rooms/students/delete/${id}`);
+    return axiosInstance.delete(`/students/delete/${id}`);
 };
 
-const useDeleteTeacherStudent = ({onSuccess,onError})=>{
+const useDeleteStudent = ({onSuccess,onError})=>{
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn:dt,
         onSuccess: (data)=>{
-            queryClient.invalidateQueries(["dashboard","teacher","students","index"]);
+            queryClient.invalidateQueries(["dashboard","school","students","index"]);
             onSuccess && onSuccess(data);
         },
         onError
     })
 };
 
-export default useDeleteTeacherStudent;
+export default useDeleteStudent;

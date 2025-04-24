@@ -6,13 +6,15 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 import { CiMonitor } from "react-icons/ci";
 import { LuUsersRound } from "react-icons/lu";
 import { MdHomeFilled } from 'react-icons/md';
+import { useTranslations } from 'next-intl';
 
-export default function HomeHeroSection({dashboard}) {
+export default  function HomeHeroSection({dashboard}) {
+    const t = useTranslations("dashboard.school.home.hero");
   return (
     <section className='flex flex-col gap-4 px-4'>
         <div className='flex gap-3 items-center'>
             <span className='bg-primaryA3 rounded-full'><MdHomeFilled size={22}/></span>
-            <h1 className='font-bold text-lg sm:text-xl md:text-2xl'>Welcome to OCTAR</h1>
+            <h1 className='font-bold text-lg sm:text-xl md:text-2xl'>{t("header")}</h1>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
             {/* Total Teachers */}
@@ -20,7 +22,7 @@ export default function HomeHeroSection({dashboard}) {
                 <div className='flex justify-between'>
                     <div className='flex items-center font-semibold gap-2'>
                         <AiOutlineUserAdd size={34} className='p-1 border-2 rounded-lg'/>
-                        <span>Total Teachers</span>
+                        <span>{t("teachers")}</span>
                     </div>
                 </div>
                 <div className='flex gap-2 items-end'>
@@ -33,7 +35,7 @@ export default function HomeHeroSection({dashboard}) {
                 <div className='flex justify-between'>
                     <div className='flex items-center font-semibold gap-2'>
                         <LuUsersRound size={34} className='p-1 border-2 rounded-lg'/>
-                        <span>Total Students</span>
+                        <span>{t("students")}</span>
                     </div>
                 </div>
                 <div className='flex gap-2 items-end'>
@@ -46,7 +48,7 @@ export default function HomeHeroSection({dashboard}) {
                 <div className='flex justify-between'>
                     <div className='flex items-center font-semibold gap-2'>
                         <CiMonitor size={34} className='p-1 border-2 rounded-lg'/>
-                        <span>Active Classes</span>
+                        <span>{t("classes")}</span>
                     </div>
                 </div>
                 <div className='flex gap-2 items-end'>

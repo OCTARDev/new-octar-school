@@ -3,16 +3,17 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import useShowStudentNotes from '@/tanstack-query/School/Students/useShowNotes'
 import Image from 'next/image';
 import React from 'react'
+import { useTranslations } from 'use-intl';
 
 export default function NotesSection({id}) {
+    const t = useTranslations("dashboard.school.students.notes");
     const {data,isLoading,isError,isSuccess,error} = useShowStudentNotes({id});
     const notes = data?.data?.data;
-    console.log("notes",notes);
     
   return (
     <section className='flex flex-col gap-4'>
         {/* top Header */}
-        <h1 className='text-4xl font-bold capitalize mt-6'>View Notes</h1>
+        <h1 className='text-4xl font-bold capitalize mt-6'>{t("header")}</h1>
         <ErrorBoundary isSuccess={isSuccess} isLoading={isLoading} isError={isError} error={error}>
         <div className='flex flex-col gap-4'>
             {notes?.map((note,index)=>(
@@ -28,7 +29,12 @@ export default function NotesSection({id}) {
                         </div>
                     </div>
                     {/* Note  */}
-                    <p className='px-3 capitalize'>{note?.note}</p>
+                    <div
+                            className="mt-4 prose reset-html-styles" // Tailwind's prose class for better formatting
+                            dangerouslySetInnerHTML={{ __html: note?.note }}
+                        />
+                        
+                    {/* <p className='px-3 capitalize'>{note?.note}</p> */}
                 </div>
             ))}
         </div>

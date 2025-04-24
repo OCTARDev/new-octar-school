@@ -6,14 +6,16 @@ import ParentSection from '@/components/ParentSection'
 import ErrorBoundary from '@/components/ErrorBoundary';
 import { useRouter } from 'next/navigation';
 import FormMediaComponent from '@/components/FormMedia';
-import useShowStudent from '@/tanstack-query/School/Students/useShow';
-import useUpdateStudent from '@/tanstack-query/School/Students/useUpdate';
+import useUpdateTeacherStudent from '@/tanstack-query/Teacher/Students/useUpdate';
+import useShowTeacherStudent from '@/tanstack-query/Teacher/Students/useShow';
+import { useTranslations } from 'next-intl';
 
 export default function EditStudentSection({id}) {
+    const t = useTranslations("dashboard.teacher.students.edit");
     const [image,setImage] = useState(null);
     const router = useRouter();
     const {register,setValue,handleSubmit,formState:{errors},reset} = useForm();
-    const { data,isLoading,isError,isSuccess,error} = useShowStudent({id});
+    const { data,isLoading,isError,isSuccess,error} = useShowTeacherStudent({id});
     const onSuccess = (data)=>{        
         toast.success(data?.data?.message || "Student Edited successfully");
         router.back();
@@ -23,7 +25,7 @@ export default function EditStudentSection({id}) {
         
         toast.error(error?.response?.data?.message || "Failed to edit Student");
     };
-    const editStudent = useUpdateStudent({onSuccess,onError})
+    const editStudent = useUpdateTeacherStudent({onSuccess,onError})
     const onSubmit = (data)=>{
         editStudent.mutate({id,...data});
         
@@ -41,7 +43,7 @@ export default function EditStudentSection({id}) {
         <div className='flex flex-col gap-6'>
         <ParentSection>
             <div>
-                <h3 className='text-2xl font-bold'>Edit Student</h3>
+                <h3 className='text-2xl font-bold'>{t("header")}</h3>
             </div>
             <div>
                 <ErrorBoundary isLoading={isLoading} isError={isError} error={error} isSuccess={isSuccess}>
@@ -52,12 +54,12 @@ export default function EditStudentSection({id}) {
                     {/* Name */}
                     <div>
                     <label className="block text-gray-700 font-semibold mb-1">
-                        Student Name
+                    {t("name")}
                     </label>
                     <input
                         type="text"
                         {...register("name", { required: "Student Name is required" })}
-                        placeholder="Enter Student Name"
+                        placeholder={t("namePlaceholder")}
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                     />
                     {errors.name && (
@@ -67,8 +69,8 @@ export default function EditStudentSection({id}) {
                     
                     {/* Media */}
                     <FormMediaComponent 
-                    title={"media"}
-                    placeholder={"+ Click To Upload Image"}
+                    title={t("media")}
+                    placeholder={t("mediaPlaceholder")}
                     formTitle={"media"}
                     register={register}
                     setValue={setValue}
@@ -82,7 +84,7 @@ export default function EditStudentSection({id}) {
                         type="submit"
                         className="btn btn-primary"
                         >
-                        Edit Student
+                        {t("addBtn")}
                         </button>
                     </div>
                 </form>

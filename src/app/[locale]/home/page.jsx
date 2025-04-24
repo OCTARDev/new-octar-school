@@ -10,7 +10,7 @@ import CaseStudiesSection from './_sections/CaseStudies';
 
 export default function Home() {  
   return (
-    <div className=''>
+    <div className='capitalize'>
       <HeroSection />
       <HowItWorksSection />
       <ForSchoolsSection />

@@ -5,11 +5,13 @@ import MultiChoiceSelect from '@/components/MultipleChoiceSelect';
 import SearchBar from '@/components/Searchbar';
 import useSubjectsHelp from '@/tanstack-query/School/Subjects/useHelp';
 import useIndexSubjects from '@/tanstack-query/School/Subjects/useIndex';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 
 export default function SubjectsSection() {
+    const t = useTranslations('dashboard.school.subjects');
     const { setValue,watch} = useForm();
     const level_ids = watch("level_ids");
     const [search ,setSearch] = useState("");
@@ -24,13 +26,13 @@ export default function SubjectsSection() {
   return (
     <div >
         <div className='flex gap-4 mb-10'>
-            <SearchBar handleSearch={handleSearch}/>
+            <SearchBar handleSearch={handleSearch} placeholder={t("searchPlaceholder")}/>
             <ErrorBoundary isLoading={helpIsLoading} isError={helpIsError} isSuccess={helpIsSuccess} error={helpError}>
                 <MultiChoiceSelect 
                 options={helpResponse}
                 setValue={setValue}
                 selectId={"level_ids"}
-                placeholder={"Grades"}
+                placeholder={t("grades")}
                 />
             </ErrorBoundary>
         </div>

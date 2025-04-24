@@ -10,6 +10,7 @@ import { FaUser } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import UpdateLogoSection from '../Logo';
 import { MdEdit } from "react-icons/md";
+import SubDetailsSection from '../SubDetails';
 
 
 
@@ -21,8 +22,8 @@ export default function ProfileSection() {
   const t = useTranslations("dashboard.school.profile");
   useEffect(()=>{
     if(data && isSuccess){      
-      const {first_name,last_name,email,phone,country_code,country,school_name} = data?.data?.data?.user;    
-      reset({first_name,last_name,email,phone,country_code,country,school_name})
+      const {first_name,last_name,email,phone,country_code,country,school_name,student,role} = data?.data?.data?.user;    
+      reset({first_name,last_name,email,phone,country_code,country,school_name,student,role})
     }
   },[data,reset,isSuccess]);
   const onSuccess = (data)=>{
@@ -59,7 +60,7 @@ export default function ProfileSection() {
               <span>{t("editButton")}</span>
               
             </button>
-        </div>
+          </div>
         </div>
         <form className='flex flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
           {/* Email */}
@@ -72,7 +73,7 @@ export default function ProfileSection() {
               disabled
             />
           </div>
-          {/* Email */}
+          {/* School Name */}
           <div className='input-container'>
             <label>{t("school_name")}</label>
             <input 
@@ -81,11 +82,31 @@ export default function ProfileSection() {
               {...register("school_name")}
             />
           </div>
+          {/* No of Students */}
+          <div className='input-container'>
+            <label>{t("noStudents")}</label>
+            <input 
+              placeholder={t("noStudents")}
+              type='text'
+              {...register("student")}
+              disabled
+            />
+          </div>
+          {/* Role */}
+          <div className='input-container'>
+            <label>{t("role")}</label>
+            <input 
+              placeholder={t("role")}
+              type='text'
+              {...register("role")}
+              disabled
+            />
+          </div>
           {/* First and last Name */}
           <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
             <div className='input-container'>
               <label>{t("first")}</label>
-              <input 
+              <input
               disabled={disabled}
               {...register("first_name",{required:"First Name Is Required"})}
               placeholder='Enter First Name'
@@ -162,6 +183,7 @@ export default function ProfileSection() {
           </div>
         </form>
       </section>
+      <SubDetailsSection subs={data?.data?.data?.subscription}/>
       </ErrorBoundary>
     </div>
   )

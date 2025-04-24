@@ -3,12 +3,14 @@ import FormMediaComponent from '@/components/FormMedia';
 import useDeleteCommunityPostMedia from '@/tanstack-query/School/Community/useDeleteMedia';
 import useShowCommunityPost from '@/tanstack-query/School/Community/useShow';
 import useUpdateCommunityPost from '@/tanstack-query/School/Community/useUpdate';
+import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 export default function EditPostSection({id}) {
+    const t = useTranslations("dashboard.school.community.edit");
     const [image,setImage] = useState(null);
     const router = useRouter();
     const {register,setValue,handleSubmit,formState:{errors},reset} = useForm();
@@ -48,12 +50,12 @@ export default function EditPostSection({id}) {
   return (
       <section>
           <div className='flex flex-col gap-4 p-4'>
-              <h1 className='text-2xl font-bold'>Edit Community Post</h1>
+              <h1 className='text-2xl font-bold'>{t("header")}</h1>
               <form action="" className='flex flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
                   <div className='input-container'>
                       <input 
                       type="text" 
-                      placeholder='Title*' 
+                      placeholder={t("titlePlaceholder")}
                       {...register("title",{required:"Title is required"})}
                       />
                   </div>
@@ -61,7 +63,7 @@ export default function EditPostSection({id}) {
                       <textarea 
                       {...register("description",{required:"Description is required"})}
                       rows="10" 
-                      placeholder='Description*'
+                      placeholder={t("descriptionPlaceholder")}
                       />
                   </div>
                   <FormMediaComponent
@@ -71,13 +73,13 @@ export default function EditPostSection({id}) {
                   image={image}
                   setImage={setImage}
                   errors={errors}
-                  title={"Post Image"}
-                  placeholder={"+ Post Image"}
+                  title={t("postImage")}
+                  placeholder={`+ ${t("postImage")}`}
                   isDeleteable={true}
                   handleDelete={handleDeleteMedia}
                   />
                   <div className='flex items-center justify-end gap-4'>
-                      <button type="submit" className='btn btn-primary'>Submit</button>
+                      <button type="submit" className='btn btn-primary'>{t("edit")}</button>
                   </div>
                   
               </form>

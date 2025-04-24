@@ -9,13 +9,14 @@ import { useParams, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import FormMediaComponent from '@/components/FormMedia';
 import useStoreStudent from '@/tanstack-query/School/Students/useStore';
+import BackSection from '@/components/BackSection';
 
 
 export default function AddStudent() {
     const {classId} = useParams();
     const [image,setImage] = useState(null);
     const router = useRouter();
-    /* const t = useTranslations("dashboard.school.classes"); */
+    const t = useTranslations("dashboard.school.students.add");
     const {register,handleSubmit,formState: { errors },setValue} = useForm({defaultValues:{level_id:""}});
     
     const onSuccess = (data)=>{
@@ -33,13 +34,10 @@ export default function AddStudent() {
   
   return (
     <div className='flex flex-col gap-6'>
-        <section className='flex gap-1 items-center'>
-        <FaAngleLeft />
-        <Link className='text-primaryDarkest' href={"/dashboard/school/teachers"}>Back</Link>
-        </section>
+        <BackSection />
         <ParentSection>
             <div>
-                <h3 className='text-2xl font-bold'>Create Student</h3>
+                <h3 className='text-2xl font-bold'>{t("header")}</h3>
             </div>
             <div>
             <form
@@ -49,12 +47,12 @@ export default function AddStudent() {
                 {/* Name */}
                 <div>
                 <label className="block text-gray-700 font-semibold mb-1">
-                    Student Name
+                {t("name")}
                 </label>
                 <input
                     type="text"
                     {...register("name", { required: "Student Name is required" })}
-                    placeholder="Enter Student Name"
+                    placeholder={t("namePlaceholder")}
                     className="w-full px-3 py-2 border border-gray-300 rounded"
                 />
                 {errors.name && (
@@ -64,8 +62,8 @@ export default function AddStudent() {
                 
                 {/* Media */}
                 <FormMediaComponent 
-                title={"media"}
-                placeholder={"+ Click To Upload Image"}
+                title={t("media")}
+                placeholder={t("mediaPlaceholder")}
                 formTitle={"media"}
                 register={register}
                 setValue={setValue}
@@ -79,13 +77,13 @@ export default function AddStudent() {
                     type="reset"
                     className="btn btn-secondary"
                     >
-                    Reset
+                    {t("resetBtn")}
                     </button>
                     <button
                     type="submit"
                     className="btn btn-primary"
                     >
-                    Add Student
+                    {t("addBtn")}
                     </button>
                 </div>
         </form>

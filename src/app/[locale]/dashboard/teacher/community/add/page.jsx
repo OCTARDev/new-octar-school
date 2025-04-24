@@ -5,7 +5,7 @@ import AddPostSection from '../_sections/AddPost'
 export default function AddCommunityPost() {
   return (
     <div>
-        <BackSection  title="Back To Community"/>
+        <BackSection />
         <AddPostSection />
     </div>
   )

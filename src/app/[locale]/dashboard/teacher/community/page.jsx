@@ -6,8 +6,10 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import AddComponent from './_components/AddComponent';
 import useIndexTeacherCommunity from '@/tanstack-query/Teacher/Community/useIndex';
 import useDeleteTeacherCommunityPost from '@/tanstack-query/Teacher/Community/useDelete';
+import { useTranslations } from 'next-intl';
 
 export default function CommunityFeed(){
+    const t = useTranslations("dashboard.teacher.community");
     const {
         data,
         fetchNextPage,
@@ -66,7 +68,7 @@ export default function CommunityFeed(){
         {isFetchingNextPage && 
             <div className="text-center">
                 <Spinner />
-                <span>Loading more...</span>
+                <span>{t("loading")}</span>
             </div>
         }
     </div>

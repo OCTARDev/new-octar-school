@@ -9,8 +9,10 @@ import Image from 'next/image';
 import { expandSidebar, logOut } from '@/redux/slices/user.slice';
 import { useRouter } from 'next/navigation';
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 export default function Header() {
+  const t = useTranslations("dashboard.header");
   const dispatch = useDispatch();
   const pathname = usePathname();
   const router = useRouter();
@@ -37,17 +39,17 @@ export default function Header() {
           </button>
         </div>
         {/* Middle */}
-        <div className="font-bold text-lg">OCTAR Education</div>
+        <div className="font-bold text-lg">{t("title")}</div>
         {/* Right */}
         <div className='hidden md:flex gap-1 sm:gap-3 items-center justify-between capitalize py-2 '>  
           <LanguageSwitcher /> 
           {user? 
           <button className='btn btn-primary' onClick={handleLogOut}>
-          Logout
+          {t("logout")}
           </button>
         :
           <Link href={"/login"} className={`nav-link btn btn-primary ${pathname.includes("/home")?" active":""}`}>
-          login
+          {t("login")}
           </Link>
         }
         </div>

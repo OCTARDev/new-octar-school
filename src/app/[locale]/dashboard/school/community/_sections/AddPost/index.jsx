@@ -1,12 +1,14 @@
 "use client";
 import FormMediaComponent from '@/components/FormMedia';
 import useStoreCommunityPost from '@/tanstack-query/School/Community/useStore';
+import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 export default function AddPostSection() {
+    const t = useTranslations("dashboard.school.community.add");
     const [image,setImage] = useState(null);
     const {register,handleSubmit,formState:{errors},setValue} = useForm({});
     const router = useRouter();
@@ -26,12 +28,12 @@ export default function AddPostSection() {
   return (
     <section>
         <div className='flex flex-col gap-4 p-4'>
-            <h1 className='text-2xl font-bold'>Add Community Post</h1>
+            <h1 className='text-2xl font-bold'>{t("header")}</h1>
             <form action="" className='flex flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
                 <div className='input-container'>
                     <input 
                     type="text" 
-                    placeholder='Title*' 
+                    placeholder={t("titlePlaceholder")} 
                     {...register("title",{required:"Title is required"})}
                     />
                 </div>
@@ -39,7 +41,7 @@ export default function AddPostSection() {
                     <textarea 
                     {...register("description",{required:"Description is required"})}
                     rows="10" 
-                    placeholder='Description*'
+                    placeholder={t("descriptionPlaceholder")}
                     />
                 </div>
                 <FormMediaComponent 
@@ -49,11 +51,11 @@ export default function AddPostSection() {
                 image={image}
                 setImage={setImage}
                 errors={errors}
-                title={"Post Image"}
-                placeholder={"+ Post Image"}
+                title={t("postImage")}
+                placeholder={`+ ${t("postImage")}`}
                 />
                 <div className='flex items-center justify-end gap-4'>
-                    <button type="submit" className='btn btn-primary'>Submit</button>
+                    <button type="submit" className='btn btn-primary'>{t("submit")}</button>
                 </div>
                 
             </form>

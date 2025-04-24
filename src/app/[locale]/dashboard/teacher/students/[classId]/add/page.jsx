@@ -8,10 +8,12 @@ import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import FormMediaComponent from '@/components/FormMedia';
-import useStoreStudent from '@/tanstack-query/School/Students/useStore';
+import useStoreTeacherStudent from '@/tanstack-query/Teacher/Students/useStore';
+import BackSection from '@/components/BackSection';
 
 
 export default function AddStudent() {
+    const t = useTranslations("dashboard.teacher.students.add");
     const {classId} = useParams();
     const [image,setImage] = useState(null);
     const router = useRouter();
@@ -20,26 +22,23 @@ export default function AddStudent() {
     
     const onSuccess = (data)=>{
         toast.success("Student added successfully");
-        router.push("/dashboard/school/students/"+classId);
+        router.push("/dashboard/teacher/students/"+classId);
     };
     const onError = (error)=>{
         console.log(error);
         toast.error(error?.response?.data?.message || "Failed to add Student");
     };
-    const addStudent = useStoreStudent({onSuccess,onError});
+    const addStudent = useStoreTeacherStudent({onSuccess,onError});
     const onSubmit = (data) => {
         addStudent.mutate({class_id:classId,...data});
     };
   
   return (
     <div className='flex flex-col gap-6'>
-        <section className='flex gap-1 items-center'>
-        <FaAngleLeft />
-        <Link className='text-primaryDarkest' href={"/dashboard/school/teachers"}>Back</Link>
-        </section>
+        <BackSection />
         <ParentSection>
             <div>
-                <h3 className='text-2xl font-bold'>Create Student</h3>
+                <h3 className='text-2xl font-bold'>{t("header")}</h3>
             </div>
             <div>
             <form
@@ -49,12 +48,12 @@ export default function AddStudent() {
                 {/* Name */}
                 <div>
                 <label className="block text-gray-700 font-semibold mb-1">
-                    Student Name
+                    {t("name")}
                 </label>
                 <input
                     type="text"
                     {...register("name", { required: "Student Name is required" })}
-                    placeholder="Enter Student Name"
+                    placeholder={t("namePlaceholder")}
                     className="w-full px-3 py-2 border border-gray-300 rounded"
                 />
                 {errors.name && (
@@ -64,8 +63,8 @@ export default function AddStudent() {
                 
                 {/* Media */}
                 <FormMediaComponent 
-                title={"media"}
-                placeholder={"+ Click To Upload Image"}
+                title={t("media")}
+                placeholder={t("mediaPlaceholder")}
                 formTitle={"media"}
                 register={register}
                 setValue={setValue}
@@ -79,13 +78,13 @@ export default function AddStudent() {
                     type="reset"
                     className="btn btn-secondary"
                     >
-                    Reset
+                    {t("resetBtn")}
                     </button>
                     <button
                     type="submit"
                     className="btn btn-primary"
                     >
-                    Add Student
+                    {t("addBtn")}
                     </button>
                 </div>
         </form>

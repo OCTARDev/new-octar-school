@@ -16,9 +16,11 @@ import useDeleteStudent from '@/tanstack-query/School/Students/useDelete';
 import useRestoreStudent from '@/tanstack-query/School/Students/useRestore';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 
 export default function StudentsTableSection({id}) {
+    const t = useTranslations("dashboard.school.students.studentTable");
     const [page,setPage] = useState(1);
     const [search ,setSearch] = useState("");
     const [isExpanded, setIsExpanded] = useState(false);
@@ -74,7 +76,10 @@ export default function StudentsTableSection({id}) {
             id={selectedId}
         />
         <div>
-            <SearchBar setSearch={setSearch}/>
+            <SearchBar 
+            setSearch={setSearch}
+            placeholder={t("searchPlaceholder")}
+            />
         </div>
         {/* table */}
         <ErrorBoundary isLoading={isLoading} isError={isError} error={error} isSuccess={isSuccess}>
@@ -84,13 +89,13 @@ export default function StudentsTableSection({id}) {
                 <ResponsiveTable >
                 <thead>
               <tr className='text-sm text-[#424242]'>
-                <th className="px-4 py-2 text-start">ID</th>
-                <th className="px-4 py-2 text-start">Student Name</th>
-                <th className="px-4 py-2 text-start">Code</th>
-                <th className="px-4 py-2 text-start">Status</th>
-                <th className="px-4 py-2 text-start">Notes</th>
+                <th className="px-4 py-2 text-start">{t("id")}</th>
+                <th className="px-4 py-2 text-start">{t("name")}</th>
+                <th className="px-4 py-2 text-start">{t("code")}</th>
+                <th className="px-4 py-2 text-start">{t("status")}</th>
+                <th className="px-4 py-2 text-start">{t("notes")}</th>
 
-                <th className="px-4 py-2 text-start">Actions</th>
+                <th className="px-4 py-2 text-start">{t("actions")}</th>
               </tr>
             </thead>
             <tbody>

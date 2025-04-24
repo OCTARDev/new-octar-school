@@ -13,6 +13,16 @@
         "support": "الدعم",
         "news": "الأخبار"
     },
+    "components":{
+        "backSection":{
+            "back":"العودة"
+        },
+        "postCard":{
+            "learnMore":"تعرف علي المزيد",
+            "edit":"تعديل",
+            "delete":"حذف"
+        }
+    },
     "home":{
         "hero": {
             "welcome": "مرحبًا بك فى",
@@ -190,7 +200,21 @@
         }
     },
     "dashboard":{
+        "header":{
+            "title": "اوكتار التعليمية",
+            "logout":"تسجيل الخروج",
+            "login":"تسجيل الدخول"
+        },
         "school":{
+            "sidebar":{
+                "home": "الرئيسية",
+                "teachers": "المعلمين",
+                "subjects": "المواد الدراسية",
+                "classes": "الفصول",
+                "schoolProfile": "ملف المدرسة",
+                "subscriptionDetails": "تفاصيل الاشتراك",
+                "community": "المجتمع"
+            },
             "profile":{
                 "header": "إدارة الملف الشخصي",
                 "editButton": "تعديل الملف الشخصي",
@@ -211,7 +235,333 @@
                 "placeholderOldPassword":"ادخل الباسورد الحالية",
                 "placeholderNewPassword":"ادخل الباسورد الجديد",
                 "placeholderCPassword":"اكد الباسورد",
-                "logoButton":"تعديل اللوجو"
+                "logoButton":"تعديل اللوجو",
+                "noStudents":"عدد الطلاب",
+                "role":"الدور",
+                "subs": {
+                    "header":"تفاصيل الاشتراك",
+                    "title": "العنوان",
+                    "status": "الحالة",
+                    "price": "السعر",
+                    "period": "المدة",
+                    "type": "نوع الخطة",
+                    "num_seats": "عدد المقاعد",
+                    "renew": "تاريخ تجديد الاشتراك"
+                }
+            },
+            "home":{
+                "hero": {
+                    "header": "مرحبًا بكم في اوكتار",
+                    "teachers": "إجمالي المعلمين",
+                    "students": "إجمالي الطلاب",
+                    "classes": "الفصول النشطة"
+                },
+                "sub": {
+                    "header": "خطة الاشتراك الحالية",
+                    "h1": "الخطة الفردية",
+                    "active": "نشط",
+                    "inacitve": "غير نشط",
+                    "pause":"متوقف",
+                    "seat": "خطة المقاعد",
+                    "renewSubs": "تاريخ تجديد الاشتراك",
+                    "terms": "تطبق الشروط",
+                    "upgrade": "ترقية"
+                },
+                "classes":{
+                    "activeClasses": "الفصول النشطة",
+                    "viewAll": "عرض الكل",
+                    "id": "المعرف",
+                    "className": "اسم الفصل",
+                    "level": "المستوى",
+                    "teachersCount": "عدد المعلمين",
+                    "studentsCount": "عدد الطلاب",
+                    "actions": "الإجراءات",
+                    "teachers": "معلمين",
+                    "students": "طلاب",
+                    "edit": "تعديل",
+                    "delete": "حذف"
+                }
+            },
+            "teachers":{
+                "header":"المعلمين",
+                "addTeacher":"إضافة معلم",
+                "searchPlaceholder":"بحث عن معلم بالاسم",
+                "table":{
+                    "id": "معرف",
+                    "name": "الاسم",
+                    "class": "الفصل",
+                    "emailAddress": "عنوان البريد الإلكتروني",
+                    "actions": "الإجراءات",
+                    "catalog": "كتالوج",
+                    "classes": "الفصول",
+                    "show": "عرض",
+                    "edit": "تعديل",
+                    "delete": "حذف",
+                    "restore": "استعادة"
+                },
+                "show":{
+                    "id": "معرف",
+                    "name": "الاسم",
+                    "email": "البريد الإلكتروني",
+                    "status": "الحالة",
+                    "classesCount": "عدد الفصول"
+                },
+                "showTable":{
+                    "classId": "معرف الفصل",
+                    "className": "اسم الفصل",
+                    "totalStudents": "إجمالي الطلاب",
+                    "students": "الطلاب"
+                },
+                "add":{
+                    "back": "رجوع",
+                    "title": "إضافة معلم",
+                    "nameLabel": "اسم المعلم",
+                    "namePlaceholder": "أدخل اسم المعلم",
+                    "nameRequired": "اسم المعلم مطلوب",
+                    "emailLabel": "البريد الإلكتروني للمعلم",
+                    "emailPlaceholder": "أدخل البريد الإلكتروني للمعلم",
+                    "emailRequired": "البريد الإلكتروني للمعلم مطلوب",
+                    "passwordLabel": "كلمة مرور المعلم",
+                    "passwordPlaceholder": "أدخل كلمة مرور المعلم",
+                    "passwordRequired": "كلمة مرور المعلم مطلوبة",
+                    "mediaLabel": "الوسائط",
+                    "mediaPlaceholder": "+ انقر لتحميل الصورة",
+                    "assignClassLabel": "تعيين الفصل",
+                    "assignClassPlaceholder": "تعيين الفصول",
+                    "resetButton": "إعادة تعيين",
+                    "submitButton": "إضافة معلم",
+                    "successMessage": "تمت إضافة المعلم بنجاح",
+                    "errorMessage": "فشل في إضافة المعلم"
+                },
+                "edit":{
+                    "title": "تعديل المعلم",
+                    "nameLabel": "اسم المعلم",
+                    "namePlaceholder": "أدخل اسم المعلم",
+                    "nameRequired": "اسم المعلم مطلوب",
+                    "emailLabel": "البريد الإلكتروني للمعلم",
+                    "emailPlaceholder": "أدخل البريد الإلكتروني للمعلم",
+                    "emailRequired": "البريد الإلكتروني للمعلم مطلوب",
+                    "assignClassLabel": "تعيين الفصل",
+                    "assignClassPlaceholder": "تعيين الفصول",
+                    "mediaLabel": "الوسائط",
+                    "mediaPlaceholder": "+ انقر لتحميل الصورة",
+                    "submitButton": "تعديل المعلم",
+                    "successMessage": "تم تعديل المعلم بنجاح",
+                    "errorMessage": "فشل في تعديل المعلم"
+                  }
+            },
+            "subjects":{
+                "header":"المواد",
+                "searchPlaceholder":"البحث بالاسم",
+                "grades":"الدرجات",
+                "categories":{
+                    "availableCategories": "الفئات المتاحة"
+                  },
+                "targets":{
+                    "availableTargets":" الفئات المستهدفة المتاحة"
+                }
+            },
+            "subs":{
+                "header":"تفاصيل الاشتراك",
+                "table": {
+                    "header": "سجل الدفع",
+                    "id": "المعرف",
+                    "title": "العنوان",
+                    "subPlan": "خطة الاشتراك",
+                    "type": "نوع الخطة",
+                    "duration": "المدة",
+                    "cost": "التكلفة",
+                    "status": "الحالة"
+                }
+            },
+            "community":{
+                "loading":"جار التحميل",
+                "add":{
+                    "header": "إضافة منشور مجتمعي",
+                    "titlePlaceholder": "العنوان",
+                    "descriptionPlaceholder": "الوصف",
+                    "postImage": "صورة المنشور",
+                    "submit":"ارسال"
+                },
+                "edit":{
+                    "header": "تعديل منشور مجتمعي",
+                    "titlePlaceholder": "العنوان",
+                    "descriptionPlaceholder": "الوصف",
+                    "postImage": "صورة المنشور",
+                    "edit":"تعديل"
+                }
+            },
+            "classes": {
+                "header": "الفصول",
+                "addBtn":"إضافة فصل",
+                "classTable": {
+                    "searchPlaceholder": "ابحث عن فصل",
+                    "id": "المعرف",
+                    "name": "اسم الفصل",
+                    "status": "الحالة",
+                    "students": "إجمالي الطلاب",
+                    "level": "المستوى",
+                    "actions": "الإجراءات"
+                },
+                "add": {
+                    "header": "إنشاء فصل",
+                    "name": "اسم الفصل",
+                    "namePlaceholder": "أدخل اسم الفصل",
+                    "assignLevelLabel": "تعيين المستوى",
+                    "assignLevelPlaceholder": "تعيين المستويات",
+                    "mediaLabel": "وسائط",
+                    "mediaPlaceholder": "+ انقر لتحميل صورة",
+                    "addBtn": "إضافة فصل",
+                    "resetBtn": "إعادة تعيين"
+                },
+                "edit":{
+                    "header": "تعديل فصل",
+                    "name": "اسم الفصل",
+                    "namePlaceholder": "أدخل اسم الفصل",
+                    "assignLevelLabel": "تعيين المستوى",
+                    "assignLevelPlaceholder": "تعيين المستويات",
+                    "mediaLabel": "وسائط",
+                    "mediaPlaceholder": "+ انقر لتحميل صورة",
+                    "addBtn": "تعديل فصل",
+                    "resetBtn": "إعادة تعيين"
+                }
+            },
+            "students": {
+                "header": "الطلاب",
+                "addStudent": "إضافة طالب",
+                "studentTable": {
+                    "searchPlaceholder": "البحث بالاسم أو البريد الإلكتروني",
+                    "id": "المعرف",
+                    "name": "اسم الطالب",
+                    "code": "الكود",
+                    "status": "الحالة",
+                    "notes": "ملاحظات",
+                    "actions": "الإجراءات"
+                },
+                "add": {
+                    "header": "إنشاء طالب",
+                    "name": "اسم الطالب",
+                    "namePlaceholder": "أدخل اسم الطالب",
+                    "media": "وسائط",
+                    "mediaPlaceholder": "+ انقر لتحميل صورة",
+                    "addBtn":"اضافة طالب",
+                    "resetBtn":"إعادة تعيين"
+                },
+                "edit":{
+                    "header": "تعديل طالب",
+                    "name": "اسم الطالب",
+                    "namePlaceholder": "أدخل اسم الطالب",
+                    "media": "وسائط",
+                    "mediaPlaceholder": "+ انقر لتحميل صورة",
+                    "addBtn":"تعديل طالب",
+                    "resetBtn":"إعادة تعيين"
+                },
+                "notes":{
+                    "header":"اظهر التعليقات"
+                }
+            }
+        },
+        "teacher":{
+            "sidebar":{
+                "home": "الرئيسية",
+                "subjects": "المواد الدراسية",
+                "classes": "الفصول",
+                "teacherProfile": "ملف المدرس",
+                "community": "المجتمع"
+            },
+            "home":{
+                "hero": {
+                    "header": "مرحبًا بكم في اوكتار",
+                    "curriculum": "إجمالي المناهج",
+                    "students": "إجمالي الطلاب",
+                    "classes": "الفصول النشطة"
+                },
+                "classes":{
+                    "latest": "اخر اعمال الطلاب",
+                    "viewAll": "عرض الكل",
+                    "id": "المعرف",
+                    "className": "اسم الفصل",
+                    "level": "المستوى",
+                    "teachersCount": "عدد المعلمين",
+                    "studentsCount": "عدد الطلاب",
+                    "teachers":"مدرسين",
+                    "students":"طلاب"
+                }
+            },
+            "subjects":{
+                "header":"المواد",
+                "searchPlaceholder":"البحث بالاسم",
+                "grades":"الدرجات",
+                "categories":{
+                    "availableCategories": "الفئات المتاحة"
+                  },
+                "targets":{
+                    "availableTargets":" الفئات المستهدفة المتاحة"
+                }
+            },
+            "classes": {
+                "header": "الفصول",
+                "addBtn":"إضافة فصل",
+                "classTable": {
+                    "searchPlaceholder": "ابحث عن فصل",
+                    "allLevels":"جميع المستويات",
+                    "id": "المعرف",
+                    "name": "اسم الفصل",
+                    "students": "إجمالي الطلاب",
+                    "actions": "الإجراءات"
+                }
+            },
+            "students": {
+                "header": "الطلاب",
+                "addStudent": "إضافة طالب",
+                "studentTable": {
+                    "searchPlaceholder": "البحث بالاسم أو البريد الإلكتروني",
+                    "id": "المعرف",
+                    "name": "اسم الطالب",
+                    "code": "الكود",
+                    "status": "الحالة",
+                    "notes": "ملاحظات",
+                    "actions": "الإجراءات"
+                },
+                "add": {
+                    "header": "إنشاء طالب",
+                    "name": "اسم الطالب",
+                    "namePlaceholder": "أدخل اسم الطالب",
+                    "media": "وسائط",
+                    "mediaPlaceholder": "+ انقر لتحميل صورة",
+                    "addBtn":"اضافة طالب",
+                    "resetBtn":"إعادة تعيين"
+                },
+                "edit":{
+                    "header": "تعديل طالب",
+                    "name": "اسم الطالب",
+                    "namePlaceholder": "أدخل اسم الطالب",
+                    "media": "وسائط",
+                    "mediaPlaceholder": "+ انقر لتحميل صورة",
+                    "addBtn":"تعديل طالب",
+                    "resetBtn":"إعادة تعيين"
+                },
+                "notes":{
+                    "header":"اضف التعليقات",
+                    "btn":"اضف التعليق"
+                }
+            },
+            "community":{
+                "loading":"جار التحميل",
+                "add":{
+                    "header": "إضافة منشور مجتمعي",
+                    "titlePlaceholder": "العنوان",
+                    "descriptionPlaceholder": "الوصف",
+                    "postImage": "صورة المنشور",
+                    "submit":"ارسال"
+                },
+                "edit":{
+                    "header": "تعديل منشور مجتمعي",
+                    "titlePlaceholder": "العنوان",
+                    "descriptionPlaceholder": "الوصف",
+                    "postImage": "صورة المنشور",
+                    "edit":"تعديل"
+                }
             }
         }
     }

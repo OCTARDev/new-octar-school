@@ -68,7 +68,7 @@ export default function Header() {
         {/* Middle */}
         <div className='items-center gap-6 hidden lg:flex'>
           <Link 
-            className={`nav-link ${pathname === ("/home")?" active":""}`} 
+            className={`nav-link ${pathname === (`/${firstLink}/home`)?" active":""}`} 
             href={`/${firstLink}/home`}
             >
               {t("home")}

@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const fetch = (id)=>{
 
-    return teacherAxiosInstance.get(`/subjects/show-curriculums/${id}`)
+    return teacherAxiosInstance.get(`/subjects/show-curriculum/${id}`)
 }
 
 const useShowTeacherCurriculum = ({id})=>{
