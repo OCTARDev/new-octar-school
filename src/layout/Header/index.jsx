@@ -36,6 +36,12 @@ export default function Header() {
       {/* top nav */}
       <div className='p-2 bg-gray-100 hidden lg:flex justify-end items-center gap-4'>
       <Link 
+        className={`nav-link ${pathname.includes("/home/events")?" active":""}`} 
+        href={`/${firstLink}/home/events`}
+        >
+          {t("events")}
+      </Link>
+      <Link 
         className={`nav-link ${pathname.includes("/home/news")?" active":""}`} 
         href={`/${firstLink}/home/news`}
         >
@@ -68,7 +74,13 @@ export default function Header() {
         {/* Middle */}
         <div className='items-center gap-6 hidden lg:flex'>
           <Link 
-            className={`nav-link ${pathname === (`/${firstLink}/home`)?" active":""}`} 
+            className={`nav-link 
+              ${
+                pathname === (`/${firstLink}/home`) ||
+                pathname === (`/${firstLink}/home/newera`) ||
+                pathname === (`/${firstLink}/home/working`)
+                ?
+                "active":""}`} 
             href={`/${firstLink}/home`}
             >
               {t("home")}

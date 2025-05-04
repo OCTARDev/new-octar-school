@@ -3,11 +3,12 @@ import testimonail1 from "@/assets/home/testi1.png";
 import testimonail2 from "@/assets/home/testi2.png";
 import Image from "next/image";
 import Link from "next/link";
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from "next-intl";
 
 
-export default async function TestimonialsSection (){
-  const t = await getTranslations("home.testimonial")
+export default function TestimonialsSection (){
+  const t = useTranslations("home.testimonial");
+  
   return (
     <section className="">
       <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto '>

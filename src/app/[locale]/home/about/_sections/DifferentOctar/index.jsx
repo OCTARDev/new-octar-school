@@ -1,10 +1,10 @@
 import React from 'react'
 import howitworks from "@/assets/home/howitworks.png";
 import Image from 'next/image';
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
-export default async function DifferentOctarSection() {
-  const t = await getTranslations("about.differentOctar");
+export default  function DifferentOctarSection() {
+  const t =  useTranslations("about.differentOctar");
   return (
     <section className='py-10 md:py-6'>
         <div className='grid grid-cols-1 md:grid-cols-5 gap-10 px-4 items-center max-w-screen-xl mx-auto'>

@@ -11,7 +11,8 @@
         "blog":"blog",
         "contact":"contact",
         "support":"support",
-        "news":"news"
+        "news":"news",
+        "events":"events"
     },
     "components":{
         "backSection":{
@@ -88,6 +89,64 @@
         },
         "testimonial":{
             "button":"share your story"
+        },
+        "working":{
+            "hero":{
+                "octar":"OCTAR",
+                "header" :"An Interactive AR Learning Platform for Schools",
+                "p":"OCTAR is an immersive, Augmented Reality (AR)--powered learning tool designed to enhance early education through interactive, 3D experiences. Tailored for kindergarten and primary school curricula, OCTAR transforms traditional lessons into engaging, hands-on learning adventures, where students interact with educational content in a dynamic and fun way."
+            },
+            "schools":{
+                "title":"By using OCTAR, schools can",
+                "h1":"Transform Traditional Curriculum",
+                "p1":"OCTAR takes core subjects like language, math, science, and social studies and turns them into AR-based experiences, making abstract concepts tangible and interactive.",
+                "h2":"Enhance Teacher Support",
+                "p2":"The app provides teachers with an intuitive dashboard to track student progress, customize lesson plans, and integrate AR content seamlessly into their classrooms.",
+                "h3":"Promote Active Learning",
+                "p3":"Students actively participate in learning by engaging with 3D objects, characters, and stories, boosting retention and making lessons more memorable.",
+                "h4":"Track Learning Progress",
+                "p4":"OCTAR’s built-in analytics allow teachers to monitor each student's development in real time, making it easier to tailor support where needed."
+            },
+            "howitworks":{
+                "p":"With OCTAR, schools can foster creativity, critical thinking, and a love of learning while streamlining lesson delivery and enhancing teaching effectiveness."
+            }
+        },
+        "newera":{
+            "hero":{
+                "header":"A New Era of Classroom Support",
+                "octar":"OCTAR",
+                "p1":"At OCTAR, we understand the challenges teachers face in the modern classroom. That's why we’ve developed an innovative AR tool that not only supplements traditional teaching methods but enhances them. OCTAR is designed to help teachers by bringing the curriculum to life in a way that’s interactive, engaging, and aligned with educational standards.",
+                "p2":"Rather than replacing textbooks or established teaching tools, OCTAR is an invaluable companion that empowers educators to connect with students in fresh, dynamic ways. It adds depth and excitement to the classroom by transforming ordinary lessons into extraordinary learning experiences.",
+                "h3":"Supporting Teachers, Not Replacing Them",
+                "p3":"OCTAR isn’t meant to replace traditional teaching methods, it’s here to support teachers by making lesson delivery more engaging and easier to manage. The interactive AR content allows teachers to simplify complex concepts and create memorable learning moments for their students. Teachers no longer have to rely solely on books, charts, or worksheets. With OCTAR, they can introduce visual, interactive elements that deepen students' understanding."
+            },
+            "forschools":{
+                "header":"Here’s how OCTAR makes a difference",
+                "h1":"Simplifying Complex Concepts",
+                "p1":"OCTAR allows teachers to transform abstract topics—such as the human body, the solar system, or even historical events—into 3D, interactive experiences that students can explore. This visual approach makes it easier for students to grasp difficult concepts.",
+                "h2":"Enhancing Student Engagement",
+                "p2":"Traditional lessons can sometimes struggle to keep students focused, especially with younger learners. By using OCTAR’s AR-based activities, teachers can keep students motivated, excited, and actively engaged in the learning process.",
+                "h3":"Fostering Active Learning",
+                "p3":"The hands-on approach of OCTAR allows students to learn through exploration and creativity. Teachers can guide students through AR activities that promote critical thinking and problem-solving, rather than simply following a lecture-based approach.",
+                "h4":"Real-Time Tracking and Customization",
+                "p4":"OCTAR offers a powerful teacher dashboard that tracks student progress in real time. Teachers can see which areas their students are excelling in, and where they might need additional support. This feature allows for customized learning—teachers can adjust activities to meet the specific needs of each student."
+            },
+            "integrates":{
+                "header":"How OCTAR Integrates into Your Classroom",
+                "body":"Rather than forcing teachers to overhaul their entire teaching structure, OCTAR integrates seamlessly into existing curricula. Teachers can use it as a supplementary tool to enhance the topics they are already teaching. Whether it’s an interactive AR activity in the middle of a math lesson, or a story-based AR experience to teach language arts, OCTAR gives teachers the flexibility to enhance their lessons in the most engaging way possible.",
+                "h1":"Timesaving",
+                "p1":"OCTAR offers ready-to-use AR content that teachers can integrate into their lessons without needing to create new materials from scratch. This saves time and allows teachers to focus on what truly matters—interacting with and supporting their students.",
+                "h2":"Creating a Collaborative Learning Environment",
+                "p2":"Teachers can use OCTAR to encourage teamwork and collaboration. Students can explore AR worlds together, solve problems as a group, and discuss their findings. This teamwork promotes communication, cooperation, and social development.",
+                "h3":"Supporting Diverse Learners",
+                "p3":"OCTAR caters to a variety of learning styles. Visual learners will benefit from the interactive 3D content, while auditory learners can enjoy listening to explanations and narrations. This helps ensure that every student is engaged in the way that works best for them."
+            },
+            "investment":{
+                "octar":"OCTAR",
+                "header":"An Investment in Effective Teaching",
+                "p1":"By providing a tool that simplifies lesson planning, boosts engagement, and promotes interactive learning, OCTAR helps teachers focus on what they do best—teach. It doesn’t replace the teacher’s role; instead, it empowers teachers to use technology to enhance their teaching style and connect with students in new, meaningful ways.",
+                "p2":"OCTAR is here to support teachers every step of the way, making their jobs easier while offering students an exciting, dynamic way to learn."
+            }
         }
     },
     "pricing":{
@@ -561,6 +620,11 @@
                 }
             }
         }
+    },
+    "news":{
+        "header":"Latest News",
+        "link":"Read More",
+        "loading":"Loading..."
     }
 
 }

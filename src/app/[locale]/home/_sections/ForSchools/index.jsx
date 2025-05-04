@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
 import workspallete from "@/assets/home/workspallete.png";
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
 
 
-export default async function ForSchoolsSection() {
-    const t = await getTranslations("home.schools");
+export default  function ForSchoolsSection() {
+    const t =  useTranslations("home.schools");
   return (
     <section className='py-6 my-10'>
         <h3 className='text-3xl font-bold text-center'>{t("header")}</h3>

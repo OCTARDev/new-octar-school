@@ -3,10 +3,10 @@ import React from 'react'
 import district from "@/assets/home/district.png";
 import institue from "@/assets/home/institue.png";
 import { LuArrowUpRight } from "react-icons/lu";
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
-export default async function CaseStudiesSection() {
-    const t = await getTranslations("home.case");
+export default  function CaseStudiesSection() {
+    const t = useTranslations("home.case");
   return (
     <section className='px-4 py-6 my-10'>
         <div className='text-center flex flex-col gap-3 items-center'>

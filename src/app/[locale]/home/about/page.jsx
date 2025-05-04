@@ -3,9 +3,8 @@ import HeroSection from './_sections/Hero'
 import UsingSchoolsSection from './_sections/UsingSchools'
 import DifferentOctarSection from './_sections/DifferentOctar'
 
-export default function page() {
+export default function About() {
 
-  
   return (
     <div>
       <HeroSection />

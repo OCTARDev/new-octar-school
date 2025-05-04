@@ -2,10 +2,10 @@ import Image from 'next/image'
 import React from 'react'
 import student from "@/assets/home/student.png";
 import { LuArrowUpRight } from "react-icons/lu";
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
-export default async function ForStudentsSection() {
-    const t = await getTranslations("home.students");
+export default  function ForStudentsSection() {
+    const t = useTranslations("home.students");
   return (
     <section className='py-6 my-10'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto mt-6'>

@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 import hero from "@/assets/home/hero.png";
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
 
-export default async function HeroSection() {
-    const t = await getTranslations("about.hero");
+export default function HeroSection() {
+    const t =  useTranslations("about.hero");
   return (
     <section className='px-4 mt-24 py-6'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto'>
