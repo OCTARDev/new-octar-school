@@ -3,6 +3,7 @@ import React from 'react'
 import student from "@/assets/home/student.png";
 import { LuArrowUpRight } from "react-icons/lu";
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 export default  function ForStudentsSection() {
     const t = useTranslations("home.students");
@@ -62,12 +63,12 @@ export default  function ForStudentsSection() {
             </div>
         </div>
         <div className=' px-4 items-center max-w-screen-xl mx-auto mt-6'>
-            <button className='btn btn-primary flex gap-1 items-center'>
+            <Link className='btn btn-primary flex gap-1 items-center w-fit' href={"home/newera"}>
                 <span>{t("button")}</span>
                 <span>
                     <LuArrowUpRight size={24}/>
                 </span>
-            </button>
+            </Link>
         </div>
     </section>
   )

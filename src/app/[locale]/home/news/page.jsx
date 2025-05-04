@@ -63,8 +63,8 @@ export default function News(){
               <div key={post.id} className='border rounded-lg w-full flex items-center overflow-hidden capitalize'>
                 <div className='w-2/6 h-full min-h-48'>
                   <img 
-                  src={post.media}
-                  alt={post.title}
+                  src={post?.media}
+                  alt={post?.title}
                   className='object-cover w-full h-full'
                   />
                 </div>
@@ -72,11 +72,11 @@ export default function News(){
                   {/* Date */}
                   <div className='flex gap-2 items-center text-sm font-semibold'>
                     <span><FaCalendarAlt className='text-primaryA1'/></span>
-                    <span className='text-[#414141]'>{post.updated_at}</span>
+                    <span className='text-[#414141]'>{post?.updated_at}</span>
                   </div>
                   {/* Title */}
-                  <h3 className='text-lg font-bold'>{post.title}</h3>
-                  <p>{post.sub_title}</p>
+                  <h3 className='text-lg font-bold'>{post?.title}</h3>
+                  <p>{post?.sub_title}</p>
                   <Link 
                   className='text-primaryA1 font-semibold mt-auto ms-auto flex gap-2 items-center' 
                   href={`news/single/${post.id}`}

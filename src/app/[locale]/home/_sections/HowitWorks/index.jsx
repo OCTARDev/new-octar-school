@@ -2,6 +2,7 @@ import React from 'react'
 import howitworks from "@/assets/home/howitworks.png";
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 
 export default function HowItWorksSection() {
@@ -24,9 +25,9 @@ export default function HowItWorksSection() {
                     {t("body")}
                 </p>
                 <div>
-                    <button className='btn btn-primary'>
+                    <Link className='btn btn-primary w-fit' href={"home/working"}>
                         {t("button")}
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
