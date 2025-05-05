@@ -39,7 +39,7 @@ export default function SingleEventComponent({id}) {
                     <span>{news?.event_date}</span>
                 </div>
                 {
-                    news.attend && 
+                    news?.attended && 
                 <div className='flex items-center gap-1'>
                     <MdOutlineMessage  className='text-primaryA1'/>
                     <span>{news?.attended} {t("attend")}</span>

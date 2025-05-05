@@ -26,7 +26,7 @@ export default function EventCard({card}) {
                     <span>{card?.event_date}</span>
                 </div>
                 {
-                    card.attend && 
+                    card?.attended && 
                 <div className='flex items-center gap-1'>
                     <MdOutlineMessage  className='text-primaryA1'/>
                     <span>{card?.attended} {t("attend")}</span>
