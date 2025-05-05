@@ -25,10 +25,14 @@ export default function EventCard({card}) {
                     <FaCalendarAlt  className='text-primaryA1'/>
                     <span>{card?.event_date}</span>
                 </div>
+                {
+                    card.attend && 
                 <div className='flex items-center gap-1'>
                     <MdOutlineMessage  className='text-primaryA1'/>
                     <span>{card?.attended} {t("attend")}</span>
                 </div>
+
+                }
 
             </div>
             <div>

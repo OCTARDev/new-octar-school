@@ -1,8 +1,10 @@
 "use client";
 import ErrorBoundary from '@/components/ErrorBoundary';
 import useShowEvent from '@/tanstack-query/Home/Events/useShow';
+import { useTranslations } from 'next-intl';
 import React from 'react'
 import { FaCalendarAlt } from 'react-icons/fa';
+import { MdOutlineMessage } from 'react-icons/md';
 import Gallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 
@@ -10,6 +12,7 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 export default function SingleEventComponent({id}) {
     const {data,isLoading,isError,isSuccess,error} = useShowEvent({id});
     const news = data?.data?.data;
+        const t = useTranslations("events");
     // Map the image links to the format expected by react-image-gallery
     const images = news?.media?.map(link => ({
         original: link,
@@ -30,9 +33,21 @@ export default function SingleEventComponent({id}) {
             slideInterval={4000}
             slideHeight={400}
             />
-            <div className='flex items-center gap-1 mt-4'>
-                <FaCalendarAlt className='text-primaryA1'/>
-                <span>{news?.event_date}</span>
+            <div className='flex items-center gap-4'>
+                <div className='flex items-center gap-1'>
+                    <FaCalendarAlt  className='text-primaryA1'/>
+                    <span>{news?.event_date}</span>
+                </div>
+                {
+                    news.attend && 
+                <div className='flex items-center gap-1'>
+                    <MdOutlineMessage  className='text-primaryA1'/>
+                    <span>{news?.attended} {t("attend")}</span>
+                </div>
+
+                }
+                
+
             </div>
             </div>
             {/* Body */}
