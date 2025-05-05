@@ -630,7 +630,8 @@
         "upcoming":"upcoming events",
         "seeall":"see all",
         "past":"past events",
-        "read":"read more"
+        "read":"read more",
+        "attend":"attend"
     }
 
 }

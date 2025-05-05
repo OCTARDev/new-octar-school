@@ -17,9 +17,6 @@ export default function Events() {
         <div className='max-w-screen-xl mx-auto px-4'>
             <div className='flex items-center justify-between my-10'>
                 <h1 className='font-bold text-2xl'>{t("upcoming")}</h1>
-                <Link href={"events/all"} className='font-bold underline hover:text-gray-600'>
-                {t("seeall")}
-                </Link>
             </div>
             
             <ErrorBoundary isLoading={isLoading} isError={isError} isSuccess={isSuccess} error={error}>
@@ -34,9 +31,6 @@ export default function Events() {
             </section>
             <div className='flex items-center justify-between my-10'>
                 <h1 className='font-bold text-2xl'>{t("past")}</h1>
-                <Link href={"events/all"} className='font-bold underline hover:text-gray-600'>
-                {t("seeall")}
-                </Link>
             </div>
             <section className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                 {
