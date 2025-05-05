@@ -625,6 +625,12 @@
         "header":"Latest News",
         "link":"Read More",
         "loading":"Loading..."
+    },
+    "events":{
+        "upcoming":"upcoming events",
+        "seeall":"see all",
+        "past":"past events",
+        "read":"read more"
     }
 
 }

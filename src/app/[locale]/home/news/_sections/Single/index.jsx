@@ -27,9 +27,13 @@ export default function SingleNewsSection({id}) {
             lazyLoad={true}
             showFullscreenButton={false}
             autoPlay={true}
-            slideInterval={5000}
+            slideInterval={4000}
             slideHeight={400}
             />
+            <div className='flex items-center gap-1 mt-4'>
+                <FaCalendarAlt className='text-primaryA1'/>
+                <span>{news?.updated_at}</span>
+            </div>
             </div>
             {/* Body */}
             <div className='mt-8 flex flex-col gap-4'>
