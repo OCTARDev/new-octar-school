@@ -10,6 +10,8 @@ export default function School() {
   const {data,isError,isLoading,isSuccess,error} = useFetchTeacherDashboard({page});
   const dashboard = data?.data?.data;
   
+  console.log("data",data);
+  
   return (
     <div className='flex flex-col gap-6'>
       <ErrorBoundary isLoading={isLoading} isError={isError} error={error} isSuccess={isSuccess}>

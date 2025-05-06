@@ -54,7 +54,8 @@ export default function SingleEventComponent({id}) {
             <div className='mt-8 flex flex-col gap-4'>
                 <h1 className='text-3xl font-bold'>{news?.title}</h1>
                 <h2 className=''>{news?.sub_title}</h2>
-                <p className='text-[#171717] font-semibold'>{news?.description}</p>
+                <p dangerouslySetInnerHTML={{ __html: news?.description }} />
+                {/* <p className='text-[#171717] font-semibold'>{news?.description}</p> */}
             </div>
         </div>
         </ErrorBoundary>
