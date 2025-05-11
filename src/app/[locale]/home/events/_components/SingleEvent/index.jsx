@@ -46,8 +46,6 @@ export default function SingleEventComponent({id}) {
                 </div>
 
                 }
-                
-
             </div>
             </div>
             {/* Body */}
