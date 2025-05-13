@@ -18,8 +18,10 @@ export default function Sidebar({isOpen,toggleMenu}) {
     const t = useTranslations("header");
     const dispatch = useDispatch();
     const router = useRouter();
-    const user = useSelector(state=>state.user.user);
     const pathname = usePathname();
+    const user = useSelector(state=>state.user.user);
+    const lastPathName = pathname.split("/");
+    const firstLink = lastPathName[1];
 
 
     const handleLogOut = ()=>{
@@ -38,23 +40,23 @@ export default function Sidebar({isOpen,toggleMenu}) {
         </div>
         <hr className='border-2'/>
         <div className='flex flex-col gap-1 px-2'>
-            <Link className='nav-link' href={"/home"}>
+            <Link className='nav-link' href={`/${firstLink}/home`}>
             {t("home")}
             </Link>
-            <Link className='nav-link' href={"/home/about"}>
+            <Link className='nav-link' href={`/${firstLink}/home/about`}>
             {t("about")}
             </Link>
-            <Link className='nav-link' href={"/home/curriculum"}>
+            <Link className='nav-link' href={`/${firstLink}/home/curriculum`}>
             {t("curriculum")}
             </Link>
-            <Link className='nav-link' href={"/home/features"}>
+            <Link className='nav-link' href={`/${firstLink}/home/features`}>
             {t("features")}
             </Link>
 
-            <Link className='nav-link' href={"/home/pricing"}>
+            <Link className='nav-link' href={`/${firstLink}/home/pricing`}>
             {t("pricing")}
             </Link>
-            <Link className='nav-link' href={"/home/blog"}>
+            <Link className='nav-link' href={`/${firstLink}/home/blog`}>
             {t("blog")}
             </Link>
             
@@ -62,14 +64,17 @@ export default function Sidebar({isOpen,toggleMenu}) {
         </div>
         <hr className='border-2'/>
         <div className='mt-auto flex flex-col gap-2 px-2'>
-            <Link className='nav-link' href={"/home/contact"}>
+            <Link className='nav-link' href={`/${firstLink}/home/contact`}>
                 {t("contact")}
             </Link>
-            <Link className='nav-link' href={"/home/support"}>
+            <Link className='nav-link' href={`/${firstLink}/home/support`}>
                 {t("support")}
             </Link>
-            <Link className='nav-link' href={"/home/news"}>
+            <Link className='nav-link' href={`/${firstLink}/home/news`}>
                 {t("news")}
+            </Link>
+            <Link className='nav-link' href={`/${firstLink}/home/events`}>
+                {t("events")}
             </Link>
         </div>
         <hr className='border-2'/>

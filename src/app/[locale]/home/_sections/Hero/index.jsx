@@ -27,7 +27,7 @@ export default  function HeroSection() {
             </div>
             {/* right */}
             <div className='flex justify-center'>
-                <Image src={hero} className={"max-w-full"} alt={"hero image"}/>
+                <Image src={hero} className={"max-w-full w-5/6"} alt={"hero image"}/>
             </div>
         </div>
     </section>

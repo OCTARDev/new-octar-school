@@ -19,7 +19,7 @@ export default function Header() {
   const pathname = usePathname();
   const user = useSelector(state=>state.user.user);
   const lastPathName = pathname.split("/");
-  let firstLink = lastPathName[1];
+  const firstLink = lastPathName[1];
   const [isOpen, setIsOpen] = useState(false); // Mobile menu state
   const toggleMenu = () => {
     setIsOpen(!isOpen);
