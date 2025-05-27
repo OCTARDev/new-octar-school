@@ -6,6 +6,7 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import Link from 'next/link';
 import Dropdown from '@/components/Dropdown/Dropdown';
 import DropContainer from '@/components/DropContainer';
+import BackSection from '@/components/BackSection';
 
 export default function SingleFAQ({id}) {
     const [faq,setFAQ] = useState(null);
@@ -19,12 +20,7 @@ export default function SingleFAQ({id}) {
     console.log(faq)
   return (
     <div className='p-10'>
-        <section className='flex items-center px-4 py-6 gap-4'>
-            <Link href={"/home/support"} className='flex items-center gap-2 text-primaryA1 hover:text-gray-800'>
-                <span><IoArrowBack /></span>
-                <span>Back</span>
-            </Link>
-        </section>
+        <BackSection />
         <ErrorBoundary isLoading={isLoading} isError={isError} error={error} isSuccess={isSuccess}>
         <section className='capitalize'>
             <div className='max-w-screen-lg px-10 mx-auto py-10 flex flex-col gap-8'>

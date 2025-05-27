@@ -1,18 +1,21 @@
+"use client";
 import React from 'react'
 import hero from "@/assets/home/hero.png";
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export default function SupportHeroSection() {
+    const t = useTranslations("support.hero");
   return (
     <section className='px-4 mt-24 py-6'>
     <div className='grid grid-cols-1 md:grid-cols-3 gap-10 px-4 items-center max-w-screen-xl mx-auto'>
         {/* left  */}
         <div className='flex flex-col gap-2 md:col-span-2'>
             <h1 className='text-4xl font-extrabold leading-relaxed'>
-                Getting Started with OCTAR
+                {t("header")}
             </h1>
             <p>
-                Easily integrate OCTAR into your classroom with our step-by-step guide and teacher resources
+                {t("body")}
             </p>
 
         </div>

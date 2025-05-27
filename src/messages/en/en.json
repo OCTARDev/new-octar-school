@@ -632,6 +632,15 @@
         "past":"past events",
         "read":"read more",
         "attend":"attend"
+    },
+    "support":{
+        "hero":{
+            "header":"Getting Started with OCTAR",
+            "body":"Easily integrate OCTAR into your classroom with our step-by-step guide and teacher resources"
+        },
+        "help":{
+            "header":"How Can We Help You?"
+        }
     }
 
 }

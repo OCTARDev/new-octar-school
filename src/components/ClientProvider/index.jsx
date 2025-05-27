@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { usePathname } from "next/navigation";
 import Loader from "../loader";
 import { motion , AnimatePresence } from "framer-motion";
+import ScrollIndicator from "../ScrollIndicator";
 
 
 const variants = {
@@ -27,7 +28,7 @@ export default function ClientProvider({ children }) {
     
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 500); // Simulate loading time
+    }, 5000); // Simulate loading time
     
     return () => clearTimeout(timeout);
   }, [pathname]);
@@ -46,6 +47,7 @@ export default function ClientProvider({ children }) {
             exit="exit"
             transition={{ type: "tween", duration: 0.5 }}
             >
+              <ScrollIndicator />
               {children}
 
             </motion.div>

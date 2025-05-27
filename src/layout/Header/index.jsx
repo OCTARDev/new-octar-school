@@ -13,6 +13,7 @@ import Image from 'next/image';
 import { logOut } from '@/redux/slices/user.slice';
 import Dropdown from '@/components/Dropdown/Dropdown';
 import GiftMenuComponent from './components/Curicuilum';
+import { motion } from 'framer-motion';
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -30,7 +31,11 @@ export default function Header() {
   const t = useTranslations("header");
   
   return (
-    <header className='capitalize'>
+    <motion.header 
+    animate={{ opacity: 1 , x: 0}}
+    initial={{ opacity: 0 , x:"-100vw"}}
+    transition={{ duration: 1 , type:"spring" }}
+    className='capitalize'>
       <div className={`${styles.fullscreen} ${!isOpen?"hidden":""} `} onClick={toggleMenu}></div>
       <Sidebar isOpen={isOpen} toggleMenu={toggleMenu}/>
       {/* top nav */}
@@ -147,6 +152,6 @@ export default function Header() {
         </div>
       </nav>
         
-    </header>
+    </motion.header>
   )
 }
