@@ -20,7 +20,6 @@ async function RootLayout({children}) {
     }
     if (user.user.role !== "school") {
       console.log("User role is not teacher:", user.user.role);
-      
       redirect("/dashboard/teacher");
     }
   return (

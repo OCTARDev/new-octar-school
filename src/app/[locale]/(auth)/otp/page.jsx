@@ -15,7 +15,7 @@ import { logOut } from '@/redux/slices/user.slice';
 export default function Otp() {
     const router = useRouter();
     const dispatch = useDispatch();
-    const [timer, setTimer] = useState(180);
+    const [timer, setTimer] = useState(600);
     const [isClicked , setIsClicked] = useState(false);
     const [otp ,setOtp] = useState("");
 
@@ -60,7 +60,7 @@ export default function Otp() {
       /* handling resending otp */
     const resendOnSuccess = (data)=>{
     setIsClicked(true);
-    setTimer(180);
+    setTimer(600);
     toast.success(data?.data?.message || "otp has been sent to mail please check your mail")
     }
     const resendOnError = (error)=>{

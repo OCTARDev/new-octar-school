@@ -316,7 +316,7 @@
                     "header":"Current Subscription Plan",
                     "h1":"Individual Plan",
                     "active":"active",
-                    "inacitve":"inactive",
+                    "inactive":"inactive",
                     "pause":"pause",
                     "seat":"seat plan",
                     "renewSubs":"Renew Subscription Date",

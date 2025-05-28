@@ -4,7 +4,7 @@ import hero from "@/assets/home/hero.png";
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import Loader from '@/components/loader';
+import Link from 'next/link';
 
 export default  function HeroSection() {
     const t = useTranslations("home.hero");
@@ -26,10 +26,10 @@ export default  function HeroSection() {
                 <p>
                 {t("first")}<br/> {t("transforming")}
                 </p>
-                <div className=''>
-                    <button className='btn btn-primary'>
+                <div className='w-fit'>
+                    <Link className='btn btn-primary' href={`/dashboard/school`}>
                         {t("button")}
-                    </button>
+                    </Link>
                 </div>
 
             </div>

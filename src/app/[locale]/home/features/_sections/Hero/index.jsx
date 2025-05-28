@@ -2,6 +2,7 @@ import React from 'react';
 import hero from "@/assets/home/hero.png";
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
 
 export default async function HeroSection() {
   const t = await getTranslations("features.hero");
@@ -42,7 +43,9 @@ export default async function HeroSection() {
                     </div>
                 </div>
                 <div>
-                    <button className='btn btn-primary'>{t('button')}</button> {/* Dynamic button text */}
+                    <Link className='btn btn-primary' href={`dashboard`}>
+                        {t('button')}
+                    </Link> {/* Dynamic button text */}
                 </div>
             </div>
             {/* right */}

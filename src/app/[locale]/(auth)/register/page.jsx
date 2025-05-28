@@ -42,7 +42,7 @@ export default function Register() {
     // Store user in cookies
     Cookies.set("user", JSON.stringify(user), { path: "/" });
     //re route to home route
-    router.push("/home");
+    router.push("/otp");
   }
   const onError = (error)=>{
     console.log(error);

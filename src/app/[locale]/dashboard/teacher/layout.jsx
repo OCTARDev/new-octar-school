@@ -6,9 +6,9 @@ async function RootLayout({children}) {
   const cookieStore = await cookies();
   const userCookie = cookieStore.get("user");
 
-  if (!userCookie) {
+/*   if (!userCookie) {
     redirect("/login");
-  }
+  } */
   let user;
   
   try{
