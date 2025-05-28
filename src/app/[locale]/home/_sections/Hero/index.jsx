@@ -13,7 +13,7 @@ export default  function HeroSection() {
     initial={{ opacity: 0 , y:"-100vh"}}
     animate={{ opacity: 1 , y:0}}
     transition={{ duration: 1.5 , type:"spring" ,ease:"easeInOut" }}
-    className='px-4 mt-24 py-6 border-b-2 border-black'>
+    className='px-4 mt-24 py-6 '>
         {/* <Loader /> */}
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto'>
             {/* left  */}

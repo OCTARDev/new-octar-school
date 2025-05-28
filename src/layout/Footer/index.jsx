@@ -43,7 +43,7 @@ export default function Footer(){
             </div>
           </div>
           {/* under footer copy rights */}
-          <div className="mt-8 text-center text-gray-500">
+          <div className="mt-8 text-center text-white">
             <p>&copy; {new Date().getFullYear()} OCTAR SCHOOL. All rights reserved.</p>
           </div>
         </div>

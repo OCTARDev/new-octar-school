@@ -9,6 +9,7 @@ export default  function ForSchoolsSection() {
     const t =  useTranslations("home.schools");
   return (
     <section className='py-6 my-10'>
+        <h2 className='text-center text-4xl font-bold'>{t("header")}</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-center max-w-screen-xl mx-auto mt-6'>
             {/* left */}
             <div className='flex flex-col gap-4'>
