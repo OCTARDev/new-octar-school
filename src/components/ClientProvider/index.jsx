@@ -28,7 +28,7 @@ export default function ClientProvider({ children }) {
     
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 5000); // Simulate loading time
+    }, 500); // Simulate loading time
     
     return () => clearTimeout(timeout);
   }, [pathname]);
