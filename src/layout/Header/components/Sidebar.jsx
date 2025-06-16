@@ -5,12 +5,11 @@ import Link  from 'next/link';
 import { IoGiftSharp } from 'react-icons/io5';
 import { IoMdClose } from "react-icons/io";
 import { CiBellOn } from 'react-icons/ci';
-import LanguageSwitcher from '../../../components/LanguageSwitcher';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import logo from "../../../assets/logo.svg";
+import logo from "@/assets/logo.svg";
 import { useDispatch, useSelector } from 'react-redux';
-import { FaUserCircle } from 'react-icons/fa';
 import { usePathname, useRouter } from 'next/navigation';
 import { logOut } from '@/redux/slices/user.slice';
 
@@ -29,7 +28,7 @@ export default function Sidebar({isOpen,toggleMenu}) {
     router.replace("/login");
     }
   return (
-    <aside className={`${styles.sidebar}  ${isOpen?`${styles.expanded}`:""} flex flex-col gap-3`}>
+    <aside className={`${styles.sidebar}  ${isOpen?`${styles.expanded}`:""} flex flex-col gap-3 overflow-x-hidden`}>
         <div className='flex justify-center items-center gap-3 px-3 pt-3 fs-4 fw-bold '> 
             <Link className='flex gap-1 items-center text-primaryRed' href={"/"}>
                 <span><Image src={logo} className='w-18 h-18' alt='logo'/></span>
@@ -81,7 +80,7 @@ export default function Sidebar({isOpen,toggleMenu}) {
         {/* Bottom */}
         <div className=' flex flex-col pt-2  gap-2 px-2'>
             
-            <LanguageSwitcher />
+            <LanguageSwitcher isUp={true} />
             {
                 user? 
                 <button className='btn btn-primary' onClick={handleLogOut}>

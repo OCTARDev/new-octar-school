@@ -32,8 +32,8 @@ export default function Header() {
   
   return (
     <motion.header 
-    animate={{ opacity: 1 , x: 0}}
-    initial={{ opacity: 0 , x:"-100vw"}}
+    animate={{ opacity: 1 , y: 0}}
+    initial={{ opacity: 0 , y:"-100vh"}}
     transition={{ duration: 1 , type:"spring" }}
     className='capitalize'>
       <div className={`${styles.fullscreen} ${!isOpen?"hidden":""} `} onClick={toggleMenu}></div>
@@ -64,7 +64,8 @@ export default function Header() {
         >
           {t("contact")}
       </Link>
-      <LanguageSwitcher />
+      <div><LanguageSwitcher /></div>
+      
       </div>
       <nav className={`${styles.navbar} px-8 md:px-14 lg:px-20 py-2 flex justify-between max-w-full relative gap-6 border-b-2 shadow-md`}>
         {/* Left */}
@@ -97,7 +98,11 @@ export default function Header() {
               {t("about")}
           </Link>
           <Dropdown title={
-            <div className='flex mx-auto items-center gap-2 py-3 hover:text-primaryA0 nav-link'>
+            <div className={`
+              flex mx-auto items-center gap-2 py-3 hover:text-primaryA0 nav-link
+              ${pathname.includes("/home/curriculum") || pathname.includes("/home/categories") || pathname.includes("/home/targets")
+                ?" active":""}
+            `}>
               <span className='text-center '>{t("curriculum")}</span>
               <span><FaChevronDown size={14}/></span>
               </div>}

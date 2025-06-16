@@ -2,7 +2,6 @@
 import Card from '@/components/Card';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import useFetchCurriculum from '@/tanstack-query/Home/useFetchCurriculum';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import { useTranslations } from 'use-intl';

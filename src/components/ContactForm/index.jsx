@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import React from 'react'
+import React, { use } from 'react'
 import chatbot from "@/assets/contact-us/chatbot.png";
 import Input from '@/components/Input';
 import { FaPhoneAlt, FaRegUser } from 'react-icons/fa';
@@ -8,8 +8,10 @@ import { useForm } from 'react-hook-form';
 import { MdMailOutline } from 'react-icons/md';
 import useContactUs from '@/tanstack-query/Home/useContactUs';
 import { toast } from 'react-toastify';
+import { useTranslations } from 'next-intl';
 
-export default function ContactFormSection() {
+export default function ContactForm() {
+    const t = useTranslations("components.contactForm");
     const {register,handleSubmit,formState:{errors}}  = useForm();
     const onSuccess = (data)=>{
         console.log("re",data?.data);
@@ -31,11 +33,11 @@ export default function ContactFormSection() {
                 className='max-w-full object-cover'
                 alt='Young Woman chatting with chatbot'
             />
-            <h2 className='text-primaryA1 border-b border-primaryA1 font-extrabold'>CONTACT US</h2>
+            <h2 className='text-primaryA1 border-b border-primaryA1 font-extrabold'>{t("header")}</h2>
             <form className='flex flex-col gap-6 flex-grow md:w-4/6 mx-auto' onSubmit={handleSubmit(onSubmit)}>
-                <h3 className='text-primaryA1 font-extrabold'>Email us your inquiry</h3>
+                <h3 className='text-primaryA1 font-extrabold'>{t("title")}</h3>
                 <Input 
-                    placeholder={"name"}
+                    placeholder={t("form.namePlaceholder")}
                     icon = {<FaRegUser size={18} className='text-gray-400'/>}
                     register={register}
                     id={"name"}
@@ -43,7 +45,7 @@ export default function ContactFormSection() {
                     errors={errors}
                 />
                 <Input 
-                    placeholder={"Email Address"}
+                    placeholder={t("form.emailPlaceholder")}
                     icon = {<MdMailOutline size={20} className='text-gray-400'/>}
                     register={register}
                     id={"email"}
@@ -51,7 +53,7 @@ export default function ContactFormSection() {
                     errors={errors}
                 />
                 <Input 
-                    placeholder={"Phone Number"}
+                    placeholder={t("form.phonePlaceholder")}
                     icon = {<FaPhoneAlt  size={20} className='text-gray-400'/>}
                     register={register}
                     id={"phone"}
@@ -60,11 +62,11 @@ export default function ContactFormSection() {
                 />
                 <textarea
                     className='border gray-300 p-2 rounded-lg'
-                    placeholder='Your Message'
+                    placeholder={t("form.messagePlaceholder")}
                     {...register("message")}
                     rows={4}
                 />
-                <button className='btn btn-primary'>Send</button>
+                <button className='btn btn-primary'>{t("form.button")}</button>
             </form>
         </div>
     </section>

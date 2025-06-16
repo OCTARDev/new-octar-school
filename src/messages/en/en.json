@@ -22,6 +22,17 @@
             "learnMore":"Learn More",
             "edit":"Edit",
             "delete":"Delete"
+        },
+        "contactForm":{
+            "header":"Contact Us",
+            "title":"Email us your inquiry",
+            "form":{
+                "namePlaceholder":"Enter Your Name",
+                "emailPlaceholder":"Enter Your Email Address",
+                "phonePlaceholder":"Enter Your Phone Number",
+                "messagePlaceholder":"Enter Your Message",
+                "button":"Send"
+            }
         }
     },
     "home":{
@@ -201,7 +212,7 @@
             "h1":"Why OCTAR is Different",
             "p1":"Unlike other AR tools or VR systems, OCTAR combines coloring with interactive 3D experiences to keep kids physically active and engaged. This immersive, hands-on approach promotes deeper understanding and makes learning more memorable."
         }
-        },
+    },
     "curriculum":{
         "header":"Curriculum",
         "button":"Explore Content"
@@ -253,6 +264,14 @@
             "description": "OCTAR simplifies teaching, saves time with ready-made AR lessons, and keeps students engaged with interactive, immersive content.",
             "button": "Explore How OCTAR Supports Teachers",
             "imageAlt": "Illustrative image of a teacher using OCTAR"
+        }
+    },
+    "blog":{
+        "header":"Blogs",
+        "single":{
+            "aside":{
+                "header":"Other articles by the author"
+            }
         }
     },
     "dashboard":{
