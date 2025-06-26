@@ -2,6 +2,7 @@ import React from 'react'
 import hero from "@/assets/home/hero.png";
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import LogosAlignments from '@/components/LogosSection';
 
 
 
@@ -15,9 +16,7 @@ export default function CurriculumHeroSection() {
                 <h1 className='text-4xl font-extrabold leading-relaxed'>
                     {t("h1")}
                 </h1>
-                <p>
-                    {t("b1")}
-                </p>
+                <LogosAlignments />
 
             </div>
             {/* right */}

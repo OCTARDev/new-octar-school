@@ -5,13 +5,18 @@ import React from 'react'
 import EventCard from './_components/card';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import ComingSoonPage from '@/components/ComingSoon';
 
 export default function Events() {
+    return(
+        <ComingSoonPage />
+    )
     const {data,isLoading,isError,isSuccess,error} = useIndexEvents();
     const events = data?.data?.data;
     const upcoming = events?.upcoming;
     const past = events?.past;
     const t = useTranslations("events");
+
   return (
     <div className='py-10 capitalize'>
         <div className='max-w-screen-xl mx-auto px-4'>

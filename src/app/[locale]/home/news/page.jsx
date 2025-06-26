@@ -7,8 +7,12 @@ import { useTranslations } from 'next-intl';
 import useIndexNews from '@/tanstack-query/Home/News/useIndex';
 import { FaArrowRight, FaCalendarAlt } from "react-icons/fa";
 import Link from 'next/link';
+import ComingSoonPage from '@/components/ComingSoon';
 
 export default function News(){
+    return(
+      <ComingSoonPage />
+    )
     const t = useTranslations("news");
     const {
         data,
@@ -49,7 +53,7 @@ export default function News(){
         };
     }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
 
-    
+
   return (
     <div className='relative max-w-screen-lg mx-auto'>
       <div className='my-10 px-4'>

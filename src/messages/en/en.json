@@ -33,6 +33,10 @@
                 "messagePlaceholder":"Enter Your Message",
                 "button":"Send"
             }
+        },
+        "comingSoon":{
+            "h1":"Coming Soon",
+            "h2":"Something amazing is on the way"
         }
     },
     "home":{
