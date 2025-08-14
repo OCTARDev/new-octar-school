@@ -24,7 +24,7 @@ export default function CategorySection({categoryId}) {
                 {targets?.map((c,i)=>{
                     return(
                     <div className='flex flex-col items-center gap-2' key={c.id}>
-                        <Card c={c} key={c.id}/>
+                        <Card c={c} key={c.id} isFullWidth={true}/>
                         <div>
                             <Link href={`/home/targets/${c.id}`} className='btn btn-primary'>{t("button")}</Link>
                         </div>

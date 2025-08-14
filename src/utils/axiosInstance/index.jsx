@@ -3,7 +3,7 @@ import {store} from "@/redux/store";
 import { logOut } from "@/redux/slices/user.slice";
 import Cookies from "js-cookie";
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
-
+import Router from 'next/router';
 
 const axiosInstance = axios.create({
     baseURL
@@ -32,6 +32,20 @@ axiosInstance.interceptors.response.use(
     async(error)=>{
         
         const originalRequest = error.config;
+
+        // ✅ Redirect on 403 without retry
+        if (error.response?.status === 403) {
+            console.log("status 403");
+            
+            if (typeof window !== "undefined") {
+                console.log("window isnt undefined");
+                
+                window.location.href = "/otp";
+            }
+            return Promise.reject(error);
+        }
+
+        // on status 401
         if(error.response.status === 401 && !originalRequest._retry){
             originalRequest._retry = true;
             try{      
@@ -46,7 +60,12 @@ axiosInstance.interceptors.response.use(
                     accessToken:newAccessToken,
                     refreshToken:newRefreshToken
                 };
-                localStorage.setItem("user",JSON.stringify(newUser));
+                Cookies.set("user",JSON.stringify(newUser),{ 
+                    expires,
+                    path: "/",
+                    secure:true,
+                    sameSite:"Strict"
+                });
                 originalRequest.headers.Authorization = `Bearer ${newAccessToken}`
                 return axiosInstance(originalRequest);
 

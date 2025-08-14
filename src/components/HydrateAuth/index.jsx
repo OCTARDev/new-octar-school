@@ -1,7 +1,7 @@
 "use client";
 import { setInitialized, setUser } from '../../redux/slices/user.slice';
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Cookies from "js-cookie";
 
 export default function HydrateAuth({ children }) {

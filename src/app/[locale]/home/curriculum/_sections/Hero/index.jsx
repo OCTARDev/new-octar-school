@@ -16,6 +16,9 @@ export default function CurriculumHeroSection() {
                 <h1 className='text-4xl font-extrabold leading-relaxed'>
                     {t("h1")}
                 </h1>
+                <p>
+                    {t("b1")}
+                </p>
                 <LogosAlignments />
 
             </div>

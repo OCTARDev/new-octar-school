@@ -43,7 +43,7 @@ export default async function HeroSection() {
                     </div>
                 </div>
                 <div>
-                    <Link className='btn btn-primary' href={`dashboard`}>
+                    <Link className='btn btn-primary' href={`/dashboard`}>
                         {t('button')}
                     </Link> {/* Dynamic button text */}
                 </div>

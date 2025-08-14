@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 async function RootLayout({children}) {
     const cookieStore = await cookies();
     const userCookie = cookieStore.get("user");
-    /* console.log("User cookie:", userCookie); */
+    console.log("User cookie:", userCookie);
     if (!userCookie) {
       redirect("/login");
     }
@@ -20,10 +20,10 @@ async function RootLayout({children}) {
       console.error("Failed to parse cookie:", e);
       redirect("/login");
     }
-    if (!user.user.email_verified_at) {
+    /* if (!user.user.email_verified_at) {
       console.log("User role is not teacher:", user.user.email_verified_at);
       redirect("/otp");
-    }
+    } */
 
   return (
     <div className='min-h-screen flex flex-col'>

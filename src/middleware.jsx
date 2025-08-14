@@ -41,10 +41,10 @@ export function middleware(request) {
     }
 
     // Redirect unverified users to /home/verify-email (excluding itself)
-    if (!user?.user?.email_verified_at && !isVerifyPage) {
+/*     if (!user?.user?.email_verified_at && !isVerifyPage) {
       console.log('Redirecting to /otp due to unverified email');
       return NextResponse.redirect(new URL(`/otp`, request.url));
-    }
+    } */
   }
 
   // Prevent verified users from accessing /otp
