@@ -3,7 +3,6 @@ import {store} from "@/redux/store";
 import { logOut } from "@/redux/slices/user.slice";
 import Cookies from "js-cookie";
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
-import Router from 'next/router';
 
 const axiosInstance = axios.create({
     baseURL
