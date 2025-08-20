@@ -13,6 +13,13 @@ export function middleware(request) {
   
   const protectedPaths = ['/dashboard', '/otp'];
   const protectedPathForLoggedIn = ['/login', '/register'];
+  const teacherProtectedPaths = [
+    '/home/teacher-portal',
+    '/dashboard/teacher',
+  ];
+  const schoolProtectedPaths = [
+    '/dashboard/school',
+  ];
 
   const requestedPath = request.nextUrl.pathname;
   const isVerifyPage = requestedPath.startsWith("/otp");
@@ -57,7 +64,29 @@ export function middleware(request) {
     if (user) {
       return NextResponse.redirect(new URL("/home", request.url));
     }
+  };
+
+  // Protect /home/teacher-portal for users with role !== "teacher"
+  if (teacherProtectedPaths.some((path) => pathname.includes(path))) {
+    console.log("Checking user role for teacher portal access");
+    
+    if (!user || user?.user?.role !== "teacher") {
+      console.log('Redirecting to /home due to insufficient permissions');
+      return NextResponse.redirect(new URL("/home", request.url));
+    }
   }
+
+  // Protect /home/teacher-portal for users with role !== "school"
+  if (schoolProtectedPaths.some((path) => pathname.includes(path))) {
+    console.log("Checking user role for school portal access");
+    
+    if (!user || user?.user?.role !== "school") {
+      console.log('Redirecting to /home due to insufficient permissions');
+      return NextResponse.redirect(new URL("/home", request.url));
+    }
+  }
+
+
   // Localization Middleware
   const intlMiddleware = createIntlMiddleware({
     locales,

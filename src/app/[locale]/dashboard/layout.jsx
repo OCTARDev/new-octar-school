@@ -6,7 +6,6 @@ import { redirect } from "next/navigation";
 async function RootLayout({children}) {
     const cookieStore = await cookies();
     const userCookie = cookieStore.get("user");
-    console.log("User cookie:", userCookie);
     if (!userCookie) {
       redirect("/login");
     }

@@ -1,10 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 import useFetchFAQs from '@/tanstack-query/Home/useFetchFAQs';
-import { IoArrowBack } from "react-icons/io5";
 import ErrorBoundary from '@/components/ErrorBoundary';
-import Link from 'next/link';
-import Dropdown from '@/components/Dropdown/Dropdown';
 import DropContainer from '@/components/DropContainer';
 import BackSection from '@/components/BackSection';
 

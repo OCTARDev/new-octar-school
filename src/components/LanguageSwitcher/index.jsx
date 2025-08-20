@@ -7,7 +7,7 @@ import { GrLanguage } from "react-icons/gr";
 import { FaChevronDown , FaCheck} from "react-icons/fa";
 import {AnimatePresence, motion} from "framer-motion";
 
-const LanguageSwitcher = ({isUp=false}) => {
+const LanguageSwitcher = ({isUp=false,className=""}) => {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams(); // Add this hook
@@ -69,7 +69,7 @@ const LanguageSwitcher = ({isUp=false}) => {
     <motion.div 
     whileHover={{scale:1.02}}
 
-    className="relative flex-grow z-50" ref={dropdownRef}>
+    className={`relative flex-grow z-50 ${className}`} ref={dropdownRef}>
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
