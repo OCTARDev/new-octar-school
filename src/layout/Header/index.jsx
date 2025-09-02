@@ -114,7 +114,14 @@ export default function Header() {
             user?.role === "teacher" && 
             <Dropdown
             className='px-2'
-            label={"Teacher Portal"}
+            label={
+              <Link
+              href={`/home/teacher-portal`}
+              className={`nav-link px-4 w-full block text-start ${pathname.includes("/home/teacher-portal")?" active":""}`}
+              >
+                {t("teacher_portal")}
+              </Link>
+            }
             >
               <TeacherPortalComponent />
             </Dropdown>

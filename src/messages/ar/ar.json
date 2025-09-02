@@ -12,7 +12,8 @@
         "contact": "اتصل بنا",
         "support": "الدعم",
         "news": "الأخبار",
-        "events":"الاحداث"
+        "events":"الاحداث",
+        "teacher_portal":"بوابة المعلم"
     },
     "components":{
         "backSection":{

@@ -12,7 +12,8 @@
         "contact":"contact",
         "support":"support",
         "news":"news",
-        "events":"events"
+        "events":"events",
+        "teacher_portal":"Teacher Portal"
     },
     "components":{
         "backSection":{
@@ -161,6 +162,15 @@
                 "header":"An Investment in Effective Teaching",
                 "p1":"By providing a tool that simplifies lesson planning, boosts engagement, and promotes interactive learning, OCTAR helps teachers focus on what they do best—teach. It doesn’t replace the teacher’s role; instead, it empowers teachers to use technology to enhance their teaching style and connect with students in new, meaningful ways.",
                 "p2":"OCTAR is here to support teachers every step of the way, making their jobs easier while offering students an exciting, dynamic way to learn."
+            }
+        },
+        "teacher-portal":{
+            "hero":{
+                "welcome":"Welcome to",
+                "octar":"octar",
+                "where":"— Where",
+                "learning":"Learning Comes to Life",
+                "transforming":"The place that brings together the best ideas and support to develop your education."
             }
         }
     },

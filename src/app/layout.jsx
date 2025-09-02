@@ -27,8 +27,6 @@ export const metadata = {
 
 
 function RootLayout({ children  }) {
-
-
   return (
     <html>
       <body
