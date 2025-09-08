@@ -137,3 +137,10 @@ input,select,textarea{
   height: 600px !important; /* Set the fixed height for the images */
   object-fit: cover; /* Ensure the image fills the container without distortion */
 }
+
+.swiper-pagination{
+  position: static !important;
+}
+.swiper-pagination-bullet{
+  @apply !w-5 !h-5 !bg-gradient-primary;
+}

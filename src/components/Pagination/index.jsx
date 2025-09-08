@@ -11,7 +11,7 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
             className={`px-3 py-2 rounded ${
               currentPage === i
                 ? "bg-primaryA1 text-white"
-                : "bg-secondaryA2 text-gray-700 hover:bg-gray-200"
+                : " text-gray-700 hover:bg-gray-200"
             }`}
             onClick={() => onPageChange(i)}
           >

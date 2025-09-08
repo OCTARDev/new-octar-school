@@ -7,7 +7,7 @@ import NewMembersSection from './_sections/NewMembers'
 
 export default function TeacherPortal() {
   return (
-    <div className='my-10 px-4 flex flex-col gap-8 md:gap-24 '>
+    <div className='my-10 px-4 flex flex-col gap-8 md:gap-24 max-w-6xl mx-auto'>
       <HeroSection />
       <UsePortalSection />
       <CommunitySection />

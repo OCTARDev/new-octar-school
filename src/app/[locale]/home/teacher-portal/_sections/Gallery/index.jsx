@@ -9,7 +9,7 @@ export default function GallerySection() {
     const response = data?.data?.data?.features;
     
     return (
-        <div className='max-w-6xl mx-auto'>
+        <div className=''>
             <ErrorBoundary  {...methods}>
                 <GalleryComponent data={response} />
             </ErrorBoundary>

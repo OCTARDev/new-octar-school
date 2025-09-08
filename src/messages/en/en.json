@@ -165,12 +165,22 @@
             }
         },
         "teacher-portal":{
-            "hero":{
-                "welcome":"Welcome to",
-                "octar":"octar",
-                "where":"— Where",
-                "learning":"Learning Comes to Life",
-                "transforming":"The place that brings together the best ideas and support to develop your education."
+            "home":{
+                "hero":{
+                    "welcome":"Welcome to",
+                    "octar":"octar",
+                    "where":"— Where",
+                    "learning":"Learning Comes to Life",
+                    "transforming":"The place that brings together the best ideas and support to develop your education."
+                }
+            },
+            "class-sharing":{
+                "hero":{
+                    "share":"Share your classroom activities with the",
+                    "octar":"OCTAR",
+                    "community":"community",
+                    "p":"Turn your classroom activities into a source of inspiration for others, and share your ideas and creativity for the benefit of all."
+                }
             }
         }
     },

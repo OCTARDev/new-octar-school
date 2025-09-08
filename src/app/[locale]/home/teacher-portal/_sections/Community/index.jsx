@@ -1,13 +1,13 @@
 import PointComponent from '@/components/PointComponent';
 import { useTranslations } from 'next-intl';
 import React from 'react'
-import img from "@/assets/home/teacher-portal/community.png";
+import img from "@/assets/home/teacher-portal/home/community.png";
 import Image from 'next/image';
 
 export default function CommunitySection() {
     const t = useTranslations("home.parents");
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-center max-w-6xl mx-auto'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-center'>
         {/* Left */}
         <div className='flex flex-col gap-6'>
             <h2 className='font-bold text-3xl mb-4'>

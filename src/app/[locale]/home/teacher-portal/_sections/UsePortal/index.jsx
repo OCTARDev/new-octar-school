@@ -4,7 +4,7 @@ import { FaPlay } from 'react-icons/fa';
 
 export default function UsePortalSection() {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-center max-w-6xl mx-auto'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-12 px-6 items-center'>
         {/* Left */}
         <div className='bg-gradient-primary p-3 w-full h-full rounded-lg  aspect-video flex items-center justify-center'>
             <FaPlay  className='text-white text-[80px]'/>
