@@ -10,7 +10,8 @@ const nextConfig = {
                 protocol:"https",
                 hostname:"schooloctarback.adgrouptech.com"
             }
-        ]
+        ],
+        unoptimized:true
     }
 };
  
