@@ -1,4 +1,3 @@
-import axiosInstance from "@/utils/axiosInstance";
 import teacherAxiosInstance from "@/utils/teacherAxiosInstance";
 import { useQuery } from "@tanstack/react-query";
 

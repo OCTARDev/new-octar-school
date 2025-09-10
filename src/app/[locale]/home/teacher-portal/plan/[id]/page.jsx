@@ -8,6 +8,8 @@ import TitleSection from './_sections/Title';
 import BodySection from './_sections/Body';
 import NotesSection from './_sections/Notes';
 import PlanTeachersSection from './_sections/Teachers';
+import PlanUpdatesSection from './_sections/Updates';
+import BackSection from '@/components/BackSection';
 
 export default function PlanResource() {
     const {id} = useParams();
@@ -17,6 +19,7 @@ export default function PlanResource() {
     
   return (
     <div className='my-10'>
+        <BackSection className='max-w-6xl mx-auto '/>
         <ErrorBoundary {...methods}>
             <PlanResourceHeroSection />
             <TitleSection data={response?.title}/>
@@ -31,6 +34,8 @@ export default function PlanResource() {
             email={response?.email}
             />
             <PlanTeachersSection data={response?.plan_lesson_teachers}/>
+            <hr className='border-[20px] border-primaryA1'/>
+            <PlanUpdatesSection />
         </ErrorBoundary>
     </div>
   )

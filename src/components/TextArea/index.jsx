@@ -6,9 +6,13 @@ export default function TextArea({placeholder,id,register,icon,errors,rows=4}) {
     return (
         <>
         <div className="input-control">
+            {
+            icon && 
             <span className="">
                 {icon}
             </span>
+            }
+            
             <textarea
                 rows={rows}
                 placeholder={placeholder}

@@ -19,19 +19,19 @@ export default function TeacherPortalComponent() {
                 Lesson Planning & Teaching Tips
             </Link>
             <Link
-            href={`/home/teacher-portal/`}
+            href={`/home/teacher-portal/support`}
             className='nav-link px-4 w-full block text-sm text-start'
             >
                 Training & Support
             </Link>
             <Link
-            href={`/home/teacher-portal/`}
+            href={`/home/teacher-portal/feedback`}
             className='nav-link px-4 w-full block text-sm text-start'
             >
                 Feedback
             </Link>
             <Link
-            href={`/home/teacher-portal/`}
+            href={`/home/teacher-portal/resources`}
             className='nav-link px-4 w-full block text-sm text-start'
             >
                 Rewards & Resources
