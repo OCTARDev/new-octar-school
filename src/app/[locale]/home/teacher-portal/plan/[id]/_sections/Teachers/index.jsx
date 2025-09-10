@@ -41,7 +41,7 @@ export default function PlanTeachersSection({data}) {
                   width={128}
                   height={128}
                   className='h-32 w-32  rounded-full'
-                  src={placeholderImg}
+                  src={item?.teacher?.media_path}
                   alt={item?.teacher?.name}
                   />
                 </div>

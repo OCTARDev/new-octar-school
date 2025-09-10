@@ -5,7 +5,8 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images:{
-        domains:["schooloctarback.adgrouptech.com"]
+        domains:["schooloctarback.adgrouptech.com"],
+        unoptimized:true
     }
 };
  
