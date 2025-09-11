@@ -239,7 +239,10 @@
     },
     "curriculum":{
         "header":"Curriculum",
-        "button":"Explore Content"
+        "button":"Explore Content",
+        "english":"English",
+        "arabic":"Arabic",
+        "filter":"Langauge"
     },
     "categories":{
         "hero":"OCTAR is designed to meet and exceed international educational standards",

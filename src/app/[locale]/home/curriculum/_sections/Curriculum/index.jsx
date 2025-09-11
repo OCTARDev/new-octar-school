@@ -3,7 +3,8 @@ import Card from '@/components/Card';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import useFetchCurriculum from '@/tanstack-query/Home/useFetchCurriculum';
 import Link from 'next/link';
-import React, { useState } from 'react'
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react'
 import { useTranslations } from 'use-intl';
 
 export default function CurriculumSection({id}) {
@@ -11,19 +12,27 @@ export default function CurriculumSection({id}) {
     const {data,isLoading,isError,isSuccess,error} = useFetchCurriculum({id,lang});
     const curriculum = data?.data?.data;
     const t = useTranslations("curriculum");
+    const pathname = usePathname();
+    
+    const lastPathName = pathname.split("/");
+    const firstLink = lastPathName[1];
+    
+    useEffect(()=>{
+        setLang(firstLink)
+    },[firstLink])
     return (
         <section className='px-4'>
             <div className='max-w-screen-xl mx-auto flex flex-col gap-2 py-4'>
                 <div className='flex justify-between flex-wrap gap-3 items-center px-5'>
                     <h3 className='text-4xl font-bold mb-8'>{t("header")}</h3>
                     <div className='flex gap-2 items-center flex-col '>
-                        <label className='font-semibold'>Language Filter</label>
+                        <label className='font-semibold'>{t("filter")}</label>
                         <select 
                         onChange={(e)=>setLang(e.target.value)}
+                        value={lang}
                         className='px-5 py-1 border-2 capitalize rounded-lg'>
-                            <option value={"all"}>all</option>
-                            <option value={"en"}>english</option>
-                            <option value={"ar"}>arabic</option>
+                            <option value={"en"}>{t("english")}</option>
+                            <option value={"ar"}>{t("arabic")}</option>
                         </select>
                     </div>
                     
