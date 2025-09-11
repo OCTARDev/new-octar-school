@@ -16,6 +16,7 @@ export default function FeedBackHeroSection() {
             <Image 
             width={400}
             height={600}
+            quality={100}
             alt='Feedback Hero Image'
             src={img}
             className='w-full h-full object-cover'

@@ -13,8 +13,9 @@ export default function PlanCardComponent({data}) {
             {/* Image */}
             <div className='bg-white rounded-lg'>
                 <Image 
-                width={240} 
-                height={280} 
+                width={400} 
+                height={600}
+                quality={100} 
                 className='w-full h-72 object-cover rounded-lg' 
                 src={data?.cover}
                 alt={data?.title}

@@ -15,9 +15,10 @@ export default function PlanUpdatesSection() {
             <Image 
             width={400}
             height={600}
+            quality={100}
             alt='Updates Image'
             src={img}
-            className='w-full max-h-full object-cover'
+            className='w-full h-full object-cover'
             />
         </div>
     </section>

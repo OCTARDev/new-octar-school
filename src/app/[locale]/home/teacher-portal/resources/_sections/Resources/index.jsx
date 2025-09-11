@@ -34,11 +34,11 @@ export default function ResourcesReadySection({data}) {
               <div className=' w-full  flex items-center justify-center border rounded-lg mb-3'>
                 <Image 
                 src={item?.cover}
-                width={400}
+                width={600}
                 height={600}
                 quality={100}
                 alt={item?.title}
-                className='w-full h-full rounded-lg'
+                className='w-full  aspect-square rounded-lg'
                 />
               </div> 
                 

@@ -20,19 +20,19 @@ export default function TeacherPortalComponent() {
             </Link>
             <Link
             href={`/home/teacher-portal/support`}
-            className='nav-link px-4 w-full block text-sm text-start'
+            className={`nav-link px-4 w-full block text-sm text-start ${pathname.includes("/support")?" active":""}`}
             >
                 Training & Support
             </Link>
             <Link
             href={`/home/teacher-portal/feedback`}
-            className='nav-link px-4 w-full block text-sm text-start'
+            className={`nav-link px-4 w-full block text-sm text-start ${pathname.includes("/feedback")?" active":""}`}
             >
                 Feedback
             </Link>
             <Link
             href={`/home/teacher-portal/resources`}
-            className='nav-link px-4 w-full block text-sm text-start'
+            className={`nav-link px-4 w-full block text-sm text-start ${pathname.includes("/resources")?" active":""}`}
             >
                 Rewards & Resources
             </Link>

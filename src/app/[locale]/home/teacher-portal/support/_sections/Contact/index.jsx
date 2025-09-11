@@ -54,6 +54,7 @@ export default function SupportContactUsSection() {
                     <Image 
                     width={400}
                     height={600}
+                    quality={100}
                     alt='Support Contact Us Image'
                     src={img}
                     className='w-full h-full'

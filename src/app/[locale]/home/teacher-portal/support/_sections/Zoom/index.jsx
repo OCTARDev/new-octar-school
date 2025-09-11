@@ -24,6 +24,7 @@ export default function ZoomMeetingSection({data}) {
         <Image 
         width={600}
         height={600}
+        quality={100}
         alt='Zoom Meeting Image'
         src={img}
         className='w-full h-full object-cover'

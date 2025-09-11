@@ -10,8 +10,9 @@ export default function BodySection({body,image,download}) {
       </div>
       <div className='md:col-span-2'>
         <Image 
-        width={300} 
-        height={700} 
+        width={400} 
+        height={600}
+        quality={100} 
         className='w-full h-full object-cover rounded-lg' 
         src={image} 
         alt='Post Image'

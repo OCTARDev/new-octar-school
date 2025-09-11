@@ -17,6 +17,7 @@ export default function ResourcesHeroSection() {
         <Image
             width={800}
             height={800}
+            quality={100}
             className='w-full h-full object-cover'
             src={img}
             alt='Resources & Rewards Hero Image'

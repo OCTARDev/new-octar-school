@@ -120,6 +120,7 @@ export default function NotesSection({author,email,id}) {
                 <Image 
                 width={800}
                 height={800}
+                quality={100}
                 src={img}
                 alt='Notes Image'
                 className='w-full h-full object-cover rounded-lg'

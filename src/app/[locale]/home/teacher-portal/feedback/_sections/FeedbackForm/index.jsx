@@ -56,6 +56,7 @@ export default function FeedbackFormSection() {
         <Image 
         width={400}
         height={600}
+        quality={100}
         alt='Feedback Form Image'
         src={img}
         className='w-full h-full object-cover'

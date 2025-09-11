@@ -28,8 +28,8 @@ export default function ResourcesImagesCardComponent({data}) {
       {/* Image */}
       <div className='flex-shrink-0 flex items-center justify-center  border-2 rounded-full border-primaryA1 w-28 h-28'>
         <Image  
-            width={112} 
-            height={112} 
+            width={400} 
+            height={400} 
             className='w-24 h-24 object-cover rounded-full' 
             src={data?.media?.media_path}
             alt={data?.title}

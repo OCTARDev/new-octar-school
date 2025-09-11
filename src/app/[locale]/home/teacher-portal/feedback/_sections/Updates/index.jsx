@@ -29,6 +29,7 @@ export default function FeedbackUpdatesSection({data}) {
                             <Image 
                             width={400}
                             height={400}
+                            quality={100}
                             alt={item?.title}
                             src={item?.media}
                             className='w-full aspect-square rounded-lg object-cover'

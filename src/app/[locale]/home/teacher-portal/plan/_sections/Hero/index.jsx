@@ -21,7 +21,14 @@ export default function PlanHeroSection() {
             </div>
             {/* right */}
             <div className='flex justify-center'>
-                <Image src={hero} className={"max-w-full w-5/6"} alt={"hero image"}/>
+                <Image 
+                src={hero} 
+                className={"h-full w-full"} 
+                alt={"hero image"}
+                width={400}
+                height={600}
+                quality={100}
+                />
             </div>
         </div>
 

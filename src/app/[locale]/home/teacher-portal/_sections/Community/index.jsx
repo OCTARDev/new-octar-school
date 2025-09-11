@@ -41,7 +41,14 @@ export default function CommunitySection() {
         </div>
         {/* Right */}
         <div>
-            <Image src={img} className={"max-w-full w-5/6"} alt={"hero image"}/>
+            <Image 
+            src={img} 
+            className={"h-full w-full object-cover"} 
+            alt={"hero image"}
+            width={400}
+            height={600}
+            quality={100}
+            />
         </div>
     </div>
   )

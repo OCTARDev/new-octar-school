@@ -17,6 +17,7 @@ export default function SupportHeroSection() {
         <Image
             width={400}
             height={800}
+            quality={100}
             className='w-full h-full object-cover'
             src={img}
             alt='Support Hero Image'
