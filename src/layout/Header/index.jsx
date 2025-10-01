@@ -110,7 +110,7 @@ export default function Header() {
             >
               {t("features")}
           </Link>
-          {/* {
+          {
             user?.role === "teacher" && 
             <Dropdown
             className='px-2'
@@ -125,7 +125,7 @@ export default function Header() {
             >
               <TeacherPortalComponent />
             </Dropdown>
-          } */}
+          }
           
           <Link 
             className={`nav-link ${pathname.includes("/home/blog")?" active":""}`} 
