@@ -535,7 +535,8 @@
                     "searchPlaceholder":"Search by name or email",
                     "id":"ID",
                     "name":"Student Name",
-                    "code":"code",
+                    "code":"Code",
+                    "parent_code":"Parent Code",
                     "status":"Status",
                     "notes":"Notes",
                     "actions":"Actions"
@@ -621,6 +622,7 @@
                     "id":"ID",
                     "name":"Student Name",
                     "code":"code",
+                    "parent_code":"Parent Code",
                     "status":"Status",
                     "notes":"Notes",
                     "actions":"Actions"

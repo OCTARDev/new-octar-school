@@ -92,6 +92,7 @@ export default function StudentsTableSection({id}) {
                 <th className="px-4 py-2 text-start">{t("id")}</th>
                 <th className="px-4 py-2 text-start">{t("name")}</th>
                 <th className="px-4 py-2 text-start">{t("code")}</th>
+                <th className="px-4 py-2 text-start">{t("parent_code")}</th>
                 <th className="px-4 py-2 text-start">{t("status")}</th>
                 <th className="px-4 py-2 text-start">{t("notes")}</th>
 
@@ -109,13 +110,17 @@ export default function StudentsTableSection({id}) {
                             {/* Name */}
                             <td className="px-4 py-2 space-x-2">
                                 <div className='flex gap-1 items-center'>
-                                    <span><Image src={row?.media_path} alt='catalog' width={32} height={32} /></span>
+                                    <span><Image src={row?.media_path} alt='catalog' width={32} height={32} className='w-10 h-10 object-cover'/></span>
                                     <span>{row?.name}</span>
                                 </div>
                             </td>
-                            {/* total students */}
+                            {/* Code */}
                             <td className="px-4 py-2  space-x-2">
                                 <span>{row?.code}</span>
+                            </td>
+                            {/* Parent Code */}
+                            <td className="px-4 py-2  space-x-2">
+                                <span>{row?.parent_code}</span>
                             </td>
                             {/* Status */}
                             <td className="px-4 py-2 space-x-2">
