@@ -60,7 +60,7 @@ axiosInstance.interceptors.response.use(
                     refreshToken:newRefreshToken
                 };
                 Cookies.set("user",JSON.stringify(newUser),{ 
-                    expires,
+                    expires:7,
                     path: "/",
                     secure:true,
                     sameSite:"Strict"
