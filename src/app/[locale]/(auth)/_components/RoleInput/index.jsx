@@ -21,11 +21,18 @@ export default function RoleInput({setValue}) {
                 School
             </button>
             <button 
-            className={`!rounded-e-full px-8 py-3 btn  ${role === "teacher"? "btn-primary" :"bg-gray-300"}`} 
+            className={`!rounded-none px-8 py-3 btn  ${role === "teacher"? "btn-primary" :"bg-gray-300"}`} 
             type='button'
             onClick={()=>{handleChooseRole("teacher")}}
             >
                 Teacher
+            </button>
+            <button 
+            className={`!rounded-e-full px-8 py-3 btn  ${role === "parent"? "btn-primary" :"bg-gray-300"}`} 
+            type='button'
+            onClick={()=>{handleChooseRole("parent")}}
+            >
+                Parent
             </button>
         </div>
   </div>

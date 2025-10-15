@@ -20,6 +20,9 @@ export function middleware(request) {
   const schoolProtectedPaths = [
     '/dashboard/school',
   ];
+  const parentProtectedPaths = [
+    "/dashboard/parent"
+  ]
 
   const requestedPath = request.nextUrl.pathname;
   const isVerifyPage = requestedPath.startsWith("/otp");
@@ -76,11 +79,21 @@ export function middleware(request) {
     }
   }
 
-  // Protect /home/teacher-portal for users with role !== "school"
+  // Protect /dashboard/school for users with role !== "school"
   if (schoolProtectedPaths.some((path) => pathname.includes(path))) {
     console.log("Checking user role for school portal access");
     
     if (!user || user?.user?.role !== "school") {
+      console.log('Redirecting to /home due to insufficient permissions');
+      return NextResponse.redirect(new URL("/home", request.url));
+    }
+  }
+
+  // Protect /dashboard/parent for users with role !== "school"
+  if (parentProtectedPaths.some((path) => pathname.includes(path))) {
+    console.log("Checking user role for school portal access");
+    
+    if (!user || user?.user?.role !== "parent") {
       console.log('Redirecting to /home due to insufficient permissions');
       return NextResponse.redirect(new URL("/home", request.url));
     }

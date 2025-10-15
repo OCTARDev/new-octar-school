@@ -13,12 +13,12 @@ export default function SidebarWrapper({children,className}) {
     }
   return (
     <>
-    <div className={`${isExpanded?"":"hidden"} fixed top-0 left-0 w-full h-full bg-black/80 z-10 ${className}`} onClick={handleClose}></div>
+    <div className={`${isExpanded?"":"hidden"} fixed top-0 left-0 w-full h-full bg-black/80 z-10 `} onClick={handleClose}></div>
     <motion.aside 
         initial="hidden"
         animate="visible"
         transition={{ type: "tween", duration: 1, delay: 0.1 }}
-        className={`${styles.sidebar} ${isExpanded? `${styles.expanded}` :``}`}
+        className={`${styles.sidebar} ${isExpanded? `${styles.expanded} ${className}` :``}`}
     >
         {children}
     </motion.aside>

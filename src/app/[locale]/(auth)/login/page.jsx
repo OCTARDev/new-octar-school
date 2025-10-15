@@ -17,12 +17,14 @@ import { setUser } from '@/redux/slices/user.slice';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { signinSchema } from '@/utils/Validation/auth/Login';
 import Input from '@/components/Input';
+import { HiOutlineQrCode } from "react-icons/hi2";
+
 
 export default function Login() {  
   const router = useRouter();
   const dispatch = useDispatch();
   const [rememberMe , setRememberMe] = useState(false);
-  const { register , formState:{errors} , handleSubmit , setValue } = useForm({
+  const { register , formState:{errors} , handleSubmit , setValue , watch} = useForm({
     resolver:yupResolver(signinSchema),
     defaultValues:{
     type:"school",
@@ -61,6 +63,8 @@ export default function Login() {
   const onSubmit = (data)=>{
     login.mutate(data);
   };  
+  const role = watch("type");
+  
   return (
     <main className='grid grid-cols-1 sm:grid-cols-2 min-h-screen'>
       {/* left form */}
@@ -81,20 +85,35 @@ export default function Login() {
             <RoleInput 
               setValue={setValue}
             />
-            {/* inputs */}
-            <Input 
-            register={register}
-            id={"email"}
-            placeholder={"Email"}
-            icon={<FaRegUser size={18} className='text-gray-400'/>}
-            errors={errors}
-            />
-            {/* password */}
-            <PasswordInput 
-              placeholder={"Password"}
-              register={register}
-              errors={errors}
-            />
+            {
+              role === "parent" ? (
+                <Input 
+                  register={register}
+                  id={"parent_code"}
+                  placeholder={"Parent Code"}
+                  icon={<HiOutlineQrCode size={18} className='text-gray-400'/>}
+                  errors={errors}
+                  />
+              ):(
+                <>
+                {/* email */}
+                <Input 
+                register={register}
+                id={"email"}
+                placeholder={"Email"}
+                icon={<FaRegUser size={18} className='text-gray-400'/>}
+                errors={errors}
+                />
+                {/* password */}
+                <PasswordInput 
+                  placeholder={"Password"}
+                  register={register}
+                  errors={errors}
+                />
+                </>
+              )
+            }
+            
             {/* remember me &  Forgot password */}
             <div className='flex gap-3 my-2 justify-between px-2 text-sm text-gray-500'>
               <div className='flex gap-1 text-sm text-gray-500'>

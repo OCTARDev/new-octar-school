@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 
 
 
-export default function SchoolSidebar() {
+export default function TeacherSidebar() {
     const t = useTranslations("dashboard.teacher.sidebar");
     const pathname = usePathname();
     const lastPathName = pathname.split("/");
